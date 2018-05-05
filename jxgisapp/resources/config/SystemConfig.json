@@ -1,0 +1,6 @@
+{
+  "startModuleId": "welcome",
+  "serviceUrl": "http://localhost:8080/jxgisapp/",
+  "pageSize": 10,
+  "title": "功能列表"
+}

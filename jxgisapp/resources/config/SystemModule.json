@@ -1,0 +1,129 @@
+{
+  "children": [
+    {
+      "text": "水位信息",
+      "id": "",
+      "leaf": false,
+      "url": "",
+      "children":[
+        {
+          "text": "水情GIS监测查询",
+          "id": "sq-gis-jccx",
+          "leaf": true,
+          "url": "test"
+        }
+      ]
+    },
+    {
+      "text": "雨量信息",
+      "id": "",
+      "leaf": false,
+      "url": "",
+      "children":[
+        {
+          "text": "雨量GIS监测查询",
+          "id": "yl-gis-jccx",
+          "leaf": true,
+          "url": "test"
+        }
+      ]
+    },
+    {
+      "text": "蒸发量",
+      "id": "",
+      "leaf": false,
+      "url": "",
+      "children":[
+        {
+          "text": "地图展示",
+          "id": "dtzs",
+          "leaf": true,
+          "url": "test"
+        },
+        {
+          "text": "蒸发分布图",
+          "id": "zffbt",
+          "leaf": true,
+          "url": "test"
+        },
+        {
+          "text": "蒸发图表",
+          "id": "zftb",
+          "leaf": true,
+          "url": "test"
+        }
+      ]
+    },
+    {
+      "text": "流量监测",
+      "id": "lljc",
+      "leaf": true,
+      "url": "test"
+    },
+    {
+      "text": "工程安全监测",
+      "id": "gcaqjc",
+      "leaf": true,
+      "url": "test"
+    },
+    {
+      "text": "视频监测",
+      "id": "spjc",
+      "leaf": true,
+      "url": "test"
+    },
+    {
+      "text": "闸门监测",
+      "id": "",
+      "leaf": false,
+      "url": "",
+      "children":[
+        {
+          "text": "地图查询",
+          "id": "zm-dt-cx",
+          "leaf": true,
+          "url": "test"
+        },
+        {
+          "text": "监测信息关联监视",
+          "id": "jcxx-gl-js",
+          "leaf": true,
+          "url": "test"
+        },
+        {
+          "text": "闸门监控统计报表",
+          "id": "zm-jktj-bb",
+          "leaf": true,
+          "url": "test"
+        }
+      ]
+    },
+    {
+      "text": "供水监测",
+      "id": "gsjc",
+      "leaf": true,
+      "url": "test"
+    },
+    {
+      "text": "墒情信息",
+      "id": "sqxx",
+      "leaf": true,
+      "url": "test"
+    },
+    {
+      "text": "水质监测",
+      "id": "",
+      "leaf": false,
+      "url": "",
+      "children":[
+        {
+          "text": "水质信息查询",
+          "id": "szxxcx",
+          "leaf": true,
+          "url": "test"
+        }
+      ]
+    }
+  ],
+  "text": "."
+}
