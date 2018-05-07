@@ -27,7 +27,7 @@ Ext.define('jxgisapp.view.welcome.Welcome', {
         /* include child components here */
         {
             xtype: 'label',
-            html: '<h1>欢迎使用江西GIS功能系统！</h1>'
+            html: '<h1>欢迎使用GIS功能系统！</h1>'
         }
     ]
 });
