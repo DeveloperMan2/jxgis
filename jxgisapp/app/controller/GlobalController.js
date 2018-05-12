@@ -161,13 +161,18 @@ Ext.define('jxgisapp.controller.GlobalController', {
                 }
             }
 
-            var tempWidget = subPanel.getComponent(subModule['id']);
-            if (tempWidget) {
-                tempWidget.show();
+            if (subModule['init']) {
+                var tempWidget = subPanel.getComponent(subModule['id']);
+                if (tempWidget) {
+                    tempWidget.show();
+                } else {
+                    tempWidget = new Ext.create('widget.' + subModule['url'], {id: subModule['id']});
+                    subPanel.add(tempWidget);
+                }
             } else {
-                tempWidget = new Ext.create('widget.' + subModule['url'], {id: subModule['id']});
-                subPanel.add(tempWidget);
+                subPanel.setHidden(true);
             }
+
 
             subPanel.updateLayout();
         }

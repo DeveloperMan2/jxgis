@@ -17,7 +17,6 @@ Ext.define('jxgisapp.view.right.Right', {
     /*
     Uncomment to give this component an xtype*/
     xtype: 'right',
-    width: 300,
     border: true,
 
     viewModel: {

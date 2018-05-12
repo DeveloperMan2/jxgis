@@ -53,8 +53,7 @@ Ext.define('jxgisapp.view.main.Main', {
                         },
                         {
                             xtype: 'panel',
-                            id: 'bottomModuleContainerWrapId',
-                            height: 100
+                            id: 'bottomModuleContainerWrapId'
                         }
                     ]
                 },
