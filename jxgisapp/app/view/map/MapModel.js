@@ -1,9 +1,9 @@
 /**
- * Created by LBM on 2018/2/8.
+ * Created by winnerlbm on 2018/5/12.
  */
-Ext.define('jxgisapp.view.test.TestModel', {
+Ext.define('jxgisapp.view.map.MapModel', {
     extend: 'Ext.app.ViewModel',
-    alias: 'viewmodel.test',
+    alias: 'viewmodel.map',
 
     stores: {
         /*
@@ -11,11 +11,13 @@ Ext.define('jxgisapp.view.test.TestModel', {
         store configuration. For example:
 
         users: {
-            model: 'Test',
+            model: 'Map',
             autoLoad: true
         }
         */
     },
 
-    data: {}
+    data: {
+        /* This object holds the arbitrary data that populates the ViewModel and is then available for binding. */
+    }
 });

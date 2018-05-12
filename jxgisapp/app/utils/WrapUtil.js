@@ -1,6 +1,6 @@
-Ext.define('jxgisapp.view.main.MainContainerWrap', {
+Ext.define('jxgisapp.utils.WrapUtil', {
     extend: 'Ext.container.Container',
-    xtype: 'maincontainerwrap',
+    xtype: 'warputil',
 
     requires: [
         'Ext.layout.container.HBox'

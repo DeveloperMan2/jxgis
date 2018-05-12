@@ -1,129 +1,111 @@
 {
-  "children": [
+  "sysMenus": [
     {
       "text": "水位信息",
-      "id": "",
-      "leaf": false,
-      "url": "",
-      "children":[
-        {
-          "text": "水情GIS监测查询",
-          "id": "sq-gis-jccx",
-          "leaf": true,
-          "url": "test"
-        }
-      ]
+      "id": "swxx",
+      "url": "waterlevel",
+      "init": true,
+      "selected": true,
+      "width": 300,
+      "hide": false,
+      "icon": null,
+      "subModule": {
+        "text": "水位信息子模块",
+        "id": "swxxzmk",
+        "url": "subwaterlevel",
+        "init": true,
+        "height": 200
+      }
     },
     {
       "text": "雨量信息",
-      "id": "",
-      "leaf": false,
-      "url": "",
-      "children":[
-        {
-          "text": "雨量GIS监测查询",
-          "id": "yl-gis-jccx",
-          "leaf": true,
-          "url": "test"
-        }
-      ]
+      "id": "ylxx",
+      "url": "test2",
+      "init": false,
+      "selected": false,
+      "width": 300,
+      "hide": false,
+      "icon": null
     },
     {
       "text": "蒸发量",
-      "id": "",
-      "leaf": false,
-      "url": "",
-      "children":[
-        {
-          "text": "地图展示",
-          "id": "dtzs",
-          "leaf": true,
-          "url": "test"
-        },
-        {
-          "text": "蒸发分布图",
-          "id": "zffbt",
-          "leaf": true,
-          "url": "test"
-        },
-        {
-          "text": "蒸发图表",
-          "id": "zftb",
-          "leaf": true,
-          "url": "test"
-        }
-      ]
+      "id": "zfl",
+      "url": "test3",
+      "init": false,
+      "selected": false,
+      "width": 300,
+      "hide": false,
+      "icon": null
     },
     {
       "text": "流量监测",
       "id": "lljc",
-      "leaf": true,
-      "url": "test"
+      "url": "test4",
+      "init": false,
+      "selected": false,
+      "width": 300,
+      "hide": false,
+      "icon": null
     },
     {
-      "text": "工程安全监测",
-      "id": "gcaqjc",
-      "leaf": true,
-      "url": "test"
+      "text": "工程安全",
+      "id": "gcaq",
+      "url": "test5",
+      "init": false,
+      "selected": false,
+      "width": 300,
+      "hide": false,
+      "icon": null
     },
     {
       "text": "视频监测",
       "id": "spjc",
-      "leaf": true,
-      "url": "test"
+      "url": "test6",
+      "init": false,
+      "selected": false,
+      "width": 300,
+      "hide": false,
+      "icon": null
     },
     {
       "text": "闸门监测",
-      "id": "",
-      "leaf": false,
-      "url": "",
-      "children":[
-        {
-          "text": "地图查询",
-          "id": "zm-dt-cx",
-          "leaf": true,
-          "url": "test"
-        },
-        {
-          "text": "监测信息关联监视",
-          "id": "jcxx-gl-js",
-          "leaf": true,
-          "url": "test"
-        },
-        {
-          "text": "闸门监控统计报表",
-          "id": "zm-jktj-bb",
-          "leaf": true,
-          "url": "test"
-        }
-      ]
+      "id": "zmjc",
+      "url": "test7",
+      "init": false,
+      "selected": false,
+      "width": 300,
+      "hide": false,
+      "icon": null
     },
     {
       "text": "供水监测",
       "id": "gsjc",
-      "leaf": true,
-      "url": "test"
+      "url": "test8",
+      "init": false,
+      "selected": false,
+      "width": 300,
+      "hide": false,
+      "icon": null
     },
     {
       "text": "墒情信息",
       "id": "sqxx",
-      "leaf": true,
-      "url": "test"
+      "url": "test9",
+      "init": false,
+      "selected": false,
+      "width": 300,
+      "hide": false,
+      "icon": null
     },
     {
       "text": "水质监测",
-      "id": "",
-      "leaf": false,
-      "url": "",
-      "children":[
-        {
-          "text": "水质信息查询",
-          "id": "szxxcx",
-          "leaf": true,
-          "url": "test"
-        }
-      ]
+      "id": "szjc",
+      "url": "test10",
+      "init": false,
+      "selected": false,
+      "width": 300,
+      "hide": false,
+      "icon": null
     }
-  ],
-  "text": "."
+  ]
 }

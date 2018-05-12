@@ -1,9 +1,9 @@
 /**
  * Created by LBM on 2018/2/7.
  */
-Ext.define('jxgisapp.view.left.LeftModel', {
+Ext.define('jxgisapp.view.right.RightModel', {
     extend: 'Ext.app.ViewModel',
-    alias: 'viewmodel.left',
+    alias: 'viewmodel.right',
 
     stores: {
         /*

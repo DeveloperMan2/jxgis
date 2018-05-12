@@ -11,34 +11,57 @@ Ext.define('jxgisapp.view.main.Main', {
 
     requires: [
         'Ext.layout.container.Border',
-        'Ext.layout.container.Card',
         'Ext.plugin.Viewport',
-        'jxgisapp.view.left.Left',
-        'jxgisapp.view.main.MainContainerWrap',
+        'jxgisapp.utils.WrapUtil',
         'jxgisapp.view.main.MainController',
-        'jxgisapp.view.main.MainModel'
+        'jxgisapp.view.main.MainModel',
+        'jxgisapp.view.map.Map',
+        'jxgisapp.view.right.Right',
+        'jxgisapp.view.top.Top'
     ],
     controller: 'main',
     viewModel: 'main',
-    listeners: {
-        render: 'onMainViewRender'
-    },
     layout: 'border',
     items: [
         {
-            region: 'east',
-            xtype: 'left',
-            width: 300
+            region: 'north',
+            xtype: 'top'
+
         },
         {
             region: 'center',
-            xtype: 'maincontainerwrap',
-            id: 'main-view-detail-wrap',
-            reference: 'mainContainerWrap',
+            xtype: 'container',
             layout: {
-                type: 'card',
-                anchor: '100%'
-            }
+                type: 'hbox',
+                pack: 'start',
+                align: 'stretch'
+            },
+            height: 500,
+            items: [
+                {
+                    xtype: 'container',
+                    flex: 1,
+                    layout: {
+                        type: 'vbox',
+                        pack: 'start',
+                        align: 'stretch'
+                    },
+                    items: [
+                        {
+                            xtype: 'map',
+                            flex: 1
+                        },
+                        {
+                            xtype: 'panel',
+                            id: 'bottomModuleContainerWrapId',
+                            height: 100
+                        }
+                    ]
+                },
+                {
+                    xtype: 'right'
+                }
+            ]
         }
     ]
 });

@@ -1,6 +1,5 @@
 {
-  "startModuleId": "welcome",
+  "title": "江西GIS功能",
   "serviceUrl": "http://localhost:8080/jxgisapp/",
-  "pageSize": 10,
-  "title": "功能列表"
+  "pageSize": 10
 }

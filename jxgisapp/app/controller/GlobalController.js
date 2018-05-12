@@ -8,8 +8,12 @@ Ext.define('jxgisapp.controller.GlobalController', {
         //Uncomment to add references to view components
         refs: [
             {
-                ref: 'leftView',
-                selector: 'left'
+                ref: 'rightView',
+                selector: 'right'
+            },
+            {
+                ref: 'topView',
+                selector: 'top'
             },
             {
                 ref: 'mainView',
@@ -18,62 +22,155 @@ Ext.define('jxgisapp.controller.GlobalController', {
         ],
         //Uncomment to listen for events from view components
         control: {
-            'left': {
+            'top': {
                 afterrender: function (view, eOpts) {
                     //加载配置文件
-                    this.getModuleList(view);
-                }
-
-            },
-            '#moduleTreeId': {
-                itemclick: function (tree, record, item, index, e, eOpts) {
-                    var mv = this.getMainView();
-                    if (mv && record) {
-                        var mvc = mv.getController();
-                        var moduleType = record.get("url");
-                        var isLeaf = record.get('leaf');
-                        if (mvc && moduleType && isLeaf) {
-                            mvc.redirectTo(moduleType);
-                        }
-                    }
+                    this.getSystemConfig(this);
                 }
             }
         }
     },
 
     //加载配置信息
-    getModuleList: function (view) {
+    getSystemConfig: function (me) {
         var params = {};
 
-        var mask = ajax.fn.showMask(view, '模块加载中...');
-
         function successCallBack(response, opts) {
-            ajax.fn.hideMask(mask);
             //查询结果转json对象
             var result = Ext.JSON.decode(decodeURIComponent((response.responseText)), true);
             if (result) {
                 var title = result['title'];//系统标题
                 var serviceUrl = result['serviceUrl'];//系统服务地址
-                var startModuleId = result['startModuleId'];//系统初始化启动模块
                 var pageSize = result['pageSize'];//分页查询页面大小
 
                 //存储系统配置
                 cu.title = title;
                 cu.serviceUrl = serviceUrl;
-                cu.startModuleId = startModuleId;
                 cu.pageSize = pageSize;
 
-                //执行系统配置
-                view.setTitle(title);
-                document.title = title;
+                //设置系统标题
+                document.title = cu.title;
+
+                //加载模块列表
+                me.getModuleList(me);
             }
         }
 
         function failureCallBack(response, opts) {
-            ajax.fn.hideMask(mask);
         }
 
         ajax.fn.execute(params, 'GET', cu.sysConfigUrl, successCallBack, failureCallBack);
+    },
+    //加载模块信息
+    getModuleList: function (me) {
+        var params = {};
+
+        function successCallBack(response, opts) {
+            //查询结果转json对象
+            var result = Ext.JSON.decode(decodeURIComponent((response.responseText)), true);
+            if (result) {
+                me.initSystemMenu(result['sysMenus'], me);
+            }
+        }
+
+        function failureCallBack(response, opts) {
+        }
+
+        ajax.fn.execute(params, 'GET', cu.sysModuleUrl, successCallBack, failureCallBack);
+    },
+
+    //初始化系统菜单
+    initSystemMenu: function (menus, me) {
+        var tv = me.getTopView();
+        var sysMenuCmp = tv.down("segmentedbutton");
+        if (menus && menus.length > 0) {
+            var sysMenuItems = [];
+            //解析系统菜单配置参数
+            Ext.each(menus, function (rec) {
+                if (rec != null) {
+                    var menuItem = Ext.create('Ext.button.Button', {
+                        id: rec['id'],
+                        text: rec['text'],
+                        value: rec['url'],
+                        pressed: rec['selected'],
+                        hidden: rec['hide'],
+                        iconCls: rec['icon']
+                    });
+                    menuItem['init'] = rec['init'];
+                    menuItem['moduleWidth'] = rec['width'];
+                    if (rec['subModule']) {
+                        menuItem['subModuleParams'] = rec['subModule'];
+                    }
+                    sysMenuItems.push(menuItem);
+
+                    //若需要初始化模块
+                    if (menuItem['init'] === true) {
+                        var module = {
+                            id: 'module_' + menuItem['id'],
+                            text: menuItem['text'],
+                            url: menuItem['value'],
+                            width: menuItem['moduleWidth'],
+                            moduleExtraParams: menuItem['subModuleParams'] != null ? menuItem['subModuleParams'] : null
+                        };
+                        me.loadModule(module);
+                    }
+                }
+            });
+
+            if (sysMenuCmp) {
+                sysMenuCmp.removeAll();
+                sysMenuCmp.add(sysMenuItems);
+                sysMenuCmp.on('toggle', me.menuToggleHandler, me);
+            }
+        }
+    },
+    menuToggleHandler: function (container, button, pressed) {
+        if (pressed) {
+            var module = {
+                id: 'module_' + button['id'],
+                text: button['text'],
+                url: button['value'],
+                width: button['moduleWidth'],
+                moduleExtraParams: button['subModuleParams'] != null ? button['subModuleParams'] : null
+            };
+            this.loadModule(module);
+        }
+    },
+    loadModule: function (module) {
+        //右侧面板加载模块
+        var rv = this.getRightView();
+        var rvc = rv.getController();
+        rvc.redirectTo(module['url']);
+        rv.setWidth(module['width']);
+        rv.updateLayout();
+
+        //加载子模块
+        var subModule = module['moduleExtraParams'];
+        if (subModule) {
+            //设置面板高度
+            var subPanel = Ext.getCmp('bottomModuleContainerWrapId');
+            if (subPanel) {
+                subPanel.setHeight(subModule['height']);
+            }
+
+            //隐藏主容器中已加载的模块
+            if (subPanel.items.items && subPanel.items.items.length > 0) {
+                for (var i = 0; i < subPanel.items.items.length; i++) {
+                    var mWidget = subPanel.items.items[i];
+                    mWidget.hide();
+                }
+            }
+
+            var tempWidget = subPanel.getComponent(subModule['id']);
+            if (tempWidget) {
+                tempWidget.show();
+            } else {
+                tempWidget = new Ext.create('widget.' + subModule['url'], {id: subModule['id']});
+                subPanel.add(tempWidget);
+            }
+
+            subPanel.updateLayout();
+        }
     },
 
     /**

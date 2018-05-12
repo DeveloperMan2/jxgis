@@ -1,9 +1,9 @@
 /**
- * Created by LBM on 2018/2/8.
+ * Created by winnerlbm on 2018/5/12.
  */
-Ext.define('jxgisapp.view.welcome.WelcomeController', {
+Ext.define('jxgisapp.view.top.TopController', {
     extend: 'Ext.app.ViewController',
-    alias: 'controller.welcome',
+    alias: 'controller.top',
 
     /**
      * Called when the view is created

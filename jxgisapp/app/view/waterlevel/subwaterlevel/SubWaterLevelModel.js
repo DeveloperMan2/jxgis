@@ -1,9 +1,9 @@
 /**
- * Created by LBM on 2018/2/8.
+ * Created by winnerlbm on 2018/5/12.
  */
-Ext.define('jxgisapp.view.welcome.WelcomeModel', {
+Ext.define('jxgisapp.view.waterlevel.subwaterlevel.SubWaterLevelModel', {
     extend: 'Ext.app.ViewModel',
-    alias: 'viewmodel.welcome',
+    alias: 'viewmodel.subwaterlevel',
 
     stores: {
         /*
@@ -11,7 +11,7 @@ Ext.define('jxgisapp.view.welcome.WelcomeModel', {
         store configuration. For example:
 
         users: {
-            model: 'Welcome',
+            model: 'SubWaterLevel',
             autoLoad: true
         }
         */
