@@ -199,6 +199,10 @@
     {
       "path": "app.js",
       "bundle": true
+    },
+    {
+      "path": "http://localhost:8090/ajs/sdk/4.7/dojo/dojo.js",
+      "bundle": true
     }
   ],
   /**
@@ -239,6 +243,13 @@
     },
     {
       "path": "resources/libs/fa5/css/fontawesome-all.css",
+      "bundle": true,
+      "exclude": [
+        "fashion"
+      ]
+    },
+    {
+      "path": "http://localhost:8090/ajs/sdk/4.7/esri/css/main.css",
       "bundle": true,
       "exclude": [
         "fashion"
