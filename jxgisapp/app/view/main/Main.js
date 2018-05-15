@@ -36,7 +36,6 @@ Ext.define('jxgisapp.view.main.Main', {
                 pack: 'start',
                 align: 'stretch'
             },
-            height: 500,
             items: [
                 {
                     xtype: 'container',
