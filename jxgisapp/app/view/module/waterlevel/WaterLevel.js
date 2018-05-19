@@ -21,5 +21,8 @@ Ext.define('jxgisapp.view.module.waterlevel.WaterLevel', {
 
     items: [
         /* include child components here */
+        {
+            html:'水位信息'
+        }
     ]
 });

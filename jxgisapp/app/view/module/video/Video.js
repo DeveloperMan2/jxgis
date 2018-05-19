@@ -21,5 +21,8 @@ Ext.define('jxgisapp.view.module.video.Video', {
 
     items: [
         /* include child components here */
+        {
+            html:'视频监测'
+        }
     ]
 });

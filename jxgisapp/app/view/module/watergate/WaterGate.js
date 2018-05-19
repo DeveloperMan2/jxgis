@@ -21,5 +21,8 @@ Ext.define('jxgisapp.view.module.watergate.WaterGate', {
 
     items: [
         /* include child components here */
+        {
+            html:'闸门监测'
+        }
     ]
 });

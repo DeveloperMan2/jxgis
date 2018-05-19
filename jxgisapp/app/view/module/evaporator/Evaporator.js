@@ -21,5 +21,8 @@ Ext.define('jxgisapp.view.module.evaporator.Evaporator', {
 
     items: [
         /* include child components here */
+        {
+            html:'蒸发量'
+        }
     ]
 });

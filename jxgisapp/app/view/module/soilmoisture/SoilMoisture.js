@@ -21,5 +21,8 @@ Ext.define('jxgisapp.view.module.soilmoisture.SoilMoisture', {
 
     items: [
         /* include child components here */
+        {
+            html:'墒情信息'
+        }
     ]
 });

@@ -21,5 +21,8 @@ Ext.define('jxgisapp.view.module.watersupply.WaterSupply', {
 
     items: [
         /* include child components here */
+        {
+            html:'供水监测'
+        }
     ]
 });

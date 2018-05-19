@@ -21,5 +21,8 @@ Ext.define('jxgisapp.view.module.waterquality.WaterQuality', {
 
     items: [
         /* include child components here */
+        {
+            html:'水质监测'
+        }
     ]
 });

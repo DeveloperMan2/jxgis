@@ -21,5 +21,8 @@ Ext.define('jxgisapp.view.module.rainfall.RainFall', {
 
     items: [
         /* include child components here */
+        {
+            html:'雨量信息'
+        }
     ]
 });

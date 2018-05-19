@@ -21,5 +21,8 @@ Ext.define('jxgisapp.view.module.flow.Flow', {
 
     items: [
         /* include child components here */
+        {
+            html:'流量监测'
+        }
     ]
 });

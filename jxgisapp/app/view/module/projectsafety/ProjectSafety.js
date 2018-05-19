@@ -21,5 +21,8 @@ Ext.define('jxgisapp.view.module.projectsafety.ProjectSafety', {
 
     items: [
         /* include child components here */
+        {
+            html:'工程安全监测'
+        }
     ]
 });
