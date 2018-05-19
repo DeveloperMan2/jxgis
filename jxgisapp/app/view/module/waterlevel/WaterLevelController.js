@@ -1,7 +1,7 @@
 /**
- * Created by winnerlbm on 2018/5/12.
+ * Created by winnerlbm on 2018/5/19.
  */
-Ext.define('jxgisapp.view.waterlevel.WaterLevelController', {
+Ext.define('jxgisapp.view.module.waterlevel.WaterLevelController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.waterlevel',
 

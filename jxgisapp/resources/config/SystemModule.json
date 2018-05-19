@@ -8,19 +8,20 @@
       "selected": true,
       "width": 300,
       "hide": false,
-      "icon": null,
+      "icon": null
+      /*,子模块配置
       "subModule": {
         "text": "水位信息子模块",
         "id": "swxxzmk",
         "url": "subwaterlevel",
         "init": true,
         "height": 200
-      }
+      }*/
     },
     {
       "text": "雨量信息",
       "id": "ylxx",
-      "url": "test2",
+      "url": "rainfall",
       "init": false,
       "selected": false,
       "width": 300,

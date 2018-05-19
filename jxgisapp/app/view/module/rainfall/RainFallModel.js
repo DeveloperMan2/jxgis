@@ -1,9 +1,9 @@
 /**
- * Created by winnerlbm on 2018/5/12.
+ * Created by winnerlbm on 2018/5/19.
  */
-Ext.define('jxgisapp.view.waterlevel.WaterLevelModel', {
+Ext.define('jxgisapp.view.module.rainfall.RainFallModel', {
     extend: 'Ext.app.ViewModel',
-    alias: 'viewmodel.waterlevel',
+    alias: 'viewmodel.rainfall',
 
     stores: {
         /*
@@ -11,7 +11,7 @@ Ext.define('jxgisapp.view.waterlevel.WaterLevelModel', {
         store configuration. For example:
 
         users: {
-            model: 'WaterLevel',
+            model: 'RainFall',
             autoLoad: true
         }
         */

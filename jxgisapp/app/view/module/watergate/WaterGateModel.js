@@ -1,9 +1,9 @@
 /**
- * Created by winnerlbm on 2018/5/12.
+ * Created by winnerlbm on 2018/5/19.
  */
-Ext.define('jxgisapp.view.waterlevel.subwaterlevel.SubWaterLevelModel', {
+Ext.define('jxgisapp.view.module.watergate.WaterGateModel', {
     extend: 'Ext.app.ViewModel',
-    alias: 'viewmodel.subwaterlevel',
+    alias: 'viewmodel.watergate',
 
     stores: {
         /*
@@ -11,7 +11,7 @@ Ext.define('jxgisapp.view.waterlevel.subwaterlevel.SubWaterLevelModel', {
         store configuration. For example:
 
         users: {
-            model: 'SubWaterLevel',
+            model: 'WaterGate',
             autoLoad: true
         }
         */
