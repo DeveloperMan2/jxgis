@@ -2,11 +2,11 @@
 
 系统各模块说明
     
-    # ./view
-            main                #主模块
-            map                 #公用地图模块
-            right               #右侧面板模块
-            top                 #顶部面板模块
+    # ./view/
+            main                    #主模块
+            map                     #公用地图模块
+            right                   #右侧面板模块
+            top                     #顶部面板模块
             ./module/
                     waterlevel      #水位信息
                     rainfall        #雨量信息
