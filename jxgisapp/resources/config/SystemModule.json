@@ -31,7 +31,7 @@
     {
       "text": "蒸发量",
       "id": "zfl",
-      "url": "test3",
+      "url": "evaporator",
       "init": false,
       "selected": false,
       "width": 300,
@@ -41,7 +41,7 @@
     {
       "text": "流量监测",
       "id": "lljc",
-      "url": "test4",
+      "url": "flow",
       "init": false,
       "selected": false,
       "width": 300,
@@ -51,7 +51,7 @@
     {
       "text": "工程安全",
       "id": "gcaq",
-      "url": "test5",
+      "url": "projectsafety",
       "init": false,
       "selected": false,
       "width": 300,
@@ -61,7 +61,7 @@
     {
       "text": "视频监测",
       "id": "spjc",
-      "url": "test6",
+      "url": "video",
       "init": false,
       "selected": false,
       "width": 300,
@@ -71,7 +71,7 @@
     {
       "text": "闸门监测",
       "id": "zmjc",
-      "url": "test7",
+      "url": "watergate",
       "init": false,
       "selected": false,
       "width": 300,
@@ -81,7 +81,7 @@
     {
       "text": "供水监测",
       "id": "gsjc",
-      "url": "test8",
+      "url": "watersupply",
       "init": false,
       "selected": false,
       "width": 300,
@@ -91,7 +91,7 @@
     {
       "text": "墒情信息",
       "id": "sqxx",
-      "url": "test9",
+      "url": "soilmoisture",
       "init": false,
       "selected": false,
       "width": 300,
@@ -101,7 +101,7 @@
     {
       "text": "水质监测",
       "id": "szjc",
-      "url": "test10",
+      "url": "waterquality",
       "init": false,
       "selected": false,
       "width": 300,
