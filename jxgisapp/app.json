@@ -201,6 +201,10 @@
             "bundle": true
         },
         {
+            "path": "resources/libs/echarts/echarts.min.js",
+            "bundle": true
+        },
+        {
             "path": "http://localhost:8090/ajs/sdk/4.7/dojo/dojo.js",
             "bundle": true
         }
