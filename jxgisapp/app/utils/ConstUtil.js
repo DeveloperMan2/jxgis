@@ -6,6 +6,8 @@ var cu = {
     serviceUrl: 'http://localhost:7080/jxgisapp/',//系统服务地址
     pageSize: 10,//分页查询页面大小
     sysConfigUrl: 'resources/config/SystemConfig.json',
-    sysModuleUrl: 'resources/config/SystemModule.json'
+    sysModuleUrl: 'resources/config/SystemModule.json',
+    map: null,//地图对象
+    mapView: null//地图视图对象
 };
 Ext.define('jxgisapp.utils.ConstUtil', {});

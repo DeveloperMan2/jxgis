@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="774aba46-45c3-40e8-91c0-65a042a55377" name="Default" comment="新增模块，调整工程结构，增加Readme.md说明文件">
-      <change afterPath="$PROJECT_DIR$/jxgisapp/resources/libs/echarts/echarts.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jxgisapp/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/jxgisapp/app.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jxgisapp/app/utils/ConstUtil.js" beforeDir="false" afterPath="$PROJECT_DIR$/jxgisapp/app/utils/ConstUtil.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jxgisapp/app/view/map/MapController.js" beforeDir="false" afterPath="$PROJECT_DIR$/jxgisapp/app/view/map/MapController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jxgisapp/app/view/module/waterlevel/WaterLevel.js" beforeDir="false" afterPath="$PROJECT_DIR$/jxgisapp/app/view/module/waterlevel/WaterLevel.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jxgisapp/app/view/module/waterlevel/WaterLevelController.js" beforeDir="false" afterPath="$PROJECT_DIR$/jxgisapp/app/view/module/waterlevel/WaterLevelController.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -22,8 +22,56 @@
       <file leaf-file-name="WaterLevelController.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/jxgisapp/app/view/module/waterlevel/WaterLevelController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="5" column="101" selection-start-line="5" selection-start-column="101" selection-end-line="5" selection-end-column="101" />
+            <state relative-caret-position="493">
+              <caret line="36" column="59" lean-forward="true" selection-start-line="36" selection-start-column="59" selection-end-line="36" selection-end-column="59" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WaterLevel.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/jxgisapp/app/view/module/waterlevel/WaterLevel.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="532">
+              <caret line="28" column="19" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Map.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/jxgisapp/app/view/map/Map.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="474">
+              <caret line="31" column="42" lean-forward="true" selection-start-line="31" selection-start-column="8" selection-end-line="31" selection-end-column="42" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MapController.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/jxgisapp/app/view/map/MapController.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="34" column="37" lean-forward="true" selection-start-line="34" selection-start-column="37" selection-end-line="34" selection-end-column="37" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GlobalController.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/jxgisapp/app/controller/GlobalController.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1711">
+              <caret line="27" column="47" lean-forward="true" selection-start-line="27" selection-start-column="47" selection-end-line="27" selection-end-column="47" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ConstUtil.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/jxgisapp/app/utils/ConstUtil.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="190">
+              <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -59,11 +107,9 @@
         <option value="$PROJECT_DIR$/jxgisapp/app/utils/WrapUtil.js" />
         <option value="$PROJECT_DIR$/jxgisapp/app/view/top/Top.js" />
         <option value="$PROJECT_DIR$/jxgisapp/app/view/map/Map.js" />
-        <option value="$PROJECT_DIR$/jxgisapp/app/view/map/MapController.js" />
         <option value="$PROJECT_DIR$/jxgisapp/app/view/main/MainController.js" />
         <option value="$PROJECT_DIR$/jxgisapp/app/view/waterlevel/WaterLevel.js" />
         <option value="$PROJECT_DIR$/jxgisapp/app/view/waterlevel/subwaterlevel/SubWaterLevel.js" />
-        <option value="$PROJECT_DIR$/jxgisapp/app/utils/ConstUtil.js" />
         <option value="$PROJECT_DIR$/jxgisapp/app/view/right/RightController.js" />
         <option value="$PROJECT_DIR$/jxgisapp/app/controller/GlobalController.js" />
         <option value="$PROJECT_DIR$/jxgisapp/app/view/right/Right.js" />
@@ -72,7 +118,6 @@
         <option value="$PROJECT_DIR$/jxgisapp/app/view/module/videom/Videom.js" />
         <option value="$PROJECT_DIR$/jxgisapp/app/view/module/video/Video.js" />
         <option value="$PROJECT_DIR$/jxgisapp/app/view/module/rainfall/RainFall.js" />
-        <option value="$PROJECT_DIR$/jxgisapp/app/view/module/waterlevel/WaterLevel.js" />
         <option value="$PROJECT_DIR$/jxgisapp/app/view/module/waterquality/WaterQuality.js" />
         <option value="$PROJECT_DIR$/jxgisapp/app/view/module/soilmoisture/SoilMoisture.js" />
         <option value="$PROJECT_DIR$/jxgisapp/app/view/module/watersupply/WaterSupply.js" />
@@ -85,6 +130,9 @@
         <option value="$PROJECT_DIR$/jxgisapp/app/Readme.md" />
         <option value="$PROJECT_DIR$/jxgisapp/index.html" />
         <option value="$PROJECT_DIR$/jxgisapp/app.json" />
+        <option value="$PROJECT_DIR$/jxgisapp/app/view/map/MapController.js" />
+        <option value="$PROJECT_DIR$/jxgisapp/app/view/module/waterlevel/WaterLevel.js" />
+        <option value="$PROJECT_DIR$/jxgisapp/app/utils/ConstUtil.js" />
         <option value="$PROJECT_DIR$/jxgisapp/app/view/module/waterlevel/WaterLevelController.js" />
       </list>
     </option>
@@ -98,7 +146,7 @@
   <component name="NodePackageJsonFileManager">
     <packageJsonPaths />
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="120" />
     <option name="y" value="40" />
     <option name="width" value="1400" />
@@ -135,7 +183,29 @@
               <item name="jxgis" type="462c0819:PsiDirectoryNode" />
               <item name="jxgisapp" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jxgis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jxgis" type="462c0819:PsiDirectoryNode" />
+              <item name="jxgisapp" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jxgis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jxgis" type="462c0819:PsiDirectoryNode" />
+              <item name="jxgisapp" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="view" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jxgis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jxgis" type="462c0819:PsiDirectoryNode" />
+              <item name="jxgisapp" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="view" type="462c0819:PsiDirectoryNode" />
+              <item name="map" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="jxgis" type="b2602c69:ProjectViewProjectNode" />
@@ -241,7 +311,7 @@
       <workItem from="1526717620115" duration="3289000" />
       <workItem from="1526720960830" duration="1945000" />
       <workItem from="1526804025960" duration="22000" />
-      <workItem from="1526804089607" duration="2528000" />
+      <workItem from="1526804089607" duration="7458000" />
     </task>
     <task id="LOCAL-00001" summary="调整arcgis脚本库连接">
       <created>1526209895742</created>
@@ -303,17 +373,27 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="53529000" />
+    <option name="totallyTimeSpent" value="58459000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Key Promoter X" order="3" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20442359" />
-      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1689008" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.3286517" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50067025" side_tool="true" weight="0.3286517" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3286517" />
       <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49932975" weight="0.2275281" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.3286517" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -326,7 +406,6 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3286517" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -382,7 +461,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <option name="time" value="5" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="JavascriptDebugType">
@@ -463,39 +542,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/jxgisapp/app/view/module/waterlevel/subwaterlevel/SubWaterLevel.js" />
     <entry file="file://$PROJECT_DIR$/jxgisapp/sencha-error-20180512.log" />
-    <entry file="file://$PROJECT_DIR$/jxgisapp/app/controller/GlobalController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2166">
-          <caret line="114" column="46" lean-forward="true" selection-start-line="114" selection-start-column="46" selection-end-line="114" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jxgisapp/app/view/map/Map.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="608">
-          <caret line="32" column="31" selection-start-line="32" selection-start-column="31" selection-end-line="32" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jxgisapp/app/view/map/MapController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="23" column="44" selection-start-line="23" selection-start-column="44" selection-end-line="23" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/jxgisapp/packages/local/jztheme/src/Readme.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor />
           <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jxgisapp/app/utils/ConstUtil.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="10" column="43" lean-forward="true" selection-start-line="10" selection-start-column="43" selection-end-line="10" selection-end-column="43" />
         </state>
       </provider>
     </entry>
@@ -603,13 +654,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/jxgisapp/app/view/module/waterlevel/WaterLevel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="456">
-          <caret line="24" column="22" selection-start-line="24" selection-start-column="22" selection-end-line="24" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/jxgisapp/app/view/module/watergate/WaterGate.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="513">
@@ -665,10 +709,48 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/jxgisapp/app/view/map/Map.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="474">
+          <caret line="31" column="42" lean-forward="true" selection-start-line="31" selection-start-column="8" selection-end-line="31" selection-end-column="42" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jxgisapp/app/controller/GlobalController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1711">
+          <caret line="27" column="47" lean-forward="true" selection-start-line="27" selection-start-column="47" selection-end-line="27" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jxgisapp/app/utils/ConstUtil.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jxgisapp/app/view/map/MapController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="34" column="37" lean-forward="true" selection-start-line="34" selection-start-column="37" selection-end-line="34" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jxgisapp/app/view/module/waterlevel/WaterLevel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="532">
+          <caret line="28" column="19" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/jxgisapp/app/view/module/waterlevel/WaterLevelController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="101" selection-start-line="5" selection-start-column="101" selection-end-line="5" selection-end-column="101" />
+        <state relative-caret-position="493">
+          <caret line="36" column="59" lean-forward="true" selection-start-line="36" selection-start-column="59" selection-end-line="36" selection-end-column="59" />
         </state>
       </provider>
     </entry>

@@ -29,6 +29,10 @@ Ext.define('jxgisapp.view.map.MapController', {
 
                 //去掉默认的地图缩放工具及地图底部版权信息
                 mapView.ui.remove(["zoom", 'attribution']);
+
+                //全局存储
+                cu.map = appMap;
+                cu.mapView = mapView;
             });
     },
 

@@ -24,5 +24,8 @@ Ext.define('jxgisapp.view.module.waterlevel.WaterLevel', {
         {
             html:'水位信息'
         }
-    ]
+    ],
+    listeners:{
+        afterrender: 'afterrenderHandler',
+    }
 });
