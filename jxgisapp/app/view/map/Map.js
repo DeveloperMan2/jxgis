@@ -5,8 +5,10 @@ Ext.define('jxgisapp.view.map.Map', {
     extend: 'Ext.Container',
 
     requires: [
-        'jxgisapp.view.map.MapModel',
-        'jxgisapp.view.map.MapController'
+        'Ext.container.Container',
+        'Ext.layout.container.Fit',
+        'jxgisapp.view.map.MapController',
+        'jxgisapp.view.map.MapModel'
     ],
 
     /*

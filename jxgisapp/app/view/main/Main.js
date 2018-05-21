@@ -10,7 +10,11 @@ Ext.define('jxgisapp.view.main.Main', {
     xtype: 'main',
 
     requires: [
+        'Ext.container.Container',
         'Ext.layout.container.Border',
+        'Ext.layout.container.HBox',
+        'Ext.layout.container.VBox',
+        'Ext.panel.Panel',
         'Ext.plugin.Viewport',
         'jxgisapp.utils.WrapUtil',
         'jxgisapp.view.main.MainController',
@@ -52,7 +56,8 @@ Ext.define('jxgisapp.view.main.Main', {
                         },
                         {
                             xtype: 'panel',
-                            id: 'bottomModuleContainerWrapId'
+                            id: 'bottomModuleContainerWrapId',
+                            hidden:false
                         }
                     ]
                 },

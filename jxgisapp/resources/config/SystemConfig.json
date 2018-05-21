@@ -1,5 +1,6 @@
 {
   "title": "江西水利监测信息管理系统",
   "serviceUrl": "http://localhost:8080/jxgisapp/",
-  "pageSize": 10
+  "pageSize": 10,
+  "waterlevelMapUrl":"http://localhost:6080/arcgis/rest/services/ShanXiMapService/ControlMap2Service/MapServer/1"
 }
