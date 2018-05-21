@@ -7,6 +7,8 @@
       <excludeFolder url="file://$MODULE_DIR$/jxgisapp/ext" />
       <excludeFolder url="file://$MODULE_DIR$/jxgisapp/packages" />
       <excludeFolder url="file://$MODULE_DIR$/jxgisapp/resources" />
+      <excludeFolder url="file://$MODULE_DIR$/jzzxapp/build" />
+      <excludeFolder url="file://$MODULE_DIR$/jzzxapp/ext" />
       <excludeFolder url="file://$MODULE_DIR$/temp" />
       <excludeFolder url="file://$MODULE_DIR$/tmp" />
     </content>

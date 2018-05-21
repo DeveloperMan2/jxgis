@@ -2,10 +2,88 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="774aba46-45c3-40e8-91c0-65a042a55377" name="Default" comment="新增模块，调整工程结构，增加Readme.md说明文件">
+      <change beforePath="$PROJECT_DIR$/.idea/jxgis.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jxgis.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jxgisapp/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/jxgisapp/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jxgisapp/.sencha/app/sencha.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/jxgisapp/.sencha/app/sencha.cfg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jxgisapp/.sencha/workspace/sencha.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/jxgisapp/.sencha/workspace/sencha.cfg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jxgisapp/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/jxgisapp/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jxgisapp/Readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/jxgisapp/Readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jxgisapp/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/jxgisapp/app.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jxgisapp/app/Application.js" beforeDir="false" afterPath="$PROJECT_DIR$/jxgisapp/app/Application.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jxgisapp/app/controller/GlobalController.js" beforeDir="false" afterPath="$PROJECT_DIR$/jxgisapp/app/controller/GlobalController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jxgisapp/app/utils/AjaxUtil.js" beforeDir="false" afterPath="$PROJECT_DIR$/jxgisapp/app/utils/AjaxUtil.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jxgisapp/app/utils/ConstUtil.js" beforeDir="false" afterPath="$PROJECT_DIR$/jxgisapp/app/utils/ConstUtil.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jxgisapp/app/utils/PageUtil.js" beforeDir="false" afterPath="$PROJECT_DIR$/jxgisapp/app/utils/PageUtil.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jxgisapp/app/utils/WrapUtil.js" beforeDir="false" afterPath="$PROJECT_DIR$/jxgisapp/app/utils/WrapUtil.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jxgisapp/app/view/main/Main.js" beforeDir="false" afterPath="$PROJECT_DIR$/jxgisapp/app/view/main/Main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jxgisapp/app/view/main/MainController.js" beforeDir="false" afterPath="$PROJECT_DIR$/jxgisapp/app/view/main/MainController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jxgisapp/app/view/main/MainModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/jxgisapp/app/view/main/MainModel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jxgisapp/app/view/map/Map.js" beforeDir="false" afterPath="$PROJECT_DIR$/jxgisapp/app/view/map/Map.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jxgisapp/app/view/map/MapController.js" beforeDir="false" afterPath="$PROJECT_DIR$/jxgisapp/app/view/map/MapController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jxgisapp/app/view/map/MapModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/jxgisapp/app/view/map/MapModel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jxgisapp/app/view/module/evaporator/Evaporator.js" beforeDir="false" afterPath="$PROJECT_DIR$/jxgisapp/app/view/module/evaporator/Evaporator.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jxgisapp/app/view/module/evaporator/EvaporatorController.js" beforeDir="false" afterPath="$PROJECT_DIR$/jxgisapp/app/view/module/evaporator/EvaporatorController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jxgisapp/app/view/module/evaporator/EvaporatorModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/jxgisapp/app/view/module/evaporator/EvaporatorModel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jxgisapp/app/view/module/flow/Flow.js" beforeDir="false" afterPath="$PROJECT_DIR$/jxgisapp/app/view/module/flow/Flow.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jxgisapp/app/view/module/flow/FlowController.js" beforeDir="false" afterPath="$PROJECT_DIR$/jxgisapp/app/view/module/flow/FlowController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jxgisapp/app/view/module/flow/FlowModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/jxgisapp/app/view/module/flow/FlowModel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jxgisapp/app/view/module/projectsafety/ProjectSafety.js" beforeDir="false" afterPath="$PROJECT_DIR$/jxgisapp/app/view/module/projectsafety/ProjectSafety.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jxgisapp/app/view/module/projectsafety/ProjectSafetyController.js" beforeDir="false" afterPath="$PROJECT_DIR$/jxgisapp/app/view/module/projectsafety/ProjectSafetyController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jxgisapp/app/view/module/projectsafety/ProjectSafetyModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/jxgisapp/app/view/module/projectsafety/ProjectSafetyModel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jxgisapp/app/view/module/rainfall/RainFall.js" beforeDir="false" afterPath="$PROJECT_DIR$/jxgisapp/app/view/module/rainfall/RainFall.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jxgisapp/app/view/module/rainfall/RainFallController.js" beforeDir="false" afterPath="$PROJECT_DIR$/jxgisapp/app/view/module/rainfall/RainFallController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jxgisapp/app/view/module/rainfall/RainFallModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/jxgisapp/app/view/module/rainfall/RainFallModel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jxgisapp/app/view/module/soilmoisture/SoilMoisture.js" beforeDir="false" afterPath="$PROJECT_DIR$/jxgisapp/app/view/module/soilmoisture/SoilMoisture.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jxgisapp/app/view/module/soilmoisture/SoilMoistureController.js" beforeDir="false" afterPath="$PROJECT_DIR$/jxgisapp/app/view/module/soilmoisture/SoilMoistureController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jxgisapp/app/view/module/soilmoisture/SoilMoistureModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/jxgisapp/app/view/module/soilmoisture/SoilMoistureModel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jxgisapp/app/view/module/video/Video.js" beforeDir="false" afterPath="$PROJECT_DIR$/jxgisapp/app/view/module/video/Video.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jxgisapp/app/view/module/video/VideoController.js" beforeDir="false" afterPath="$PROJECT_DIR$/jxgisapp/app/view/module/video/VideoController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jxgisapp/app/view/module/video/VideoModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/jxgisapp/app/view/module/video/VideoModel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jxgisapp/app/view/module/watergate/WaterGate.js" beforeDir="false" afterPath="$PROJECT_DIR$/jxgisapp/app/view/module/watergate/WaterGate.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jxgisapp/app/view/module/watergate/WaterGateController.js" beforeDir="false" afterPath="$PROJECT_DIR$/jxgisapp/app/view/module/watergate/WaterGateController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jxgisapp/app/view/module/watergate/WaterGateModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/jxgisapp/app/view/module/watergate/WaterGateModel.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jxgisapp/app/view/module/waterlevel/WaterLevel.js" beforeDir="false" afterPath="$PROJECT_DIR$/jxgisapp/app/view/module/waterlevel/WaterLevel.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jxgisapp/app/view/module/waterlevel/WaterLevelController.js" beforeDir="false" afterPath="$PROJECT_DIR$/jxgisapp/app/view/module/waterlevel/WaterLevelController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jxgisapp/app/view/module/waterlevel/WaterLevelModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/jxgisapp/app/view/module/waterlevel/WaterLevelModel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jxgisapp/app/view/module/waterquality/WaterQuality.js" beforeDir="false" afterPath="$PROJECT_DIR$/jxgisapp/app/view/module/waterquality/WaterQuality.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jxgisapp/app/view/module/waterquality/WaterQualityController.js" beforeDir="false" afterPath="$PROJECT_DIR$/jxgisapp/app/view/module/waterquality/WaterQualityController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jxgisapp/app/view/module/waterquality/WaterQualityModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/jxgisapp/app/view/module/waterquality/WaterQualityModel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jxgisapp/app/view/module/watersupply/WaterSupply.js" beforeDir="false" afterPath="$PROJECT_DIR$/jxgisapp/app/view/module/watersupply/WaterSupply.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jxgisapp/app/view/module/watersupply/WaterSupplyController.js" beforeDir="false" afterPath="$PROJECT_DIR$/jxgisapp/app/view/module/watersupply/WaterSupplyController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jxgisapp/app/view/module/watersupply/WaterSupplyModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/jxgisapp/app/view/module/watersupply/WaterSupplyModel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jxgisapp/app/view/right/Right.js" beforeDir="false" afterPath="$PROJECT_DIR$/jxgisapp/app/view/right/Right.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jxgisapp/app/view/right/RightController.js" beforeDir="false" afterPath="$PROJECT_DIR$/jxgisapp/app/view/right/RightController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jxgisapp/app/view/right/RightModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/jxgisapp/app/view/right/RightModel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jxgisapp/app/view/top/Top.js" beforeDir="false" afterPath="$PROJECT_DIR$/jxgisapp/app/view/top/Top.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jxgisapp/app/view/top/TopController.js" beforeDir="false" afterPath="$PROJECT_DIR$/jxgisapp/app/view/top/TopController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jxgisapp/app/view/top/TopModel.js" beforeDir="false" afterPath="$PROJECT_DIR$/jxgisapp/app/view/top/TopModel.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jxgisapp/build.xml" beforeDir="false" afterPath="$PROJECT_DIR$/jxgisapp/build.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jxgisapp/dev.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/jxgisapp/dev.cmd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jxgisapp/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/jxgisapp/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jxgisapp/packages/local/jztheme/Readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/jxgisapp/packages/local/jztheme/Readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jxgisapp/packages/local/jztheme/build.xml" beforeDir="false" afterPath="$PROJECT_DIR$/jxgisapp/packages/local/jztheme/build.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jxgisapp/packages/local/jztheme/examples/Readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/jxgisapp/packages/local/jztheme/examples/Readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jxgisapp/packages/local/jztheme/licenses/Readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/jxgisapp/packages/local/jztheme/licenses/Readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jxgisapp/packages/local/jztheme/overrides/Readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/jxgisapp/packages/local/jztheme/overrides/Readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jxgisapp/packages/local/jztheme/overrides/init.js" beforeDir="false" afterPath="$PROJECT_DIR$/jxgisapp/packages/local/jztheme/overrides/init.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jxgisapp/packages/local/jztheme/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/jxgisapp/packages/local/jztheme/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jxgisapp/packages/local/jztheme/resources/Readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/jxgisapp/packages/local/jztheme/resources/Readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jxgisapp/packages/local/jztheme/sass/Readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/jxgisapp/packages/local/jztheme/sass/Readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jxgisapp/packages/local/jztheme/sass/config.rb" beforeDir="false" afterPath="$PROJECT_DIR$/jxgisapp/packages/local/jztheme/sass/config.rb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jxgisapp/packages/local/jztheme/sass/etc/Readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/jxgisapp/packages/local/jztheme/sass/etc/Readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jxgisapp/packages/local/jztheme/sass/src/Readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/jxgisapp/packages/local/jztheme/sass/src/Readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jxgisapp/packages/local/jztheme/sass/var/Readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/jxgisapp/packages/local/jztheme/sass/var/Readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jxgisapp/packages/local/jztheme/src/Readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/jxgisapp/packages/local/jztheme/src/Readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jxgisapp/pro.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/jxgisapp/pro.cmd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jxgisapp/resources/Readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/jxgisapp/resources/Readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jxgisapp/resources/config/SystemConfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/jxgisapp/resources/config/SystemConfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jxgisapp/resources/config/SystemModule.json" beforeDir="false" afterPath="$PROJECT_DIR$/jxgisapp/resources/config/SystemModule.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jxgisapp/resources/css/loading.css" beforeDir="false" afterPath="$PROJECT_DIR$/jxgisapp/resources/css/loading.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jxgisapp/sass/Readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/jxgisapp/sass/Readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jxgisapp/sass/example/fashion.html" beforeDir="false" afterPath="$PROJECT_DIR$/jxgisapp/sass/example/fashion.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jxgisapp/sass/example/theme.html" beforeDir="false" afterPath="$PROJECT_DIR$/jxgisapp/sass/example/theme.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jxgisapp/workspace.json" beforeDir="false" afterPath="$PROJECT_DIR$/jxgisapp/workspace.json" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -18,65 +96,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="WaterLevelController.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/jxgisapp/app/view/module/waterlevel/WaterLevelController.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="36" column="59" lean-forward="true" selection-start-line="36" selection-start-column="59" selection-end-line="36" selection-end-column="59" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="WaterLevel.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/jxgisapp/app/view/module/waterlevel/WaterLevel.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="532">
-              <caret line="28" column="19" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Map.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/jxgisapp/app/view/map/Map.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="474">
-              <caret line="31" column="42" lean-forward="true" selection-start-line="31" selection-start-column="8" selection-end-line="31" selection-end-column="42" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MapController.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/jxgisapp/app/view/map/MapController.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="34" column="37" lean-forward="true" selection-start-line="34" selection-start-column="37" selection-end-line="34" selection-end-column="37" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GlobalController.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/jxgisapp/app/controller/GlobalController.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1711">
-              <caret line="27" column="47" lean-forward="true" selection-start-line="27" selection-start-column="47" selection-end-line="27" selection-end-column="47" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ConstUtil.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/jxgisapp/app/utils/ConstUtil.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -144,7 +164,45 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="NodePackageJsonFileManager">
-    <packageJsonPaths />
+    <packageJsonPaths>
+      <path value="$PROJECT_DIR$/jzzxapp/ext/classic/classic/package.json" />
+      <path value="$PROJECT_DIR$/jzzxapp/ext/classic/locale/package.json" />
+      <path value="$PROJECT_DIR$/jzzxapp/ext/classic/theme-aria/package.json" />
+      <path value="$PROJECT_DIR$/jzzxapp/ext/classic/theme-base/package.json" />
+      <path value="$PROJECT_DIR$/jzzxapp/ext/classic/theme-classic-sandbox/package.json" />
+      <path value="$PROJECT_DIR$/jzzxapp/ext/classic/theme-classic/package.json" />
+      <path value="$PROJECT_DIR$/jzzxapp/ext/classic/theme-crisp-touch/package.json" />
+      <path value="$PROJECT_DIR$/jzzxapp/ext/classic/theme-crisp/package.json" />
+      <path value="$PROJECT_DIR$/jzzxapp/ext/classic/theme-gray/package.json" />
+      <path value="$PROJECT_DIR$/jzzxapp/ext/classic/theme-neptune-touch/package.json" />
+      <path value="$PROJECT_DIR$/jzzxapp/ext/classic/theme-neptune/package.json" />
+      <path value="$PROJECT_DIR$/jzzxapp/ext/classic/theme-neutral/package.json" />
+      <path value="$PROJECT_DIR$/jzzxapp/ext/classic/theme-triton/package.json" />
+      <path value="$PROJECT_DIR$/jzzxapp/ext/classic/touch-sizing/package.json" />
+      <path value="$PROJECT_DIR$/jzzxapp/ext/modern/modern/package.json" />
+      <path value="$PROJECT_DIR$/jzzxapp/ext/modern/theme-base/package.json" />
+      <path value="$PROJECT_DIR$/jzzxapp/ext/modern/theme-blackberry/package.json" />
+      <path value="$PROJECT_DIR$/jzzxapp/ext/modern/theme-cupertino/package.json" />
+      <path value="$PROJECT_DIR$/jzzxapp/ext/modern/theme-device-base/package.json" />
+      <path value="$PROJECT_DIR$/jzzxapp/ext/modern/theme-ios/package.json" />
+      <path value="$PROJECT_DIR$/jzzxapp/ext/modern/theme-material/package.json" />
+      <path value="$PROJECT_DIR$/jzzxapp/ext/modern/theme-mountainview/package.json" />
+      <path value="$PROJECT_DIR$/jzzxapp/ext/modern/theme-neptune/package.json" />
+      <path value="$PROJECT_DIR$/jzzxapp/ext/modern/theme-triton/package.json" />
+      <path value="$PROJECT_DIR$/jzzxapp/ext/modern/theme-windows/package.json" />
+      <path value="$PROJECT_DIR$/jzzxapp/ext/package.json" />
+      <path value="$PROJECT_DIR$/jzzxapp/ext/packages/amf/package.json" />
+      <path value="$PROJECT_DIR$/jzzxapp/ext/packages/charts/package.json" />
+      <path value="$PROJECT_DIR$/jzzxapp/ext/packages/core/package.json" />
+      <path value="$PROJECT_DIR$/jzzxapp/ext/packages/font-awesome/package.json" />
+      <path value="$PROJECT_DIR$/jzzxapp/ext/packages/font-ext/package.json" />
+      <path value="$PROJECT_DIR$/jzzxapp/ext/packages/font-ios/package.json" />
+      <path value="$PROJECT_DIR$/jzzxapp/ext/packages/font-pictos/package.json" />
+      <path value="$PROJECT_DIR$/jzzxapp/ext/packages/google/package.json" />
+      <path value="$PROJECT_DIR$/jzzxapp/ext/packages/legacy/package.json" />
+      <path value="$PROJECT_DIR$/jzzxapp/ext/packages/soap/package.json" />
+      <path value="$PROJECT_DIR$/jzzxapp/ext/packages/ux/package.json" />
+    </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="120" />
@@ -160,6 +218,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -172,63 +231,10 @@
               <item name="jxgis" type="462c0819:PsiDirectoryNode" />
               <item name="jxgisapp" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="jxgis" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jxgis" type="462c0819:PsiDirectoryNode" />
-              <item name="jxgisapp" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jxgis" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jxgis" type="462c0819:PsiDirectoryNode" />
-              <item name="jxgisapp" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jxgis" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jxgis" type="462c0819:PsiDirectoryNode" />
-              <item name="jxgisapp" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="utils" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jxgis" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jxgis" type="462c0819:PsiDirectoryNode" />
-              <item name="jxgisapp" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jxgis" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jxgis" type="462c0819:PsiDirectoryNode" />
-              <item name="jxgisapp" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
-              <item name="map" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jxgis" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jxgis" type="462c0819:PsiDirectoryNode" />
-              <item name="jxgisapp" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
-              <item name="module" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jxgis" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jxgis" type="462c0819:PsiDirectoryNode" />
-              <item name="jxgisapp" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="view" type="462c0819:PsiDirectoryNode" />
-              <item name="module" type="462c0819:PsiDirectoryNode" />
-              <item name="waterlevel" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -237,7 +243,7 @@
     <property name="last_opened_file_path" value="E:/ZDS/YTDZ/pc/client/V3" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -311,7 +317,9 @@
       <workItem from="1526717620115" duration="3289000" />
       <workItem from="1526720960830" duration="1945000" />
       <workItem from="1526804025960" duration="22000" />
-      <workItem from="1526804089607" duration="7458000" />
+      <workItem from="1526804089607" duration="9234000" />
+      <workItem from="1526864411398" duration="1228000" />
+      <workItem from="1526868887439" duration="840000" />
     </task>
     <task id="LOCAL-00001" summary="调整arcgis脚本库连接">
       <created>1526209895742</created>
@@ -373,7 +381,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="58459000" />
+    <option name="totallyTimeSpent" value="62303000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -386,14 +394,12 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Key Promoter X" order="3" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1689008" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17761394" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3286517" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50067025" side_tool="true" weight="0.3286517" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3286517" />
       <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49932975" weight="0.2275281" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.3286517" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -406,6 +412,7 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3286517" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -480,6 +487,13 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/jxgisapp/app/utils/ConstUtil.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/jxgisapp/app/view/left/RightModel.js" />
     <entry file="file://$PROJECT_DIR$/jxgisapp/resources/config/SystemModule.json">
       <provider selected="true" editor-type-id="text-editor">
@@ -692,9 +706,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/jxgisapp/resources/libs/echarts/echarts.min.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/jxgisapp/app.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="380">
@@ -711,18 +722,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/jxgisapp/app/view/map/Map.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="474">
-          <caret line="31" column="42" lean-forward="true" selection-start-line="31" selection-start-column="8" selection-end-line="31" selection-end-column="42" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="589">
+          <caret line="31" column="42" selection-start-line="31" selection-start-column="8" selection-end-line="31" selection-end-column="42" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/jxgisapp/app/controller/GlobalController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1711">
-          <caret line="27" column="47" lean-forward="true" selection-start-line="27" selection-start-column="47" selection-end-line="27" selection-end-column="47" />
+        <state relative-caret-position="513">
+          <caret line="27" column="47" selection-start-line="27" selection-start-column="47" selection-end-line="27" selection-end-column="47" />
         </state>
       </provider>
     </entry>
@@ -735,8 +743,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/jxgisapp/app/view/map/MapController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="34" column="37" lean-forward="true" selection-start-line="34" selection-start-column="37" selection-end-line="34" selection-end-column="37" />
+        <state relative-caret-position="646">
+          <caret line="34" column="37" selection-start-line="34" selection-start-column="37" selection-end-line="34" selection-end-column="37" />
         </state>
       </provider>
     </entry>
@@ -749,8 +757,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/jxgisapp/app/view/module/waterlevel/WaterLevelController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="36" column="59" lean-forward="true" selection-start-line="36" selection-start-column="59" selection-end-line="36" selection-end-column="59" />
+        <state relative-caret-position="361">
+          <caret line="29" selection-start-line="29" selection-end-line="29" />
         </state>
       </provider>
     </entry>
