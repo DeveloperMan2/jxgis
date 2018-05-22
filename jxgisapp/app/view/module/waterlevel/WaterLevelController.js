@@ -146,7 +146,7 @@ Ext.define('jxgisapp.view.module.waterlevel.WaterLevelController', {
         //加载统计信息
         var meView = this.getView();
         var time = meView.lookupReference('queryDate').getRawValue();
-        var keywords = Ext.getCmp('waterLevelKeyWordId').getValue()
+        var keywords = Ext.getCmp('waterLevelKeyWordId').getValue();
 
         var treeCom = Ext.getCmp('waterLevelGrid');
 

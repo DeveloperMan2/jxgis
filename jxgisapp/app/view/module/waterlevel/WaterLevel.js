@@ -31,7 +31,7 @@ Ext.define('jxgisapp.view.module.waterlevel.WaterLevel', {
     controller: 'waterlevel',
     layout: {
         type: 'vbox',
-        align: 'left'
+        align: 'stretch'
     },
     margin: '5 5 5 5',
     items: [
@@ -62,8 +62,8 @@ Ext.define('jxgisapp.view.module.waterlevel.WaterLevel', {
                     xtype: 'textfield',
                     id: 'waterLevelKeyWordId',
                     name: 'stationNm',
-                    width: 170,
-                    margin: '0 10 0 0'
+                    flex: 1,
+                    margin: '0 0 0 0'
                 }
             ]
         }, {
@@ -130,11 +130,41 @@ Ext.define('jxgisapp.view.module.waterlevel.WaterLevel', {
             title: '水位列表&amp;[单位:米]',
             id: "waterLevelGrid",
             columns: [
-                {text: '测站', dataIndex: 'name', flex: 1},
-                {text: '水位', dataIndex: 'level', flex: 1},
-                {text: '水势', dataIndex: 'trend', flex: 1},
-                {text: '汛限', dataIndex: 'xxlevel', flex: 1},
-                {text: '警戒', dataIndex: 'warnlevel', flex: 1}
+                {
+                    text: '测站', dataIndex: 'name', flex: 1,
+                    menuDisabled: true,
+                    resizable: false,
+                    sortable: false,
+                    align: 'center'
+                },
+                {
+                    text: '水位', dataIndex: 'level', flex: 1,
+                    menuDisabled: true,
+                    resizable: false,
+                    sortable: false,
+                    align: 'center'
+                },
+                {
+                    text: '水势', dataIndex: 'trend', flex: 1,
+                    menuDisabled: true,
+                    resizable: false,
+                    sortable: false,
+                    align: 'center'
+                },
+                {
+                    text: '汛限', dataIndex: 'xxlevel', flex: 1,
+                    menuDisabled: true,
+                    resizable: false,
+                    sortable: false,
+                    align: 'center'
+                },
+                {
+                    text: '警戒', dataIndex: 'warnlevel', flex: 1,
+                    menuDisabled: true,
+                    resizable: false,
+                    sortable: false,
+                    align: 'center'
+                }
             ],
             autoLoad: false,
             store: {
@@ -151,7 +181,6 @@ Ext.define('jxgisapp.view.module.waterlevel.WaterLevel', {
                     var level = record.get("level");
                     var warnLevel = record.get("warnlevel");
                     var xxLevel = record.get("xxlevel");
-                    //TODO 2018-04-23---目前为取消巡检路线变色，仅水库行按照状态变色，酌情处理
                     if (level > warnLevel) {
                         cls = 'x-grid-row-blue';
                     }
