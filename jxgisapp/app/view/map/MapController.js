@@ -13,7 +13,7 @@ Ext.define('jxgisapp.view.map.MapController', {
                 "esri/views/MapView",
                 "esri/layers/FeatureLayer",
                 "dojo/domReady!"
-            ], function (Map, MapView,FeatureLayer) {
+            ], function (Map, MapView, FeatureLayer) {
                 var appMap = new Map({
                     basemap: 'satellite'
                 });
@@ -34,36 +34,6 @@ Ext.define('jxgisapp.view.map.MapController', {
                 //全局存储
                 cu.map = appMap;
                 cu.mapView = mapView;
-                // Create the PopupTemplate
-
-                const popupTemplate = { // autocasts as new PopupTemplate()
-                    title: "水位站信息 ",
-                    content: [{
-                        type: "fields",
-                        fieldInfos: [{
-                            fieldName: "id",
-                            label: "测站编码",
-                            format: {
-                                places: 0,
-                                digitSeparator: true
-                            }
-                        }, {
-                            fieldName: "name",
-                            label: "测站名称",
-                            format: {
-                                places: 0,
-                                digitSeparator: true
-                            }
-                        }]
-                    }]
-                };
-
-                // points to the states layer in a service storing U.S. census data
-                const fl = new FeatureLayer({
-                    url: cu.waterlevelMapUrl,
-                    popupTemplate: popupTemplate
-                });
-                appMap.add(fl);  // adds the layer to the map
             });
     },
 
