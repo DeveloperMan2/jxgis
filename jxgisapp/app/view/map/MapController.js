@@ -11,8 +11,9 @@ Ext.define('jxgisapp.view.map.MapController', {
             [
                 "esri/Map",
                 "esri/views/MapView",
+                "esri/layers/FeatureLayer",
                 "dojo/domReady!"
-            ], function (Map, MapView) {
+            ], function (Map, MapView, FeatureLayer) {
                 var appMap = new Map({
                     basemap: 'satellite'
                 });

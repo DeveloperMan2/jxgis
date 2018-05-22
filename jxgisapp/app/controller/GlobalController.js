@@ -4,6 +4,10 @@
 Ext.define('jxgisapp.controller.GlobalController', {
     extend: 'Ext.app.Controller',
 
+    requires: [
+        'Ext.button.Button'
+    ],
+
     config: {
         //Uncomment to add references to view components
         refs: [
@@ -42,11 +46,13 @@ Ext.define('jxgisapp.controller.GlobalController', {
                 var title = result['title'];//系统标题
                 var serviceUrl = result['serviceUrl'];//系统服务地址
                 var pageSize = result['pageSize'];//分页查询页面大小
+                var waterlevelMapUrl = result['waterlevelMapUrl'];//分页查询页面大小
 
                 //存储系统配置
                 cu.title = title;
                 cu.serviceUrl = serviceUrl;
                 cu.pageSize = pageSize;
+                cu.waterlevelMapUrl = waterlevelMapUrl;
 
                 //设置系统标题
                 document.title = cu.title;

@@ -7,6 +7,8 @@ Ext.define('jxgisapp.view.right.Right', {
     requires: [
         'Ext.data.TreeStore',
         'Ext.data.proxy.Ajax',
+        'Ext.layout.container.Card',
+        'Ext.layout.container.Fit',
         'Ext.layout.container.VBox',
         'Ext.tree.Panel',
         'jxgisapp.utils.WrapUtil',

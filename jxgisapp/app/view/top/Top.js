@@ -5,8 +5,10 @@ Ext.define('jxgisapp.view.top.Top', {
     extend: 'Ext.Container',
 
     requires: [
-        'jxgisapp.view.top.TopModel',
-        'jxgisapp.view.top.TopController'
+        'Ext.button.Segmented',
+        'Ext.layout.container.HBox',
+        'jxgisapp.view.top.TopController',
+        'jxgisapp.view.top.TopModel'
     ],
 
     /*
