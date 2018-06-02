@@ -61,7 +61,8 @@ Ext.define('jxgisapp.view.module.rainfall.RainFall', {
             xtype: 'container',
             layout: {
                 type: 'hbox',
-                align: 'stretch'
+                pack: 'start',
+                align: 'middle'
             },
             items: [
                 {

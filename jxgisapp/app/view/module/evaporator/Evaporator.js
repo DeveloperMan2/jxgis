@@ -62,7 +62,8 @@ Ext.define('jxgisapp.view.module.evaporator.Evaporator', {
             xtype: 'container',
             layout: {
                 type: 'hbox',
-                align: 'stretch'
+                pack: 'start',
+                align: 'middle'
             },
             items: [
                 {
