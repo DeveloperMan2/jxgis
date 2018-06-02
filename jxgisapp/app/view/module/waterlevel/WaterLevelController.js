@@ -69,6 +69,27 @@ Ext.define('jxgisapp.view.module.waterlevel.WaterLevelController', {
                                 places: 0,
                                 digitSeparator: true
                             }
+                        }, {
+                            fieldName: "level",
+                            label: "水位",
+                            format: {
+                                places: 0,
+                                digitSeparator: true
+                            }
+                        }, {
+                            fieldName: "xxlevel",
+                            label: "汛限水位",
+                            format: {
+                                places: 0,
+                                digitSeparator: true
+                            }
+                        }, {
+                            fieldName: "warnlevel",
+                            label: "警戒水位",
+                            format: {
+                                places: 0,
+                                digitSeparator: true
+                            }
                         }]
                     }]
                 };
@@ -96,6 +117,7 @@ Ext.define('jxgisapp.view.module.waterlevel.WaterLevelController', {
                         if (!val) {  // wait for the layer view to finish updating
                             lyrView.queryFeatures().then(function (results) {
                                 Ext.Array.each(results, function (ft) {
+                                    //添加测站名称
                                     var textSymbol = {
                                         type: "text",  // autocasts as new TextSymbol()
                                         color: "white",
@@ -113,6 +135,7 @@ Ext.define('jxgisapp.view.module.waterlevel.WaterLevelController', {
                                     textSymbol.text = ft.getAttribute('name');
                                     var label = new Graphic(ft.geometry, textSymbol);
                                     graphicsLayer.add(label);
+
                                     Ext.Array.each(waterLevel.result, function (rd) {
                                         if (ft.getAttribute('Id').toString() == rd.data.id.toString()) {
                                             var symbol = new  PictureMarkerSymbol();
@@ -131,6 +154,27 @@ Ext.define('jxgisapp.view.module.waterlevel.WaterLevelController', {
                                                 symbol.url = 'resources/img/orange.png';
                                             }
                                             ft.symbol = symbol;
+
+                                            //添加测站水位
+                                            var leveltextSymbol = {
+                                                type: "text",  // autocasts as new TextSymbol()
+                                                color: "white",
+                                                haloColor: "black",
+                                                haloSize: "1px",
+                                                text: "You are here",
+                                                xoffset: 0,
+                                                yoffset: 10,
+                                                font: {  // autocast as new Font()
+                                                    size: 10,
+                                                    family: "宋体",
+                                                    weight: "normal"
+                                                }
+                                            };
+                                            leveltextSymbol.text = rd.data.level;
+                                            var levellabel = new Graphic(ft.geometry, leveltextSymbol);
+                                            graphicsLayer.add(levellabel);
+
+                                            Ext.apply(ft.attributes,rd.data);
                                             return false;
                                         }
                                     })

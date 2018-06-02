@@ -16,6 +16,7 @@ Ext.define('jxgisapp.view.module.waterlevel.WaterLevel', {
         'Ext.grid.Panel',
         'Ext.layout.container.HBox',
         'Ext.layout.container.VBox',
+        'Ext.selection.RowModel',
         'jxgisapp.view.module.waterlevel.WaterLevelController',
         'jxgisapp.view.module.waterlevel.WaterLevelModel'
     ],
@@ -127,7 +128,7 @@ Ext.define('jxgisapp.view.module.waterlevel.WaterLevel', {
             ]
         }, {
             xtype: 'grid',
-            title: '水位列表&amp;[单位:米]',
+            title: '水位列表[单位:米]',
             id: "waterLevelGrid",
             columns: [
                 {
@@ -191,7 +192,8 @@ Ext.define('jxgisapp.view.module.waterlevel.WaterLevel', {
                 }
             },
             height: '100%',
-            width: '100%'
+            width: '100%',
+            selModel: 'rowmodel'
         }
     ],
     listeners:
