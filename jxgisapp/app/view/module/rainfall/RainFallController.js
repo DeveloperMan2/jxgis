@@ -43,7 +43,7 @@ Ext.define('jxgisapp.view.module.rainfall.RainFallController', {
                 "esri/Graphic",
                 "esri/layers/GraphicsLayer",
                 "dojo/domReady!"
-            ], function (FeatureLayer,PictureMarkerSymbol,Graphic,GraphicsLayer) {
+            ], function (FeatureLayer, PictureMarkerSymbol, Graphic, GraphicsLayer) {
                 // Create the PopupTemplate
                 const popupTemplate = {
                     title: "雨量信息 ",
@@ -118,7 +118,7 @@ Ext.define('jxgisapp.view.module.rainfall.RainFallController', {
 
                                     Ext.Array.each(waterLevel.result, function (rd) {
                                         if (ft.getAttribute('Id').toString() == rd.data.id.toString()) {
-                                            var symbol = new  PictureMarkerSymbol();
+                                            var symbol = new PictureMarkerSymbol();
                                             var flsymbol = waterLevel.stationLayer.renderer.symbol;
                                             symbol.height = 10;
                                             symbol.width = 10
@@ -157,7 +157,7 @@ Ext.define('jxgisapp.view.module.rainfall.RainFallController', {
                                             var levellabel = new Graphic(ft.geometry, leveltextSymbol);
                                             graphicsLayer.add(levellabel);
 
-                                            Ext.apply(ft.attributes,rd.data);
+                                            Ext.apply(ft.attributes, rd.data);
                                             return false;
                                         }
                                     })
@@ -172,7 +172,8 @@ Ext.define('jxgisapp.view.module.rainfall.RainFallController', {
     queryWaterLevelData: function (afterMapViewLoaded, moduleInit) {
         //加载统计信息
         var meView = this.getView();
-        var time = meView.lookupReference('queryDate').getRawValue();
+        var st = meView.lookupReference('querywlStartDate').getRawValue();
+        var et = meView.lookupReference('querywlEndDate').getRawValue();
         var keywords = Ext.getCmp('rainfallKeyWordId').getValue();
 
         var treeCom = Ext.getCmp('rainfallGrid');
@@ -182,7 +183,8 @@ Ext.define('jxgisapp.view.module.rainfall.RainFallController', {
         store.proxy.url = 'resources/json/waterlevel.json';
         store.load({
             params: {
-                time: time,
+                st: st,
+                et: et,
                 keywords: keywords
             }, //参数
 

@@ -42,7 +42,7 @@ Ext.define('jxgisapp.view.module.evaporator.EvaporatorController', {
                 "esri/Graphic",
                 "esri/layers/GraphicsLayer",
                 "dojo/domReady!"
-            ], function (FeatureLayer,PictureMarkerSymbol,Graphic,GraphicsLayer) {
+            ], function (FeatureLayer, PictureMarkerSymbol, Graphic, GraphicsLayer) {
                 // Create the PopupTemplate
                 const popupTemplate = {
                     title: "蒸发站信息 ",
@@ -117,7 +117,7 @@ Ext.define('jxgisapp.view.module.evaporator.EvaporatorController', {
 
                                     Ext.Array.each(waterLevel.result, function (rd) {
                                         if (ft.getAttribute('Id').toString() == rd.data.id.toString()) {
-                                            var symbol = new  PictureMarkerSymbol();
+                                            var symbol = new PictureMarkerSymbol();
                                             var flsymbol = waterLevel.stationLayer.renderer.symbol;
                                             symbol.height = 10;
                                             symbol.width = 10
@@ -154,7 +154,7 @@ Ext.define('jxgisapp.view.module.evaporator.EvaporatorController', {
                                             var levellabel = new Graphic(ft.geometry, leveltextSymbol);
                                             graphicsLayer.add(levellabel);
 
-                                            Ext.apply(ft.attributes,rd.data);
+                                            Ext.apply(ft.attributes, rd.data);
                                             return false;
                                         }
                                     })
@@ -169,7 +169,8 @@ Ext.define('jxgisapp.view.module.evaporator.EvaporatorController', {
     queryWaterLevelData: function (afterMapViewLoaded, moduleInit) {
         //加载统计信息
         var meView = this.getView();
-        var time = meView.lookupReference('queryDate').getRawValue();
+        var st = meView.lookupReference('queryevaStartDate').getRawValue();
+        var et = meView.lookupReference('queryevaEndDate').getRawValue();
         var keywords = Ext.getCmp('evaporatorKeyWordId').getValue();
 
         var treeCom = Ext.getCmp('evaporatorGrid');
@@ -179,7 +180,8 @@ Ext.define('jxgisapp.view.module.evaporator.EvaporatorController', {
         store.proxy.url = 'resources/json/zf.json';
         store.load({
             params: {
-                time: time,
+                st: st,
+                et: et,
                 keywords: keywords
             }, //参数
 
