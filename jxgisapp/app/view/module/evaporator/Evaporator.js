@@ -71,7 +71,7 @@ Ext.define('jxgisapp.view.module.evaporator.Evaporator', {
                 },
                 {
                     xtype: 'textfield',
-                    id: 'waterLevelKeyWordId',
+                    id: 'evaporatorKeyWordId',
                     name: 'stationNm',
                     width: 170,
                     margin: '0 10 0 0'
@@ -154,7 +154,7 @@ Ext.define('jxgisapp.view.module.evaporator.Evaporator', {
         }, {
             xtype: 'grid',
             title: '蒸发量列表[单位:毫米]',
-            id: "waterLevelGrid",
+            id: "evaporatorGrid",
             columns: [
                 {text: '测站', dataIndex: 'name', flex: 1},
                 {text: '蒸发量', dataIndex: 'level', flex: 1},

@@ -170,9 +170,9 @@ Ext.define('jxgisapp.view.module.evaporator.EvaporatorController', {
         //加载统计信息
         var meView = this.getView();
         var time = meView.lookupReference('queryDate').getRawValue();
-        var keywords = Ext.getCmp('waterLevelKeyWordId').getValue()
+        var keywords = Ext.getCmp('evaporatorKeyWordId').getValue();
 
-        var treeCom = Ext.getCmp('waterLevelGrid');
+        var treeCom = Ext.getCmp('evaporatorGrid');
 
         var store = treeCom.getStore();
         // store.proxy.url = conf.rtmdataUrl + 'rtmdata';//TODO 2018-04-23---本地数据加载暂时屏蔽，若需要加载后台服务数据，需要解除注释

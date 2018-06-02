@@ -32,6 +32,7 @@ Ext.define('jxgisapp.view.module.waterlevel.WaterLevel', {
     controller: 'waterlevel',
     layout: {
         type: 'vbox',
+        pack: 'start',
         align: 'stretch'
     },
     margin: '5 5 5 5',
@@ -200,5 +201,4 @@ Ext.define('jxgisapp.view.module.waterlevel.WaterLevel', {
         {
             afterrender: 'afterrenderHandler',
         }
-})
-;
+});

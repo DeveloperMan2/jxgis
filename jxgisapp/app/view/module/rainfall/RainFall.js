@@ -70,7 +70,7 @@ Ext.define('jxgisapp.view.module.rainfall.RainFall', {
                 },
                 {
                     xtype: 'textfield',
-                    id: 'waterLevelKeyWordId',
+                    id: 'rainfallKeyWordId',
                     name: 'stationNm',
                     width: 170,
                     margin: '0 10 0 0'
@@ -162,7 +162,7 @@ Ext.define('jxgisapp.view.module.rainfall.RainFall', {
         }, {
             xtype: 'grid',
             title: '雨量列表[单位:毫米]',
-            id: "waterLevelGrid",
+            id: "rainfallGrid",
             columns: [
                 {text: '测站', dataIndex: 'name', flex: 1},
                 {text: '雨量', dataIndex: 'level', flex: 1},

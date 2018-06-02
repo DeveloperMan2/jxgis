@@ -9,6 +9,7 @@ Ext.define('jxgisapp.view.right.Right', {
         'Ext.data.proxy.Ajax',
         'Ext.layout.container.Card',
         'Ext.layout.container.Fit',
+        'Ext.layout.container.HBox',
         'Ext.layout.container.VBox',
         'Ext.tree.Panel',
         'jxgisapp.utils.WrapUtil',
@@ -26,13 +27,15 @@ Ext.define('jxgisapp.view.right.Right', {
     },
 
     controller: 'right',
-
     layout: {
-        type: 'fit'
+        type: 'vbox',
+        pack: 'start',
+        align: 'stretch'
     },
     items: [
         {
             xtype: 'warputil',
+            flex: 1,
             reference: 'rightModuleContainerWrap',
             layout: {
                 type: 'card',
