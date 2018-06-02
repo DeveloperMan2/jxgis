@@ -131,6 +131,8 @@ Ext.define('jxgisapp.view.module.waterlevel.WaterLevel', {
             xtype: 'grid',
             title: '水位列表[单位:米]',
             id: "waterLevelGrid",
+            flex: 1,
+            scrollable: true,
             columns: [
                 {
                     text: '测站', dataIndex: 'name', flex: 1,
@@ -192,8 +194,6 @@ Ext.define('jxgisapp.view.module.waterlevel.WaterLevel', {
                     return cls;
                 }
             },
-            height: '100%',
-            width: '100%',
             selModel: 'rowmodel'
         }
     ],

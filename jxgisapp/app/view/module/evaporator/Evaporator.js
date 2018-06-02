@@ -31,7 +31,8 @@ Ext.define('jxgisapp.view.module.evaporator.Evaporator', {
 
     layout: {
         type: 'vbox',
-        align: 'left'
+        pack: 'start',
+        align: 'stretch'
     },
     margin: '5 5 5 5',
     items: [
@@ -43,7 +44,7 @@ Ext.define('jxgisapp.view.module.evaporator.Evaporator', {
             reference: 'queryDate',
             emptyText: '请选择起始时间',
             allowBlank: false,
-            value: new Date(new Date().getFullYear(), new Date().getMonth(), (new Date().getDate())-1),
+            value: new Date(new Date().getFullYear(), new Date().getMonth(), (new Date().getDate()) - 1),
             maxValue: new Date()
         },
         {
@@ -61,7 +62,7 @@ Ext.define('jxgisapp.view.module.evaporator.Evaporator', {
             xtype: 'container',
             layout: {
                 type: 'hbox',
-                align: 'center'
+                align: 'stretch'
             },
             items: [
                 {
@@ -73,8 +74,7 @@ Ext.define('jxgisapp.view.module.evaporator.Evaporator', {
                     xtype: 'textfield',
                     id: 'evaporatorKeyWordId',
                     name: 'stationNm',
-                    width: 170,
-                    margin: '0 10 0 0'
+                    flex: 1
                 }
             ]
         }, {
@@ -155,6 +155,8 @@ Ext.define('jxgisapp.view.module.evaporator.Evaporator', {
             xtype: 'grid',
             title: '蒸发量列表[单位:毫米]',
             id: "evaporatorGrid",
+            flex: 1,
+            scrollable: true,
             columns: [
                 {text: '测站', dataIndex: 'name', flex: 1},
                 {text: '蒸发量', dataIndex: 'level', flex: 1},
@@ -168,8 +170,6 @@ Ext.define('jxgisapp.view.module.evaporator.Evaporator', {
                 },
                 autoLoad: false,
             },
-            height: '100%',
-            width: '100%',
             selModel: 'rowmodel'
         }
     ],

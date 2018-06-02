@@ -18,7 +18,7 @@ Ext.define('jxgisapp.utils.WrapUtil', {
     beforeLayout: function () {
         var me = this,
             height = Ext.Element.getViewportHeight();
-        me.minHeight = height;
+        me.minHeight = height - 30 ;
         me.callParent(arguments);
     }
 });
