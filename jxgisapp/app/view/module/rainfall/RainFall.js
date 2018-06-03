@@ -73,7 +73,6 @@ Ext.define('jxgisapp.view.module.rainfall.RainFall', {
                 {
                     xtype: 'textfield',
                     id: 'rainfallKeyWordId',
-                    name: 'stationNm',
                     flex: 1
                 }
             ]
@@ -84,7 +83,6 @@ Ext.define('jxgisapp.view.module.rainfall.RainFall', {
                 type: 'hbox',
                 pack: 'center',
             },
-            width: '100%',
             items: [
                 {
                     xtype: 'button',
@@ -99,7 +97,6 @@ Ext.define('jxgisapp.view.module.rainfall.RainFall', {
                 type: 'hbox',
                 pack: 'center',
             },
-            width: '100%',
             items: [
                 {
                     xtype: 'image',
@@ -173,7 +170,6 @@ Ext.define('jxgisapp.view.module.rainfall.RainFall', {
                 {text: '测站', dataIndex: 'name', flex: 1},
                 {text: '雨量', dataIndex: 'level', flex: 1},
             ],
-            autoLoad: false,
             store: {
                 proxy: {
                     type: 'ajax',

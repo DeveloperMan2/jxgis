@@ -5,8 +5,18 @@ Ext.define('jxgisapp.view.module.watersupply.WaterSupply', {
     extend: 'Ext.Container',
 
     requires: [
-        'jxgisapp.view.module.watersupply.WaterSupplyModel',
-		'jxgisapp.view.module.watersupply.WaterSupplyController'
+        'Ext.button.Button',
+        'Ext.container.Container',
+        'Ext.data.proxy.Ajax',
+        'Ext.form.Label',
+        'Ext.form.field.Date',
+        'Ext.form.field.Text',
+        'Ext.grid.Panel',
+        'Ext.layout.container.HBox',
+        'Ext.layout.container.VBox',
+        'Ext.selection.RowModel',
+        'jxgisapp.view.module.watersupply.WaterSupplyController',
+        'jxgisapp.view.module.watersupply.WaterSupplyModel'
     ],
 
     /*
@@ -18,11 +28,160 @@ Ext.define('jxgisapp.view.module.watersupply.WaterSupply', {
     },
 
     controller: 'watersupply',
-
+    layout: {
+        type: 'vbox',
+        pack: 'start',
+        align: 'stretch'
+    },
+    margin: '5 5 5 5',
     items: [
-        /* include child components here */
         {
-            html:'供水监测'
+            xtype: 'datefield',
+            fieldLabel: '开始时间',
+            format: 'Y-m-d',
+            labelWidth: 60,
+            reference: 'querySupplyStartDate',
+            emptyText: '请选择起始时间',
+            allowBlank: false,
+            value: new Date(new Date().getFullYear(), new Date().getMonth(), (new Date().getDate()) - 1),
+            maxValue: new Date()
+        },
+        {
+            xtype: 'datefield',
+            fieldLabel: '结束时间',
+            format: 'Y-m-d',
+            labelWidth: 60,
+            reference: 'querySupplyEndDate',
+            emptyText: '请选择起始时间',
+            allowBlank: false,
+            value: new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate()),
+            maxValue: new Date()
+        },
+        {
+            xtype: 'container',
+            layout: {
+                type: 'hbox',
+                pack: 'start',
+                align: 'middle'
+            },
+            items: [
+                {
+                    xtype: 'label',
+                    html: '测站名称:',
+                    margin: '0 10 0 0'
+                },
+                {
+                    xtype: 'textfield',
+                    id: 'supplyKeyWordId',
+                    flex: 1
+                }
+            ]
+        },
+        {
+            xtype: 'container',
+            layout: {
+                type: 'hbox',
+                pack: 'center',
+            },
+            items: [
+                {
+                    xtype: 'button',
+                    html: '查询',
+                    margin: '10 0 10 0 '
+                }
+            ]
+        },
+        {
+            xtype: 'container',
+            layout: {
+                type: 'hbox',
+                pack: 'center',
+            },
+            defaults: {
+                width: 30,
+                height: 20
+            },
+            items: [
+                {
+                    xtype: 'label',
+                    html: '40',
+                    margin: '1 1 1 1',
+                    style: {
+                        background: '#11ff65',
+                        color: '#ffffff',
+                        textAlign: 'center',
+                        paddingTop: '2px'
+                    }
+                },
+                {
+                    xtype: 'label',
+                    html: '50',
+                    margin: '1 1 1 1',
+                    style: {
+                        background: '#1771ff',
+                        color: '#ffffff',
+                        textAlign: 'center',
+                        paddingTop: '2px'
+                    }
+                },
+                {
+                    xtype: 'label',
+                    html: '60',
+                    margin: '1 1 1 1',
+                    style: {
+                        background: '#ffbc06',
+                        color: '#ffffff',
+                        textAlign: 'center',
+                        paddingTop: '2px'
+                    }
+                },
+                {
+                    xtype: 'label',
+                    html: '70',
+                    margin: '1 1 1 1',
+                    style: {
+                        background: '#ff0dde',
+                        color: '#ffffff',
+                        textAlign: 'center',
+                        paddingTop: '2px'
+                    }
+                },
+                {
+                    xtype: 'label',
+                    html: '>70',
+                    margin: '1 1 1 1',
+                    style: {
+                        background: '#ff0000',
+                        color: '#ffffff',
+                        textAlign: 'center',
+                        paddingTop: '2px'
+                    }
+                }
+            ]
+        },
+        {
+            xtype: 'gridpanel',
+            title: '流量列表[单位:立方米]',
+            id: "supplyGrid",
+            flex: 1,
+            scrollable: true,
+            columns: [
+                {text: '测站', dataIndex: 'name', flex: 1},
+                {text: '供水流量', dataIndex: 'rate', flex: 1},
+            ],
+            store: {
+                proxy: {
+                    type: 'ajax',
+                    url: 'resources/json/watersupply.json'//TODO 2018-04-23---测试本地数据加载，加载后台服务需要屏蔽该行代码。
+                    //  url: conf.serviceRootUrl+'rtmdata'
+                },
+                autoLoad: false,
+            },
+            selModel: 'rowmodel'
         }
-    ]
+    ],
+    listeners:
+        {
+            afterrender: 'afterrenderHandler',
+        }
 });

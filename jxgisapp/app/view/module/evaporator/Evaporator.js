@@ -74,7 +74,6 @@ Ext.define('jxgisapp.view.module.evaporator.Evaporator', {
                 {
                     xtype: 'textfield',
                     id: 'evaporatorKeyWordId',
-                    name: 'stationNm',
                     flex: 1
                 }
             ]
@@ -85,7 +84,6 @@ Ext.define('jxgisapp.view.module.evaporator.Evaporator', {
                 type: 'hbox',
                 pack: 'center',
             },
-            width: '100%',
             items: [
                 {
                     xtype: 'button',
@@ -100,7 +98,6 @@ Ext.define('jxgisapp.view.module.evaporator.Evaporator', {
                 type: 'hbox',
                 pack: 'center',
             },
-            width: '100%',
             items: [
                 {
                     xtype: 'image',
@@ -165,7 +162,6 @@ Ext.define('jxgisapp.view.module.evaporator.Evaporator', {
                 {text: '测站', dataIndex: 'name', flex: 1},
                 {text: '蒸发量', dataIndex: 'level', flex: 1},
             ],
-            autoLoad: false,
             store: {
                 proxy: {
                     type: 'ajax',
@@ -181,5 +177,4 @@ Ext.define('jxgisapp.view.module.evaporator.Evaporator', {
         {
             afterrender: 'afterrenderHandler',
         }
-})
-;
+});

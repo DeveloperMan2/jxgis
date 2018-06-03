@@ -63,7 +63,6 @@ Ext.define('jxgisapp.view.module.waterlevel.WaterLevel', {
                 {
                     xtype: 'textfield',
                     id: 'waterLevelKeyWordId',
-                    name: 'stationNm',
                     flex: 1,
                     margin: '0 0 0 0'
                 }
@@ -75,7 +74,6 @@ Ext.define('jxgisapp.view.module.waterlevel.WaterLevel', {
                 type: 'hbox',
                 pack: 'center',
             },
-            width: '100%',
             items: [
                 {
                     xtype: 'button',
@@ -90,7 +88,6 @@ Ext.define('jxgisapp.view.module.waterlevel.WaterLevel', {
                 type: 'hbox',
                 pack: 'center',
             },
-            width: '100%',
             items: [
                 {
                     xtype: 'image',
@@ -173,7 +170,6 @@ Ext.define('jxgisapp.view.module.waterlevel.WaterLevel', {
                     align: 'center'
                 }
             ],
-            autoLoad: false,
             store: {
                 proxy: {
                     type: 'ajax',

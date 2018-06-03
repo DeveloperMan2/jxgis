@@ -19,7 +19,6 @@ Ext.define('jxgisapp.view.module.waterlevel.WaterLevelController', {
         //主模块地图加载完成之后执行当前模块初始化
         this.afterMapViewLoaded(this.moduleInit);
     },
-    //todo-只要init属性设置为true的模块需要采用时间器的方式获取地图对象，其他模块均采用正常方式，在模块的afterrender事件中执行初始化等,补充说明：其他需要单独对接系统子模块，因此每个模块都需要通过moduleInit的方式初始化.
     afterMapViewLoaded: function (handler) {
         var me = this;
         var task = {
@@ -48,9 +47,9 @@ Ext.define('jxgisapp.view.module.waterlevel.WaterLevelController', {
         var time = meView.lookupReference('queryDate').getRawValue();
         var keywords = Ext.getCmp('waterLevelKeyWordId').getValue();
 
-        var treeCom = Ext.getCmp('waterLevelGrid');
+        var gridCom = Ext.getCmp('waterLevelGrid');
 
-        var store = treeCom.getStore();
+        var store = gridCom.getStore();
         // store.proxy.url = conf.rtmdataUrl + 'rtmdata';//TODO 2018-04-23---本地数据加载暂时屏蔽，若需要加载后台服务数据，需要解除注释
         store.proxy.url = 'resources/json/waterlevel.json';
         store.load({
@@ -62,7 +61,7 @@ Ext.define('jxgisapp.view.module.waterlevel.WaterLevelController', {
             callback: function (records, options, success) {
                 if (success) {
                     store.loadData(records);
-                    treeCom.updateLayout();
+                    gridCom.updateLayout();
                     me.loadWaterLevelLayer(records);
                 }
             },

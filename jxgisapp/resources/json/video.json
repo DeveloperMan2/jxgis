@@ -1,0 +1,103 @@
+[
+  {
+    "name": "测站1",
+    "id": "1",
+    "level": 17.5,
+    "trend": "涨",
+    "warnlevel": 15,
+    "xxlevel": 16,
+    "rate": 15,
+    "ip":"192.168.0.1"
+  },
+  {
+    "name": "测站2",
+    "id": "2",
+    "level": 15.5,
+    "trend": "落",
+    "warnlevel": 15,
+    "xxlevel": 16,
+    "rate": 15,
+    "ip":"192.168.0.2"
+  },
+  {
+    "name": "测站3",
+    "id": "3",
+    "level": 17.5,
+    "trend": "落",
+    "warnlevel": 15,
+    "xxlevel": 16,
+    "rate": 15,
+    "ip":"192.168.0.3"
+  },
+  {
+    "name": "测站4",
+    "id": "4",
+    "level": 16.5,
+    "trend": "落",
+    "warnlevel": 15,
+    "xxlevel": 16,
+    "rate": 15,
+    "ip":"192.168.0.4"
+  },
+  {
+    "name": "测站5",
+    "id": "5",
+    "level": 16.5,
+    "trend": "落",
+    "warnlevel": 15,
+    "xxlevel": 16,
+    "rate": 15,
+    "ip":"192.168.0.5"
+  },
+  {
+    "name": "测站6",
+    "id": "6",
+    "level": 16.5,
+    "trend": "落",
+    "warnlevel": 15,
+    "xxlevel": 16,
+    "rate": 15,
+    "ip":"192.168.0.6"
+  },
+  {
+    "name": "测站7",
+    "id": "7",
+    "level": 16.5,
+    "trend": "平",
+    "warnlevel": 15,
+    "xxlevel": 16,
+    "rate": 15,
+    "ip":"192.168.0.7"
+  },
+  {
+    "name": "测站8",
+    "id": "8",
+    "level": 16.5,
+    "trend": "平",
+    "warnlevel": 15,
+    "xxlevel": 16,
+    "rate": 15,
+    "ip":"192.168.0.8"
+  },
+  {
+    "name": "测站9",
+    "id": "9",
+    "level": 12.5,
+    "trend": "平",
+    "warnlevel": 15,
+    "xxlevel": 16,
+    "rate": 15,
+    "ip":"192.168.0.9"
+  },
+  {
+    "name": "测站10",
+    "id": "10",
+    "level": 12.5,
+    "trend": "平",
+    "warnlevel": 15,
+    "xxlevel": 16,
+    "rate": 15,
+    "ip":"192.168.0.10"
+  }
+]
+

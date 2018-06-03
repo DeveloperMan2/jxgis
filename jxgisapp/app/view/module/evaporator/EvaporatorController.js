@@ -18,7 +18,6 @@ Ext.define('jxgisapp.view.module.evaporator.EvaporatorController', {
     afterrenderHandler: function () {
         this.afterMapViewLoaded(this.moduleInit);
     },
-    /**todo-只要init属性设置为true的模块需要采用时间器的方式获取地图对象，其他模块均采用正常方式，在模块的afterrender事件中执行初始化等*/
     afterMapViewLoaded: function (handler) {
         var me = this;
         var task = {
@@ -46,9 +45,9 @@ Ext.define('jxgisapp.view.module.evaporator.EvaporatorController', {
         var et = meView.lookupReference('queryevaEndDate').getRawValue();
         var keywords = Ext.getCmp('evaporatorKeyWordId').getValue();
 
-        var treeCom = Ext.getCmp('evaporatorGrid');
+        var gridCom = Ext.getCmp('evaporatorGrid');
 
-        var store = treeCom.getStore();
+        var store = gridCom.getStore();
         // store.proxy.url = conf.rtmdataUrl + 'rtmdata';//TODO 2018-04-23---本地数据加载暂时屏蔽，若需要加载后台服务数据，需要解除注释
         store.proxy.url = 'resources/json/evaporator.json';
         store.load({
@@ -61,7 +60,7 @@ Ext.define('jxgisapp.view.module.evaporator.EvaporatorController', {
             callback: function (records, options, success) {
                 if (success) {
                     store.loadData(records);
-                    treeCom.updateLayout();
+                    gridCom.updateLayout();
                     me.loadEvaporatorLayer(records);
                 }
             },
