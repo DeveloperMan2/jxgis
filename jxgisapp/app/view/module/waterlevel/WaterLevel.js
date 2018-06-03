@@ -68,7 +68,8 @@ Ext.define('jxgisapp.view.module.waterlevel.WaterLevel', {
                     margin: '0 0 0 0'
                 }
             ]
-        }, {
+        },
+        {
             xtype: 'container',
             layout: {
                 type: 'hbox',
@@ -82,7 +83,8 @@ Ext.define('jxgisapp.view.module.waterlevel.WaterLevel', {
                     margin: '10 0 10 0 '
                 }
             ]
-        }, {
+        },
+        {
             xtype: 'container',
             layout: {
                 type: 'hbox',
@@ -127,8 +129,9 @@ Ext.define('jxgisapp.view.module.waterlevel.WaterLevel', {
                     margin: '0 10 0 0 '
                 }
             ]
-        }, {
-            xtype: 'grid',
+        },
+        {
+            xtype: 'gridpanel',
             title: '水位列表[单位:米]',
             id: "waterLevelGrid",
             flex: 1,

@@ -5,7 +5,8 @@
     "level": 17.5,
     "trend": "涨",
     "warnlevel": 15,
-    "xxlevel": 16
+    "xxlevel": 16,
+    "rate": 15
   },
   {
     "name": "测站2",
@@ -13,7 +14,8 @@
     "level": 15.5,
     "trend": "落",
     "warnlevel": 15,
-    "xxlevel": 16
+    "xxlevel": 16,
+    "rate": 15
   },
   {
     "name": "测站3",
@@ -21,7 +23,8 @@
     "level": 17.5,
     "trend": "落",
     "warnlevel": 15,
-    "xxlevel": 16
+    "xxlevel": 16,
+    "rate": 15
   },
   {
     "name": "测站4",
@@ -29,7 +32,8 @@
     "level": 16.5,
     "trend": "落",
     "warnlevel": 15,
-    "xxlevel": 16
+    "xxlevel": 16,
+    "rate": 15
   },
   {
     "name": "测站5",
@@ -37,7 +41,8 @@
     "level": 16.5,
     "trend": "落",
     "warnlevel": 15,
-    "xxlevel": 16
+    "xxlevel": 16,
+    "rate": 15
   },
   {
     "name": "测站6",
@@ -45,7 +50,8 @@
     "level": 16.5,
     "trend": "落",
     "warnlevel": 15,
-    "xxlevel": 16
+    "xxlevel": 16,
+    "rate": 15
   },
   {
     "name": "测站7",
@@ -53,7 +59,8 @@
     "level": 16.5,
     "trend": "平",
     "warnlevel": 15,
-    "xxlevel": 16
+    "xxlevel": 16,
+    "rate": 15
   },
   {
     "name": "测站8",
@@ -61,7 +68,8 @@
     "level": 16.5,
     "trend": "平",
     "warnlevel": 15,
-    "xxlevel": 16
+    "xxlevel": 16,
+    "rate": 15
   },
   {
     "name": "测站9",
@@ -69,7 +77,8 @@
     "level": 12.5,
     "trend": "平",
     "warnlevel": 15,
-    "xxlevel": 16
+    "xxlevel": 16,
+    "rate": 15
   },
   {
     "name": "测站10",
@@ -77,7 +86,8 @@
     "level": 12.5,
     "trend": "平",
     "warnlevel": 15,
-    "xxlevel": 16
+    "xxlevel": 16,
+    "rate": 15
   }
 ]
 

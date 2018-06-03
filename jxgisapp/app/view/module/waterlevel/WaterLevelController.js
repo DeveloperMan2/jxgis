@@ -1,13 +1,6 @@
 /**
  * Created by winnerlbm on 2018/5/19.
  */
-var waterLevel = {
-    result: null,
-    stationLayer: null
-}
-
-//用于测试的数据服务
-//http://localhost:8090/ajs/doc/sdk/sample-code/layers-featurelayer-collection/live/data/week.geojson
 Ext.define('jxgisapp.view.module.waterlevel.WaterLevelController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.waterlevel',
@@ -22,12 +15,17 @@ Ext.define('jxgisapp.view.module.waterlevel.WaterLevelController', {
     init: function () {
 
     },
-    /**todo-只要init属性设置为true的模块需要采用时间器的方式获取地图对象，其他模块均采用正常方式，在模块的afterrender事件中执行初始化等*/
+    afterrenderHandler: function () {
+        //主模块地图加载完成之后执行当前模块初始化
+        this.afterMapViewLoaded(this.moduleInit);
+    },
+    //todo-只要init属性设置为true的模块需要采用时间器的方式获取地图对象，其他模块均采用正常方式，在模块的afterrender事件中执行初始化等,补充说明：其他需要单独对接系统子模块，因此每个模块都需要通过moduleInit的方式初始化.
     afterMapViewLoaded: function (handler) {
+        var me = this;
         var task = {
             run: function () {
                 if (cu.mapView) {
-                    handler();
+                    handler(me);
                     //销毁当前任务
                     Ext.TaskManager.stop(task);
                     task = null;
@@ -38,10 +36,42 @@ Ext.define('jxgisapp.view.module.waterlevel.WaterLevelController', {
 
         Ext.TaskManager.start(task);
     },
-    afterrenderHandler: function () {
-        this.queryWaterLevelData(this.afterMapViewLoaded, this.moduleInit);
+    //模块初始化（重写）
+    moduleInit: function (me) {
+        me.queryWaterLevelData();
     },
-    moduleInit: function () {
+    //根据选择的时间，查询水位数据
+    queryWaterLevelData: function () {
+        var me = this;
+        //加载统计信息
+        var meView = this.getView();
+        var time = meView.lookupReference('queryDate').getRawValue();
+        var keywords = Ext.getCmp('waterLevelKeyWordId').getValue();
+
+        var treeCom = Ext.getCmp('waterLevelGrid');
+
+        var store = treeCom.getStore();
+        // store.proxy.url = conf.rtmdataUrl + 'rtmdata';//TODO 2018-04-23---本地数据加载暂时屏蔽，若需要加载后台服务数据，需要解除注释
+        store.proxy.url = 'resources/json/waterlevel.json';
+        store.load({
+            params: {
+                time: time,
+                keywords: keywords
+            }, //参数
+
+            callback: function (records, options, success) {
+                if (success) {
+                    store.loadData(records);
+                    treeCom.updateLayout();
+                    me.loadWaterLevelLayer(records);
+                }
+            },
+            scope: store,
+            add: false
+        });
+    },
+    //加载水位信息图层
+    loadWaterLevelLayer: function (features) {
         require(
             [
                 "esri/layers/FeatureLayer",
@@ -49,7 +79,7 @@ Ext.define('jxgisapp.view.module.waterlevel.WaterLevelController', {
                 "esri/Graphic",
                 "esri/layers/GraphicsLayer",
                 "dojo/domReady!"
-            ], function (FeatureLayer,PictureMarkerSymbol,Graphic,GraphicsLayer) {
+            ], function (FeatureLayer, PictureMarkerSymbol, Graphic, GraphicsLayer) {
                 // Create the PopupTemplate
                 const popupTemplate = {
                     title: "水位站信息 ",
@@ -94,25 +124,16 @@ Ext.define('jxgisapp.view.module.waterlevel.WaterLevelController', {
                     }]
                 };
                 // points to the states layer in a service storing U.S. census data
-                waterLevel.stationLayer = new FeatureLayer({
+                var stationLayer = new FeatureLayer({
                     url: cu.waterlevelMapUrl,
                     popupTemplate: popupTemplate
                 });
-                // var symbol = {
-                //     type: "simple-marker",  // autocasts as new SimpleMarkerSymbol()
-                //     style: 'square',
-                //     color: "blue",
-                //     size: 8,
-                //     outline: {  // autocasts as new SimpleLineSymbol()
-                //         width: 0.5,
-                //         color: "darkblue"
-                //     }
-                // }
+
                 var graphicsLayer = new GraphicsLayer();
                 cu.map.add(graphicsLayer);
-                cu.map.add(waterLevel.stationLayer);  // adds the layer to the map
+                cu.map.add(stationLayer);  // adds the layer to the map
                 // returns all the graphics from the layer view
-                cu.mapView.whenLayerView(waterLevel.stationLayer).then(function (lyrView) {
+                cu.mapView.whenLayerView(stationLayer).then(function (lyrView) {
                     lyrView.watch("updating", function (val) {
                         if (!val) {  // wait for the layer view to finish updating
                             lyrView.queryFeatures().then(function (results) {
@@ -136,10 +157,10 @@ Ext.define('jxgisapp.view.module.waterlevel.WaterLevelController', {
                                     var label = new Graphic(ft.geometry, textSymbol);
                                     graphicsLayer.add(label);
 
-                                    Ext.Array.each(waterLevel.result, function (rd) {
+                                    Ext.Array.each(features, function (rd) {
                                         if (ft.getAttribute('Id').toString() == rd.data.id.toString()) {
-                                            var symbol = new  PictureMarkerSymbol();
-                                            var flsymbol = waterLevel.stationLayer.renderer.symbol;
+                                            var symbol = new PictureMarkerSymbol();
+                                            var flsymbol = stationLayer.renderer.symbol;
                                             symbol.angle = ft.getAttribute('angle');
                                             symbol.height = flsymbol.height;
                                             symbol.width = flsymbol.width;
@@ -174,8 +195,7 @@ Ext.define('jxgisapp.view.module.waterlevel.WaterLevelController', {
                                             var levellabel = new Graphic(ft.geometry, leveltextSymbol);
                                             graphicsLayer.add(levellabel);
 
-                                            Ext.apply(ft.attributes,rd.data);
-                                            return false;
+                                            Ext.apply(ft.attributes, rd.data);
                                         }
                                     })
                                 })
@@ -184,35 +204,5 @@ Ext.define('jxgisapp.view.module.waterlevel.WaterLevelController', {
                     });
                 });
             })
-    },
-    //根据选择的时间，查询水位数据
-    queryWaterLevelData: function (afterMapViewLoaded, moduleInit) {
-        //加载统计信息
-        var meView = this.getView();
-        var time = meView.lookupReference('queryDate').getRawValue();
-        var keywords = Ext.getCmp('waterLevelKeyWordId').getValue();
-
-        var treeCom = Ext.getCmp('waterLevelGrid');
-
-        var store = treeCom.getStore();
-        // store.proxy.url = conf.rtmdataUrl + 'rtmdata';//TODO 2018-04-23---本地数据加载暂时屏蔽，若需要加载后台服务数据，需要解除注释
-        store.proxy.url = 'resources/json/waterlevel.json';
-        store.load({
-            params: {
-                time: time,
-                keywords: keywords
-            }, //参数
-
-            callback: function (records, options, success) {
-                if (success) {
-                    waterLevel.result = records;
-                    store.loadData(records);
-                    treeCom.updateLayout();
-                    afterMapViewLoaded(moduleInit);
-                }
-            },
-            scope: store,
-            add: false
-        });
     }
 });

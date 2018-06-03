@@ -2,7 +2,7 @@
   {
     "name": "测站1",
     "id": "1",
-    "level": 17.5,
+    "level": 45.5,
     "trend": "涨",
     "warnlevel": 15,
     "xxlevel": 16
@@ -10,7 +10,7 @@
   {
     "name": "测站2",
     "id": "2",
-    "level": 15.5,
+    "level": 47.5,
     "trend": "落",
     "warnlevel": 15,
     "xxlevel": 16
@@ -18,7 +18,7 @@
   {
     "name": "测站3",
     "id": "3",
-    "level": 17.5,
+    "level": 50.5,
     "trend": "落",
     "warnlevel": 15,
     "xxlevel": 16
@@ -26,7 +26,7 @@
   {
     "name": "测站4",
     "id": "4",
-    "level": 16.5,
+    "level": 54.5,
     "trend": "落",
     "warnlevel": 15,
     "xxlevel": 16
@@ -34,7 +34,7 @@
   {
     "name": "测站5",
     "id": "5",
-    "level": 16.5,
+    "level": 60.5,
     "trend": "落",
     "warnlevel": 15,
     "xxlevel": 16
@@ -42,7 +42,7 @@
   {
     "name": "测站6",
     "id": "6",
-    "level": 16.5,
+    "level": 63.5,
     "trend": "落",
     "warnlevel": 15,
     "xxlevel": 16
@@ -50,7 +50,7 @@
   {
     "name": "测站7",
     "id": "7",
-    "level": 16.5,
+    "level": 40.5,
     "trend": "平",
     "warnlevel": 15,
     "xxlevel": 16
@@ -58,7 +58,7 @@
   {
     "name": "测站8",
     "id": "8",
-    "level": 16.5,
+    "level": 45.5,
     "trend": "平",
     "warnlevel": 15,
     "xxlevel": 16
@@ -66,7 +66,7 @@
   {
     "name": "测站9",
     "id": "9",
-    "level": 12.5,
+    "level": 50.5,
     "trend": "平",
     "warnlevel": 15,
     "xxlevel": 16
@@ -74,7 +74,7 @@
   {
     "name": "测站10",
     "id": "10",
-    "level": 12.5,
+    "level": 72.5,
     "trend": "平",
     "warnlevel": 15,
     "xxlevel": 16

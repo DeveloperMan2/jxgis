@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="774aba46-45c3-40e8-91c0-65a042a55377" name="Default" comment="新增模块，调整工程结构，增加Readme.md说明文件">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="774aba46-45c3-40e8-91c0-65a042a55377" name="Default" comment="新增模块，调整工程结构，增加Readme.md说明文件" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -231,6 +229,7 @@
       <workItem from="1527001462605" duration="345000" />
       <workItem from="1527914549564" duration="14000" />
       <workItem from="1527914643149" duration="461000" />
+      <workItem from="1528006612652" duration="72000" />
     </task>
     <task id="LOCAL-00001" summary="调整arcgis脚本库连接">
       <created>1526209895742</created>
@@ -292,7 +291,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="114992000" />
+    <option name="totallyTimeSpent" value="115064000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -307,14 +306,14 @@
     <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
     <layout>
       <window_info anchor="right" id="Key Promoter X" order="3" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1930295" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19571045" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3286517" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50067025" side_tool="true" weight="0.3286517" />
       <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49932975" weight="0.23001403" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.3286517" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49932975" visible="true" weight="0.34550563" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" sideWeight="0.49932975" visible="true" weight="0.34550563" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.56882024" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />

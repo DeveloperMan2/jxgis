@@ -78,7 +78,8 @@ Ext.define('jxgisapp.view.module.evaporator.Evaporator', {
                     flex: 1
                 }
             ]
-        }, {
+        },
+        {
             xtype: 'container',
             layout: {
                 type: 'hbox',
@@ -92,7 +93,8 @@ Ext.define('jxgisapp.view.module.evaporator.Evaporator', {
                     margin: '10 0 10 0 '
                 }
             ]
-        }, {
+        },
+        {
             xtype: 'container',
             layout: {
                 type: 'hbox',
@@ -152,8 +154,9 @@ Ext.define('jxgisapp.view.module.evaporator.Evaporator', {
                     margin: '0 5 0 0 '
                 }
             ]
-        }, {
-            xtype: 'grid',
+        },
+        {
+            xtype: 'gridpanel',
             title: '蒸发量列表[单位:毫米]',
             id: "evaporatorGrid",
             flex: 1,
@@ -166,7 +169,7 @@ Ext.define('jxgisapp.view.module.evaporator.Evaporator', {
             store: {
                 proxy: {
                     type: 'ajax',
-                    url: 'resources/json/waterlevel.json'//TODO 2018-04-23---测试本地数据加载，加载后台服务需要屏蔽该行代码。
+                    url: 'resources/json/evaporator.json'//TODO 2018-04-23---测试本地数据加载，加载后台服务需要屏蔽该行代码。
                     //  url: conf.serviceRootUrl+'rtmdata'
                 },
                 autoLoad: false,
