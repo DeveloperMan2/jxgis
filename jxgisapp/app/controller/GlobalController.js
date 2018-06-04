@@ -75,6 +75,7 @@ Ext.define('jxgisapp.controller.GlobalController', {
             //查询结果转json对象
             var result = Ext.JSON.decode(decodeURIComponent((response.responseText)), true);
             if (result) {
+                cu.moduleList = result['sysMenus'];//全局存储模块列表
                 me.initSystemMenu(result['sysMenus'], me);
             }
         }

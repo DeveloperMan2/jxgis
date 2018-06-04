@@ -23,7 +23,7 @@ Ext.define('jxgisapp.view.module.watergate.WaterGateController', {
         var me = this;
         var task = {
             run: function () {
-                if (cu.mapView) {
+                if (cu.mapView && task) {
                     handler(me);
                     //销毁当前任务
                     Ext.TaskManager.stop(task);
