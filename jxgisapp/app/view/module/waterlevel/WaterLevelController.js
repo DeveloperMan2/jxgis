@@ -143,7 +143,7 @@ Ext.define('jxgisapp.view.module.waterlevel.WaterLevelController', {
                                         color: "white",
                                         haloColor: "black",
                                         haloSize: "1px",
-                                        text: "You are here",
+                                        text: "",
                                         xoffset: 0,
                                         yoffset: -20,
                                         font: {  // autocast as new Font()

@@ -44,8 +44,6 @@ Ext.define('jxgisapp.view.module.video.VideoController', {
         var me = this;
         //加载统计信息
         var meView = this.getView();
-        var st = meView.lookupReference('queryVideoStartDate').getRawValue();
-        var et = meView.lookupReference('queryVideoEndDate').getRawValue();
         var keywords = Ext.getCmp('videoKeyWordId').getValue();
 
         var gridCom = Ext.getCmp('videoGrid');
@@ -55,8 +53,6 @@ Ext.define('jxgisapp.view.module.video.VideoController', {
         store.proxy.url = 'resources/json/video.json';
         store.load({
             params: {
-                st: st,
-                et: et,
                 keywords: keywords
             }, //参数
 
@@ -82,38 +78,9 @@ Ext.define('jxgisapp.view.module.video.VideoController', {
                 "dojo/domReady!"
             ], function (FeatureLayer, PictureMarkerSymbol, Graphic, GraphicsLayer) {
                 // Create the PopupTemplate
-                const popupTemplate = {
-                    title: "蒸发站信息 ",
-                    content: [{
-                        type: "fields",
-                        fieldInfos: [{
-                            fieldName: "id",
-                            label: "测站编码",
-                            format: {
-                                places: 0,
-                                digitSeparator: true
-                            }
-                        }, {
-                            fieldName: "name",
-                            label: "测站名称",
-                            format: {
-                                places: 0,
-                                digitSeparator: true
-                            }
-                        }, {
-                            fieldName: "level",
-                            label: "蒸发量",
-                            format: {
-                                places: 0,
-                                digitSeparator: true
-                            }
-                        }]
-                    }]
-                };
                 // points to the states layer in a service storing U.S. census data
                 var stationLayer = new FeatureLayer({
                     url: cu.waterlevelMapUrl,
-                    popupTemplate: popupTemplate
                 });
                 // var symbol = {
                 //     type: "simple-marker",  // autocasts as new SimpleMarkerSymbol()
@@ -140,7 +107,7 @@ Ext.define('jxgisapp.view.module.video.VideoController', {
                                         color: "white",
                                         haloColor: "black",
                                         haloSize: "1px",
-                                        text: "You are here",
+                                        text: "",
                                         xoffset: 0,
                                         yoffset: -20,
                                         font: {  // autocast as new Font()
@@ -157,23 +124,13 @@ Ext.define('jxgisapp.view.module.video.VideoController', {
                                         if (ft.getAttribute('Id').toString() == rd.data.id.toString()) {
                                             var symbol = new PictureMarkerSymbol();
                                             var flsymbol = stationLayer.renderer.symbol;
-                                            symbol.height = 10;
-                                            symbol.width = 10;
+                                            symbol.height = 28;
+                                            symbol.width = 28;
                                             symbol.type = flsymbol.type;
-                                            if (rd.data.level < 40) {
-                                                symbol.url = 'resources/img/zf/40.png';
-                                            } else if (rd.data.level < 50) {
-                                                symbol.url = 'resources/img/zf/50.png';
-                                            } else if (rd.data.level < 60) {
-                                                symbol.url = 'resources/img/zf/60.png';
-                                            } else if (rd.data.level < 70) {
-                                                symbol.url = 'resources/img/zf/70.png';
-                                            } else if (rd.data.level > 70) {
-                                                symbol.url = 'resources/img/zf/80.png';
-                                            }
+                                            symbol.url = 'resources/img/cammer.png';
                                             ft.symbol = symbol;
 
-                                            //添加测站水位
+                                            //添加注记
                                             var leveltextSymbol = {
                                                 type: "text",  // autocasts as new TextSymbol()
                                                 color: "white",
@@ -191,7 +148,6 @@ Ext.define('jxgisapp.view.module.video.VideoController', {
                                             leveltextSymbol.text = rd.data.level;
                                             var levellabel = new Graphic(ft.geometry, leveltextSymbol);
                                             graphicsLayer.add(levellabel);
-
                                             Ext.apply(ft.attributes, rd.data);
                                         }
                                     })

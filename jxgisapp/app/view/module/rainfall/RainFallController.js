@@ -113,16 +113,6 @@ Ext.define('jxgisapp.view.module.rainfall.RainFallController', {
                     url: cu.waterlevelMapUrl,
                     popupTemplate: popupTemplate
                 });
-                // var symbol = {
-                //     type: "simple-marker",  // autocasts as new SimpleMarkerSymbol()
-                //     style: 'square',
-                //     color: "blue",
-                //     size: 8,
-                //     outline: {  // autocasts as new SimpleLineSymbol()
-                //         width: 0.5,
-                //         color: "darkblue"
-                //     }
-                // }
                 var graphicsLayer = new GraphicsLayer();
                 cu.map.add(graphicsLayer);
                 cu.map.add(stationLayer);  // adds the layer to the map
@@ -138,7 +128,7 @@ Ext.define('jxgisapp.view.module.rainfall.RainFallController', {
                                         color: "white",
                                         haloColor: "black",
                                         haloSize: "1px",
-                                        text: "You are here",
+                                        text: "",
                                         xoffset: 0,
                                         yoffset: -20,
                                         font: {  // autocast as new Font()
@@ -156,7 +146,7 @@ Ext.define('jxgisapp.view.module.rainfall.RainFallController', {
                                             var symbol = new PictureMarkerSymbol();
                                             var flsymbol = stationLayer.renderer.symbol;
                                             symbol.height = 10;
-                                            symbol.width = 10
+                                            symbol.width = 10;
                                             symbol.type = flsymbol.type;
                                             if (rd.data.level < 10) {
                                                 symbol.url = 'resources/img/10.png';

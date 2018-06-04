@@ -45,7 +45,6 @@ Ext.define('jxgisapp.view.module.watergate.WaterGateController', {
         //加载统计信息
         var meView = this.getView();
         var st = meView.lookupReference('queryGateStartDate').getRawValue();
-        var et = meView.lookupReference('queryGateEndDate').getRawValue();
         var keywords = Ext.getCmp('gateKeyWordId').getValue();
 
         var gridCom = Ext.getCmp('gateGrid');
@@ -56,7 +55,6 @@ Ext.define('jxgisapp.view.module.watergate.WaterGateController', {
         store.load({
             params: {
                 st: st,
-                et: et,
                 keywords: keywords
             }, //参数
 
@@ -83,26 +81,47 @@ Ext.define('jxgisapp.view.module.watergate.WaterGateController', {
             ], function (FeatureLayer, PictureMarkerSymbol, Graphic, GraphicsLayer) {
                 // Create the PopupTemplate
                 const popupTemplate = {
-                    title: "蒸发站信息 ",
+                    title: "闸门信息 ",
                     content: [{
                         type: "fields",
                         fieldInfos: [{
                             fieldName: "id",
-                            label: "测站编码",
+                            label: "闸门编码",
                             format: {
                                 places: 0,
                                 digitSeparator: true
                             }
                         }, {
                             fieldName: "name",
-                            label: "测站名称",
+                            label: "闸门名称",
                             format: {
                                 places: 0,
                                 digitSeparator: true
                             }
                         }, {
                             fieldName: "level",
-                            label: "蒸发量",
+                            label: "开启度(m)",
+                            format: {
+                                places: 0,
+                                digitSeparator: true
+                            }
+                        }, {
+                            fieldName: "warnlevel",
+                            label: "闸上水位(m)",
+                            format: {
+                                places: 0,
+                                digitSeparator: true
+                            }
+                        }, {
+                            fieldName: "xxlevel",
+                            label: "闸下水位(m)",
+                            format: {
+                                places: 0,
+                                digitSeparator: true
+                            }
+                        }, {
+                            fieldName: "rate",
+                            label: "流量(m³/s)",
                             format: {
                                 places: 0,
                                 digitSeparator: true
@@ -115,16 +134,6 @@ Ext.define('jxgisapp.view.module.watergate.WaterGateController', {
                     url: cu.waterlevelMapUrl,
                     popupTemplate: popupTemplate
                 });
-                // var symbol = {
-                //     type: "simple-marker",  // autocasts as new SimpleMarkerSymbol()
-                //     style: 'square',
-                //     color: "blue",
-                //     size: 8,
-                //     outline: {  // autocasts as new SimpleLineSymbol()
-                //         width: 0.5,
-                //         color: "darkblue"
-                //     }
-                // }
                 var graphicsLayer = new GraphicsLayer();
                 cu.map.add(graphicsLayer);
                 cu.map.add(stationLayer);  // adds the layer to the map
@@ -157,20 +166,11 @@ Ext.define('jxgisapp.view.module.watergate.WaterGateController', {
                                         if (ft.getAttribute('Id').toString() == rd.data.id.toString()) {
                                             var symbol = new PictureMarkerSymbol();
                                             var flsymbol = stationLayer.renderer.symbol;
-                                            symbol.height = 10;
-                                            symbol.width = 10;
+                                            symbol.height = 15;
+                                            symbol.width = 15;
                                             symbol.type = flsymbol.type;
-                                            if (rd.data.level < 40) {
-                                                symbol.url = 'resources/img/zf/40.png';
-                                            } else if (rd.data.level < 50) {
-                                                symbol.url = 'resources/img/zf/50.png';
-                                            } else if (rd.data.level < 60) {
-                                                symbol.url = 'resources/img/zf/60.png';
-                                            } else if (rd.data.level < 70) {
-                                                symbol.url = 'resources/img/zf/70.png';
-                                            } else if (rd.data.level > 70) {
-                                                symbol.url = 'resources/img/zf/80.png';
-                                            }
+                                            symbol.angle = ft.getAttribute('angle');
+                                            symbol.url = 'resources/img/gate.png';
                                             ft.symbol = symbol;
 
                                             //添加测站水位

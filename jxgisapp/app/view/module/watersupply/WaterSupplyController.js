@@ -45,7 +45,6 @@ Ext.define('jxgisapp.view.module.watersupply.WaterSupplyController', {
         //加载统计信息
         var meView = this.getView();
         var st = meView.lookupReference('querySupplyStartDate').getRawValue();
-        var et = meView.lookupReference('querySupplyEndDate').getRawValue();
         var keywords = Ext.getCmp('supplyKeyWordId').getValue();
 
         var gridCom = Ext.getCmp('supplyGrid');
@@ -56,7 +55,6 @@ Ext.define('jxgisapp.view.module.watersupply.WaterSupplyController', {
         store.load({
             params: {
                 st: st,
-                et: et,
                 keywords: keywords
             }, //参数
 
@@ -83,7 +81,7 @@ Ext.define('jxgisapp.view.module.watersupply.WaterSupplyController', {
             ], function (FeatureLayer, PictureMarkerSymbol, Graphic, GraphicsLayer) {
                 // Create the PopupTemplate
                 const popupTemplate = {
-                    title: "蒸发站信息 ",
+                    title: "测站信息 ",
                     content: [{
                         type: "fields",
                         fieldInfos: [{
@@ -101,8 +99,15 @@ Ext.define('jxgisapp.view.module.watersupply.WaterSupplyController', {
                                 digitSeparator: true
                             }
                         }, {
-                            fieldName: "level",
-                            label: "蒸发量",
+                            fieldName: "rate",
+                            label: "入库流量",
+                            format: {
+                                places: 0,
+                                digitSeparator: true
+                            }
+                        }, {
+                            fieldName: "warnlevel",
+                            label: "出库流量",
                             format: {
                                 places: 0,
                                 digitSeparator: true
@@ -115,16 +120,6 @@ Ext.define('jxgisapp.view.module.watersupply.WaterSupplyController', {
                     url: cu.waterlevelMapUrl,
                     popupTemplate: popupTemplate
                 });
-                // var symbol = {
-                //     type: "simple-marker",  // autocasts as new SimpleMarkerSymbol()
-                //     style: 'square',
-                //     color: "blue",
-                //     size: 8,
-                //     outline: {  // autocasts as new SimpleLineSymbol()
-                //         width: 0.5,
-                //         color: "darkblue"
-                //     }
-                // }
                 var graphicsLayer = new GraphicsLayer();
                 cu.map.add(graphicsLayer);
                 cu.map.add(stationLayer);  // adds the layer to the map
@@ -140,7 +135,7 @@ Ext.define('jxgisapp.view.module.watersupply.WaterSupplyController', {
                                         color: "white",
                                         haloColor: "black",
                                         haloSize: "1px",
-                                        text: "You are here",
+                                        text: "",
                                         xoffset: 0,
                                         yoffset: -20,
                                         font: {  // autocast as new Font()
@@ -157,20 +152,10 @@ Ext.define('jxgisapp.view.module.watersupply.WaterSupplyController', {
                                         if (ft.getAttribute('Id').toString() == rd.data.id.toString()) {
                                             var symbol = new PictureMarkerSymbol();
                                             var flsymbol = stationLayer.renderer.symbol;
-                                            symbol.height = 10;
-                                            symbol.width = 10;
+                                            symbol.height = 20;
+                                            symbol.width = 8;
                                             symbol.type = flsymbol.type;
-                                            if (rd.data.level < 40) {
-                                                symbol.url = 'resources/img/zf/40.png';
-                                            } else if (rd.data.level < 50) {
-                                                symbol.url = 'resources/img/zf/50.png';
-                                            } else if (rd.data.level < 60) {
-                                                symbol.url = 'resources/img/zf/60.png';
-                                            } else if (rd.data.level < 70) {
-                                                symbol.url = 'resources/img/zf/70.png';
-                                            } else if (rd.data.level > 70) {
-                                                symbol.url = 'resources/img/zf/80.png';
-                                            }
+                                            symbol.url = 'resources/img/normal.png';
                                             ft.symbol = symbol;
 
                                             //添加测站水位

@@ -45,7 +45,6 @@ Ext.define('jxgisapp.view.module.waterquality.WaterQualityController', {
         //加载统计信息
         var meView = this.getView();
         var st = meView.lookupReference('queryQualityStartDate').getRawValue();
-        var et = meView.lookupReference('queryQualityEndDate').getRawValue();
         var keywords = Ext.getCmp('qualityKeyWordId').getValue();
 
         var gridCom = Ext.getCmp('qualityGrid');
@@ -56,7 +55,6 @@ Ext.define('jxgisapp.view.module.waterquality.WaterQualityController', {
         store.load({
             params: {
                 st: st,
-                et: et,
                 keywords: keywords
             }, //参数
 
@@ -83,7 +81,7 @@ Ext.define('jxgisapp.view.module.waterquality.WaterQualityController', {
             ], function (FeatureLayer, PictureMarkerSymbol, Graphic, GraphicsLayer) {
                 // Create the PopupTemplate
                 const popupTemplate = {
-                    title: "蒸发站信息 ",
+                    title: "测站信息 ",
                     content: [{
                         type: "fields",
                         fieldInfos: [{
@@ -101,8 +99,8 @@ Ext.define('jxgisapp.view.module.waterquality.WaterQualityController', {
                                 digitSeparator: true
                             }
                         }, {
-                            fieldName: "level",
-                            label: "蒸发量",
+                            fieldName: "rank",
+                            label: "水质",
                             format: {
                                 places: 0,
                                 digitSeparator: true
@@ -160,19 +158,18 @@ Ext.define('jxgisapp.view.module.waterquality.WaterQualityController', {
                                             symbol.height = 10;
                                             symbol.width = 10;
                                             symbol.type = flsymbol.type;
-                                            if (rd.data.level < 40) {
-                                                symbol.url = 'resources/img/zf/40.png';
-                                            } else if (rd.data.level < 50) {
-                                                symbol.url = 'resources/img/zf/50.png';
-                                            } else if (rd.data.level < 60) {
-                                                symbol.url = 'resources/img/zf/60.png';
-                                            } else if (rd.data.level < 70) {
-                                                symbol.url = 'resources/img/zf/70.png';
-                                            } else if (rd.data.level > 70) {
-                                                symbol.url = 'resources/img/zf/80.png';
+                                            if (rd.data.rank == "I类" || rd.data.rank == "I类") {
+                                                symbol.url = 'resources/img/sz/1.png';
+                                            } else if (rd.data.rank == "III类" ) {
+                                                symbol.url = 'resources/img/sz/3.png';
+                                            } else if (rd.data.rank ==  "IV类") {
+                                                symbol.url = 'resources/img/sz/4.png';
+                                            } else if (rd.data.rank ==  "V类") {
+                                                symbol.url = 'resources/img/sz/5.png';
+                                            } else {
+                                                symbol.url = 'resources/img/sz/6.png';
                                             }
                                             ft.symbol = symbol;
-
                                             //添加测站水位
                                             var leveltextSymbol = {
                                                 type: "text",  // autocasts as new TextSymbol()

@@ -42,7 +42,6 @@ Ext.define('jxgisapp.view.module.evaporator.EvaporatorController', {
         //加载统计信息
         var meView = this.getView();
         var st = meView.lookupReference('queryevaStartDate').getRawValue();
-        var et = meView.lookupReference('queryevaEndDate').getRawValue();
         var keywords = Ext.getCmp('evaporatorKeyWordId').getValue();
 
         var gridCom = Ext.getCmp('evaporatorGrid');
@@ -53,7 +52,6 @@ Ext.define('jxgisapp.view.module.evaporator.EvaporatorController', {
         store.load({
             params: {
                 st: st,
-                et: et,
                 keywords: keywords
             }, //参数
 
@@ -136,7 +134,7 @@ Ext.define('jxgisapp.view.module.evaporator.EvaporatorController', {
                                         color: "white",
                                         haloColor: "black",
                                         haloSize: "1px",
-                                        text: "You are here",
+                                        text: "",
                                         xoffset: 0,
                                         yoffset: -20,
                                         font: {  // autocast as new Font()
@@ -156,9 +154,7 @@ Ext.define('jxgisapp.view.module.evaporator.EvaporatorController', {
                                             symbol.height = 10;
                                             symbol.width = 10;
                                             symbol.type = flsymbol.type;
-                                            if (rd.data.level < 40) {
-                                                symbol.url = 'resources/img/zf/40.png';
-                                            } else if (rd.data.level < 50) {
+                                            if (rd.data.level < 50) {
                                                 symbol.url = 'resources/img/zf/50.png';
                                             } else if (rd.data.level < 60) {
                                                 symbol.url = 'resources/img/zf/60.png';

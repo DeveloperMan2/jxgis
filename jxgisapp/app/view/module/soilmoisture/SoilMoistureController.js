@@ -45,7 +45,6 @@ Ext.define('jxgisapp.view.module.soilmoisture.SoilMoistureController', {
         //加载统计信息
         var meView = this.getView();
         var st = meView.lookupReference('querySoilMStartDate').getRawValue();
-        var et = meView.lookupReference('querySoilMEndDate').getRawValue();
         var keywords = Ext.getCmp('soilMKeyWordId').getValue();
 
         var gridCom = Ext.getCmp('soilMGrid');
@@ -56,7 +55,6 @@ Ext.define('jxgisapp.view.module.soilmoisture.SoilMoistureController', {
         store.load({
             params: {
                 st: st,
-                et: et,
                 keywords: keywords
             }, //参数
 
@@ -102,7 +100,28 @@ Ext.define('jxgisapp.view.module.soilmoisture.SoilMoistureController', {
                             }
                         }, {
                             fieldName: "level",
-                            label: "蒸发量",
+                            label: "平均含水量",
+                            format: {
+                                places: 0,
+                                digitSeparator: true
+                            }
+                        }, {
+                            fieldName: "warnlevel",
+                            label: "10cm含水量",
+                            format: {
+                                places: 0,
+                                digitSeparator: true
+                            }
+                        }, {
+                            fieldName: "xxlevel",
+                            label: "20cm含水量",
+                            format: {
+                                places: 0,
+                                digitSeparator: true
+                            }
+                        }, {
+                            fieldName: "rate",
+                            label: "100cm含水量",
                             format: {
                                 places: 0,
                                 digitSeparator: true
@@ -160,17 +179,7 @@ Ext.define('jxgisapp.view.module.soilmoisture.SoilMoistureController', {
                                             symbol.height = 10;
                                             symbol.width = 10;
                                             symbol.type = flsymbol.type;
-                                            if (rd.data.level < 40) {
-                                                symbol.url = 'resources/img/zf/40.png';
-                                            } else if (rd.data.level < 50) {
-                                                symbol.url = 'resources/img/zf/50.png';
-                                            } else if (rd.data.level < 60) {
-                                                symbol.url = 'resources/img/zf/60.png';
-                                            } else if (rd.data.level < 70) {
-                                                symbol.url = 'resources/img/zf/70.png';
-                                            } else if (rd.data.level > 70) {
-                                                symbol.url = 'resources/img/zf/80.png';
-                                            }
+                                            symbol.url = 'resources/img/soil.png';
                                             ft.symbol = symbol;
 
                                             //添加测站水位

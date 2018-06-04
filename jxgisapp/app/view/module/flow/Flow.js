@@ -37,24 +37,13 @@ Ext.define('jxgisapp.view.module.flow.Flow', {
     items: [
         {
             xtype: 'datefield',
-            fieldLabel: '开始时间',
+            fieldLabel: '时间',
             format: 'Y-m-d',
             labelWidth: 60,
             reference: 'queryFlowStartDate',
             emptyText: '请选择起始时间',
             allowBlank: false,
             value: new Date(new Date().getFullYear(), new Date().getMonth(), (new Date().getDate()) - 1),
-            maxValue: new Date()
-        },
-        {
-            xtype: 'datefield',
-            fieldLabel: '结束时间',
-            format: 'Y-m-d',
-            labelWidth: 60,
-            reference: 'queryFlowEndDate',
-            emptyText: '请选择起始时间',
-            allowBlank: false,
-            value: new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate()),
             maxValue: new Date()
         },
         {
@@ -92,76 +81,8 @@ Ext.define('jxgisapp.view.module.flow.Flow', {
             ]
         },
         {
-            xtype: 'container',
-            layout: {
-                type: 'hbox',
-                pack: 'center',
-            },
-            defaults: {
-                width: 30,
-                height: 20
-            },
-            items: [
-                {
-                    xtype: 'label',
-                    html: '40',
-                    margin: '1 1 1 1',
-                    style: {
-                        background: '#11ff65',
-                        color: '#ffffff',
-                        textAlign: 'center',
-                        paddingTop: '2px'
-                    }
-                },
-                {
-                    xtype: 'label',
-                    html: '50',
-                    margin: '1 1 1 1',
-                    style: {
-                        background: '#1771ff',
-                        color: '#ffffff',
-                        textAlign: 'center',
-                        paddingTop: '2px'
-                    }
-                },
-                {
-                    xtype: 'label',
-                    html: '60',
-                    margin: '1 1 1 1',
-                    style: {
-                        background: '#ffbc06',
-                        color: '#ffffff',
-                        textAlign: 'center',
-                        paddingTop: '2px'
-                    }
-                },
-                {
-                    xtype: 'label',
-                    html: '70',
-                    margin: '1 1 1 1',
-                    style: {
-                        background: '#ff0dde',
-                        color: '#ffffff',
-                        textAlign: 'center',
-                        paddingTop: '2px'
-                    }
-                },
-                {
-                    xtype: 'label',
-                    html: '>70',
-                    margin: '1 1 1 1',
-                    style: {
-                        background: '#ff0000',
-                        color: '#ffffff',
-                        textAlign: 'center',
-                        paddingTop: '2px'
-                    }
-                }
-            ]
-        },
-        {
             xtype: 'gridpanel',
-            title: '流量列表[单位:立方米]',
+            title: '流量列表[单位:m³/s]',
             id: "flowGrid",
             flex: 1,
             scrollable: true,

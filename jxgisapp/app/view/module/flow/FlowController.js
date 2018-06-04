@@ -45,7 +45,6 @@ Ext.define('jxgisapp.view.module.flow.FlowController', {
         //加载统计信息
         var meView = this.getView();
         var st = meView.lookupReference('queryFlowStartDate').getRawValue();
-        var et = meView.lookupReference('queryFlowEndDate').getRawValue();
         var keywords = Ext.getCmp('flowKeyWordId').getValue();
 
         var gridCom = Ext.getCmp('flowGrid');
@@ -56,7 +55,6 @@ Ext.define('jxgisapp.view.module.flow.FlowController', {
         store.load({
             params: {
                 st: st,
-                et: et,
                 keywords: keywords
             }, //参数
 
@@ -83,7 +81,7 @@ Ext.define('jxgisapp.view.module.flow.FlowController', {
             ], function (FeatureLayer, PictureMarkerSymbol, Graphic, GraphicsLayer) {
                 // Create the PopupTemplate
                 const popupTemplate = {
-                    title: "蒸发站信息 ",
+                    title: "测站信息 ",
                     content: [{
                         type: "fields",
                         fieldInfos: [{
@@ -101,8 +99,8 @@ Ext.define('jxgisapp.view.module.flow.FlowController', {
                                 digitSeparator: true
                             }
                         }, {
-                            fieldName: "level",
-                            label: "蒸发量",
+                            fieldName: "rate",
+                            label: "流量",
                             format: {
                                 places: 0,
                                 digitSeparator: true
@@ -160,17 +158,7 @@ Ext.define('jxgisapp.view.module.flow.FlowController', {
                                             symbol.height = 10;
                                             symbol.width = 10;
                                             symbol.type = flsymbol.type;
-                                            if (rd.data.level < 40) {
-                                                symbol.url = 'resources/img/zf/40.png';
-                                            } else if (rd.data.level < 50) {
-                                                symbol.url = 'resources/img/zf/50.png';
-                                            } else if (rd.data.level < 60) {
-                                                symbol.url = 'resources/img/zf/60.png';
-                                            } else if (rd.data.level < 70) {
-                                                symbol.url = 'resources/img/zf/70.png';
-                                            } else if (rd.data.level > 70) {
-                                                symbol.url = 'resources/img/zf/80.png';
-                                            }
+                                            symbol.url = 'resources/img/normal.png';
                                             ft.symbol = symbol;
 
                                             //添加测站水位

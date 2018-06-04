@@ -36,28 +36,6 @@ Ext.define('jxgisapp.view.module.video.Video', {
     margin: '5 5 5 5',
     items: [
         {
-            xtype: 'datefield',
-            fieldLabel: '开始时间',
-            format: 'Y-m-d',
-            labelWidth: 60,
-            reference: 'queryVideoStartDate',
-            emptyText: '请选择起始时间',
-            allowBlank: false,
-            value: new Date(new Date().getFullYear(), new Date().getMonth(), (new Date().getDate()) - 1),
-            maxValue: new Date()
-        },
-        {
-            xtype: 'datefield',
-            fieldLabel: '结束时间',
-            format: 'Y-m-d',
-            labelWidth: 60,
-            reference: 'queryVideoEndDate',
-            emptyText: '请选择起始时间',
-            allowBlank: false,
-            value: new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate()),
-            maxValue: new Date()
-        },
-        {
             xtype: 'container',
             layout: {
                 type: 'hbox',
@@ -67,7 +45,7 @@ Ext.define('jxgisapp.view.module.video.Video', {
             items: [
                 {
                     xtype: 'label',
-                    html: '测站名称:',
+                    html: '视频站名称:',
                     margin: '0 10 0 0'
                 },
                 {
@@ -88,74 +66,6 @@ Ext.define('jxgisapp.view.module.video.Video', {
                     xtype: 'button',
                     html: '查询',
                     margin: '10 0 10 0 '
-                }
-            ]
-        },
-        {
-            xtype: 'container',
-            layout: {
-                type: 'hbox',
-                pack: 'center',
-            },
-            defaults: {
-                width: 30,
-                height: 20
-            },
-            items: [
-                {
-                    xtype: 'label',
-                    html: '40',
-                    margin: '1 1 1 1',
-                    style: {
-                        background: '#11ff65',
-                        color: '#ffffff',
-                        textAlign: 'center',
-                        paddingTop: '2px'
-                    }
-                },
-                {
-                    xtype: 'label',
-                    html: '50',
-                    margin: '1 1 1 1',
-                    style: {
-                        background: '#1771ff',
-                        color: '#ffffff',
-                        textAlign: 'center',
-                        paddingTop: '2px'
-                    }
-                },
-                {
-                    xtype: 'label',
-                    html: '60',
-                    margin: '1 1 1 1',
-                    style: {
-                        background: '#ffbc06',
-                        color: '#ffffff',
-                        textAlign: 'center',
-                        paddingTop: '2px'
-                    }
-                },
-                {
-                    xtype: 'label',
-                    html: '70',
-                    margin: '1 1 1 1',
-                    style: {
-                        background: '#ff0dde',
-                        color: '#ffffff',
-                        textAlign: 'center',
-                        paddingTop: '2px'
-                    }
-                },
-                {
-                    xtype: 'label',
-                    html: '>70',
-                    margin: '1 1 1 1',
-                    style: {
-                        background: '#ff0000',
-                        color: '#ffffff',
-                        textAlign: 'center',
-                        paddingTop: '2px'
-                    }
                 }
             ]
         },

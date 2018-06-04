@@ -37,24 +37,13 @@ Ext.define('jxgisapp.view.module.waterquality.WaterQuality', {
     items: [
         {
             xtype: 'datefield',
-            fieldLabel: '开始时间',
+            fieldLabel: '时间',
             format: 'Y-m-d',
             labelWidth: 60,
             reference: 'queryQualityStartDate',
             emptyText: '请选择起始时间',
             allowBlank: false,
             value: new Date(new Date().getFullYear(), new Date().getMonth(), (new Date().getDate()) - 1),
-            maxValue: new Date()
-        },
-        {
-            xtype: 'datefield',
-            fieldLabel: '结束时间',
-            format: 'Y-m-d',
-            labelWidth: 60,
-            reference: 'queryQualityEndDate',
-            emptyText: '请选择起始时间',
-            allowBlank: false,
-            value: new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate()),
             maxValue: new Date()
         },
         {
@@ -103,59 +92,55 @@ Ext.define('jxgisapp.view.module.waterquality.WaterQuality', {
             },
             items: [
                 {
-                    xtype: 'label',
-                    html: '40',
-                    margin: '1 1 1 1',
-                    style: {
-                        background: '#11ff65',
-                        color: '#ffffff',
-                        textAlign: 'center',
-                        paddingTop: '2px'
-                    }
+                    xtype: 'image',
+                    src: 'resources/img/sz/1.png',
+                    width: 18,
+                    height: 15
                 },
                 {
                     xtype: 'label',
-                    html: '50',
-                    margin: '1 1 1 1',
-                    style: {
-                        background: '#1771ff',
-                        color: '#ffffff',
-                        textAlign: 'center',
-                        paddingTop: '2px'
-                    }
+                    html: 'I,II类',
+                    margin: '0 10 0 0 '
+                }, {
+                    xtype: 'image',
+                    src: 'resources/img/sz/3.png',
+                    width: 18,
+                    height: 15
                 },
                 {
                     xtype: 'label',
-                    html: '60',
-                    margin: '1 1 1 1',
-                    style: {
-                        background: '#ffbc06',
-                        color: '#ffffff',
-                        textAlign: 'center',
-                        paddingTop: '2px'
-                    }
+                    html: 'III类',
+                    margin: '0 10 0 0 '
+                }, {
+                    xtype: 'image',
+                    src: 'resources/img/sz/4.png',
+                    width: 18,
+                    height: 15
                 },
                 {
                     xtype: 'label',
-                    html: '70',
-                    margin: '1 1 1 1',
-                    style: {
-                        background: '#ff0dde',
-                        color: '#ffffff',
-                        textAlign: 'center',
-                        paddingTop: '2px'
-                    }
+                    html: 'IV类',
+                    margin: '0 10 0 0 '
+                }, {
+                    xtype: 'image',
+                    src: 'resources/img/sz/5.png',
+                    width: 18,
+                    height: 15
                 },
                 {
                     xtype: 'label',
-                    html: '>70',
-                    margin: '1 1 1 1',
-                    style: {
-                        background: '#ff0000',
-                        color: '#ffffff',
-                        textAlign: 'center',
-                        paddingTop: '2px'
-                    }
+                    html: 'V类',
+                    margin: '0 10 0 0 '
+                }, {
+                    xtype: 'image',
+                    src: 'resources/img/sz/6.png',
+                    width: 18,
+                    height: 15
+                },
+                {
+                    xtype: 'label',
+                    html: '>V类',
+                    margin: '0 10 0 0 '
                 }
             ]
         },
@@ -167,7 +152,7 @@ Ext.define('jxgisapp.view.module.waterquality.WaterQuality', {
             scrollable: true,
             columns: [
                 {text: '测站', dataIndex: 'name', flex: 1},
-                {text: '水质级别', dataIndex: 'rank', flex: 1},
+                {text: '水质级别', dataIndex: 'rank', flex: 1}
             ],
             store: {
                 proxy: {

@@ -46,7 +46,7 @@ Ext.define('jxgisapp.controller.GlobalController', {
                 var title = result['title'];//系统标题
                 var serviceUrl = result['serviceUrl'];//系统服务地址
                 var pageSize = result['pageSize'];//分页查询页面大小
-                var waterlevelMapUrl = result['waterlevelMapUrl'];//分页查询页面大小
+                var waterlevelMapUrl = result['waterlevelMapUrl'];//站点查询地址
 
                 //存储系统配置
                 cu.title = title;

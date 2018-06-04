@@ -6,7 +6,7 @@
       "url": "waterlevel",
       "init": false,
       "selected": false,
-      "width": 300,
+      "width": 350,
       "hide": false,
       "icon": null
       /*,子模块配置
@@ -42,16 +42,6 @@
       "text": "流量监测",
       "id": "lljc",
       "url": "flow",
-      "init": false,
-      "selected": false,
-      "width": 300,
-      "hide": false,
-      "icon": null
-    },
-    {
-      "text": "工程安全监测",
-      "id": "gcaq",
-      "url": "projectsafety",
       "init": false,
       "selected": false,
       "width": 300,

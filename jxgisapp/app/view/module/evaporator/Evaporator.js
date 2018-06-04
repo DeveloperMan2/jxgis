@@ -38,24 +38,13 @@ Ext.define('jxgisapp.view.module.evaporator.Evaporator', {
     items: [
         {
             xtype: 'datefield',
-            fieldLabel: '开始时间',
+            fieldLabel: '时间',
             format: 'Y-m-d',
             labelWidth: 60,
             reference: 'queryevaStartDate',
             emptyText: '请选择起始时间',
             allowBlank: false,
             value: new Date(new Date().getFullYear(), new Date().getMonth(), (new Date().getDate()) - 1),
-            maxValue: new Date()
-        },
-        {
-            xtype: 'datefield',
-            fieldLabel: '结束时间',
-            format: 'Y-m-d',
-            labelWidth: 60,
-            reference: 'queryevaEndDate',
-            emptyText: '请选择起始时间',
-            allowBlank: false,
-            value: new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate()),
             maxValue: new Date()
         },
         {
@@ -100,16 +89,6 @@ Ext.define('jxgisapp.view.module.evaporator.Evaporator', {
             },
             items: [
                 {
-                    xtype: 'image',
-                    src: 'resources/img/zf/40.png',
-                    width: 15,
-                    height: 15
-                },
-                {
-                    xtype: 'label',
-                    html: '40',
-                    margin: '0 5 0 0 '
-                }, {
                     xtype: 'image',
                     src: 'resources/img/zf/50.png',
                     width: 15,
