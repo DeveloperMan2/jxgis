@@ -4,8 +4,8 @@
       "text": "水位信息",
       "id": "swxx",
       "url": "waterlevel",
-      "init": true,
-      "selected": true,
+      "init": false,
+      "selected": false,
       "width": 300,
       "hide": false,
       "icon": null

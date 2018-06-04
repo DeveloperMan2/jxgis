@@ -5,13 +5,8 @@ Ext.define('jxgisapp.view.right.Right', {
     extend: 'Ext.panel.Panel',
 
     requires: [
-        'Ext.data.TreeStore',
-        'Ext.data.proxy.Ajax',
         'Ext.layout.container.Card',
-        'Ext.layout.container.Fit',
-        'Ext.layout.container.HBox',
         'Ext.layout.container.VBox',
-        'Ext.tree.Panel',
         'jxgisapp.utils.WrapUtil',
         'jxgisapp.view.right.RightController',
         'jxgisapp.view.right.RightModel'
@@ -21,6 +16,7 @@ Ext.define('jxgisapp.view.right.Right', {
     Uncomment to give this component an xtype*/
     xtype: 'right',
     border: true,
+    width: 300,
 
     viewModel: {
         type: 'right'

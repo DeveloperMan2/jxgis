@@ -26,7 +26,7 @@ Ext.define('jxgisapp.controller.GlobalController', {
         ],
         //Uncomment to listen for events from view components
         control: {
-            'top': {
+            'main': {
                 afterrender: function (view, eOpts) {
                     //加载配置文件
                     this.getSystemConfig(this);
@@ -146,8 +146,8 @@ Ext.define('jxgisapp.controller.GlobalController', {
         //右侧面板加载模块
         var rv = this.getRightView();
         var rvc = rv.getController();
-        rvc.redirectTo(module['url']);
         rv.setWidth(module['width']);
+        rvc.redirectTo(module['url']);
         rv.updateLayout();
 
         //加载子模块
