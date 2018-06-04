@@ -5,6 +5,10 @@ Ext.define('jxgisapp.view.right.RightController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.right',
 
+    requires: [
+        'Ext.util.TaskManager'
+    ],
+
     listen: {
         controller: {
             '#': {
@@ -81,6 +85,28 @@ Ext.define('jxgisapp.view.right.RightController', {
     onRouteChange: function (id) {
         //设置当前视图
         this.setCurrentView(id);
+
+        var me = this;
+        //定制模块内容面板宽度
+        var task = {
+            run: function () {
+                if (cu.moduleList && task) {
+                    for (var i = 0; i < cu.moduleList.length; i++) {
+                        var module = cu.moduleList[i];
+                        if (module['url'] === id) {
+                            me.getView().setWidth(module['width']);
+                            return false;
+                        }
+                    }
+                    //销毁当前任务
+                    Ext.TaskManager.stop(task);
+                    task = null;
+                }
+            },
+            interval: 100
+        };
+
+        Ext.TaskManager.start(task);
     },
 
     /**

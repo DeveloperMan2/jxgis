@@ -30,7 +30,7 @@ Ext.define('jxgisapp.view.main.Main', {
         {
             region: 'north',
             xtype: 'top',
-            hidden: false //todo: 正式部署时需要隐藏顶部的菜单栏，通过模块ID路由
+            hidden: true //todo: 正式部署时需要隐藏顶部的菜单栏，通过模块ID路由
         },
         {
             region: 'center',
