@@ -101,7 +101,10 @@ Ext.define('jxgisapp.view.module.soilmoisture.SoilMoisture', {
                 },
                 autoLoad: false,
             },
-            selModel: 'rowmodel'
+            selModel: 'rowmodel',
+            listeners: {
+                rowclick: 'rowclickHandler'
+            }
         }
     ],
     listeners:

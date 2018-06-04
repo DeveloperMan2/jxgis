@@ -35,6 +35,9 @@ Ext.define('jxgisapp.view.module.waterquality.WaterQualityController', {
 
         Ext.TaskManager.start(task);
     },
+    rowclickHandler: function (gp, record, element, rowIndex, e, eOpts) {
+        //window.open('http://www.baidu.com');//todo 跳转页面
+    },
     //异步组件加载完成执行模块初始化
     moduleInit: function (me) {
         me.queryQualityData();

@@ -98,7 +98,10 @@ Ext.define('jxgisapp.view.module.flow.Flow', {
                 },
                 autoLoad: false,
             },
-            selModel: 'rowmodel'
+            selModel: 'rowmodel',
+            listeners: {
+                rowclick: 'rowclickHandler'
+            }
         }
     ],
     listeners:

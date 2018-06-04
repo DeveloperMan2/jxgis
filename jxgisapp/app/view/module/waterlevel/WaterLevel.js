@@ -193,7 +193,10 @@ Ext.define('jxgisapp.view.module.waterlevel.WaterLevel', {
                     return cls;
                 }
             },
-            selModel: 'rowmodel'
+            selModel: 'rowmodel',
+            listeners: {
+                rowclick: 'rowclickHandler'
+            }
         }
     ],
     listeners:

@@ -178,7 +178,10 @@ Ext.define('jxgisapp.view.module.rainfall.RainFall', {
                 },
                 autoLoad: false,
             },
-            selModel: 'rowmodel'
+            selModel: 'rowmodel',
+            listeners: {
+                rowclick: 'rowclickHandler'
+            }
         }
     ],
     listeners:

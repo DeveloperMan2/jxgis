@@ -35,6 +35,9 @@ Ext.define('jxgisapp.view.module.waterlevel.WaterLevelController', {
 
         Ext.TaskManager.start(task);
     },
+    rowclickHandler: function (gp, record, element, rowIndex, e, eOpts) {
+        //window.open('http://www.baidu.com');//todo 跳转页面
+    },
     //模块初始化（重写）
     moduleInit: function (me) {
         me.queryWaterLevelData();
@@ -143,7 +146,7 @@ Ext.define('jxgisapp.view.module.waterlevel.WaterLevelController', {
                                         color: "white",
                                         haloColor: "black",
                                         haloSize: "1px",
-                                        text: "",
+                                        text: "You are here",
                                         xoffset: 0,
                                         yoffset: -20,
                                         font: {  // autocast as new Font()

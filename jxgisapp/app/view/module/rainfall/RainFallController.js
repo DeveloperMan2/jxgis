@@ -35,6 +35,9 @@ Ext.define('jxgisapp.view.module.rainfall.RainFallController', {
 
         Ext.TaskManager.start(task);
     },
+    rowclickHandler: function (gp, record, element, rowIndex, e, eOpts) {
+        //window.open('http://www.baidu.com');//todo 跳转页面
+    },
     moduleInit: function (me) {
         me.queryRainFallData()
     },
