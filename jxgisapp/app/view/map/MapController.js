@@ -11,23 +11,34 @@ Ext.define('jxgisapp.view.map.MapController', {
             [
                 "esri/Map",
                 "esri/views/MapView",
-                "esri/layers/FeatureLayer",
+                "esri/layers/TileLayer",
+                "esri/geometry/SpatialReference",
+                "esri/geometry/Extent",
                 "dojo/domReady!"
-            ], function (Map, MapView, FeatureLayer) {
+            ], function (Map, MapView,TileLayer,SpatialReference,Extent) {
                 var appMap = new Map({
-                    basemap: 'satellite'
+                  //  basemap: 'satellite'
                 });
                 //二维地图
                 var mapView = new MapView({
                     container: mapId,
                     map: appMap,
-                    zoom: 10,
-                    center: [115.89, 28.68],
+                    // zoom: 10,
+                    // center: [115.89, 28.68],
                     constraints: {
                         rotationEnabled: false
                     }
                 });
 
+                var baseLayer = new TileLayer({url:cu.baseMapUrl});
+                var ext = new Extent({
+                    xmin: cu.extentLeft,
+                    ymin: cu.extentBottom,
+                    xmax: cu.extentRight,
+                    ymax: cu.extentTop,
+                });
+                mapView.extent = ext;
+                appMap.add(baseLayer);
                 //去掉默认的地图缩放工具及地图底部版权信息
                 mapView.ui.remove(["zoom", 'attribution']);
 

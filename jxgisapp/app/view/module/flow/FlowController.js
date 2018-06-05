@@ -138,7 +138,7 @@ Ext.define('jxgisapp.view.module.flow.FlowController', {
                                     //添加测站名称
                                     var textSymbol = {
                                         type: "text",  // autocasts as new TextSymbol()
-                                        color: "white",
+                                        color: "black",
                                         haloColor: "black",
                                         haloSize: "1px",
                                         text: "You are here",
@@ -167,7 +167,7 @@ Ext.define('jxgisapp.view.module.flow.FlowController', {
                                             //添加测站水位
                                             var leveltextSymbol = {
                                                 type: "text",  // autocasts as new TextSymbol()
-                                                color: "white",
+                                                color: "black",
                                                 haloColor: "black",
                                                 haloSize: "1px",
                                                 text: "",

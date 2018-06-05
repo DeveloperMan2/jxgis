@@ -64,7 +64,7 @@
       "url": "watergate",
       "init": false,
       "selected": false,
-      "width": 300,
+      "width": 450,
       "hide": false,
       "icon": null
     },
@@ -84,7 +84,7 @@
       "url": "soilmoisture",
       "init": false,
       "selected": false,
-      "width": 300,
+      "width": 400,
       "hide": false,
       "icon": null
     },

@@ -82,16 +82,6 @@ Ext.define('jxgisapp.view.module.video.VideoController', {
                 var stationLayer = new FeatureLayer({
                     url: cu.waterlevelMapUrl,
                 });
-                // var symbol = {
-                //     type: "simple-marker",  // autocasts as new SimpleMarkerSymbol()
-                //     style: 'square',
-                //     color: "blue",
-                //     size: 8,
-                //     outline: {  // autocasts as new SimpleLineSymbol()
-                //         width: 0.5,
-                //         color: "darkblue"
-                //     }
-                // }
                 var graphicsLayer = new GraphicsLayer();
                 cu.map.add(graphicsLayer);
                 cu.map.add(stationLayer);  // adds the layer to the map
@@ -104,7 +94,7 @@ Ext.define('jxgisapp.view.module.video.VideoController', {
                                     //添加测站名称
                                     var textSymbol = {
                                         type: "text",  // autocasts as new TextSymbol()
-                                        color: "white",
+                                        color: "black",
                                         haloColor: "black",
                                         haloSize: "1px",
                                         text: "",
@@ -133,7 +123,7 @@ Ext.define('jxgisapp.view.module.video.VideoController', {
                                             //添加注记
                                             var leveltextSymbol = {
                                                 type: "text",  // autocasts as new TextSymbol()
-                                                color: "white",
+                                                color: "black",
                                                 haloColor: "black",
                                                 haloSize: "1px",
                                                 text: "",

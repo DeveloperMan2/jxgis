@@ -131,7 +131,7 @@ Ext.define('jxgisapp.view.module.evaporator.EvaporatorController', {
                                     //添加测站名称
                                     var textSymbol = {
                                         type: "text",  // autocasts as new TextSymbol()
-                                        color: "white",
+                                        color: "black",
                                         haloColor: "black",
                                         haloSize: "1px",
                                         text: "",
@@ -168,7 +168,7 @@ Ext.define('jxgisapp.view.module.evaporator.EvaporatorController', {
                                             //添加测站水位
                                             var leveltextSymbol = {
                                                 type: "text",  // autocasts as new TextSymbol()
-                                                color: "white",
+                                                color: "black",
                                                 haloColor: "black",
                                                 haloSize: "1px",
                                                 text: "",

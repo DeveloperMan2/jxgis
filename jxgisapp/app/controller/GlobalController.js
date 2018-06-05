@@ -47,12 +47,22 @@ Ext.define('jxgisapp.controller.GlobalController', {
                 var serviceUrl = result['serviceUrl'];//系统服务地址
                 var pageSize = result['pageSize'];//分页查询页面大小
                 var waterlevelMapUrl = result['waterlevelMapUrl'];//站点查询地址
+                var baseMapUrl = result['baseMapUrl'];//地图底图地址
+                var extentLeft = result['extentLeft'];
+                var extentBottom = result['extentBottom'];
+                var extentRight = result['extentRight'];
+                var extentTop = result['extentTop'];
 
                 //存储系统配置
                 cu.title = title;
                 cu.serviceUrl = serviceUrl;
                 cu.pageSize = pageSize;
                 cu.waterlevelMapUrl = waterlevelMapUrl;
+                cu.baseMapUrl = baseMapUrl;
+                cu.extentLeft = extentLeft;
+                cu.extentBottom = extentBottom;
+                cu.extentRight = extentRight;
+                cu.extentTop = extentTop;
 
                 //设置系统标题
                 document.title = cu.title;

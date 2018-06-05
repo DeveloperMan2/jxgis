@@ -9,6 +9,12 @@ var cu = {
     sysConfigUrl: 'resources/config/SystemConfig.json',
     sysModuleUrl: 'resources/config/SystemModule.json',
     map: null,//地图对象
-    mapView: null//地图视图对象
+    mapView: null,//地图视图对象
+    waterlevelMapUrl: null,
+    baseMapUrl: null,
+    extentLeft: null,
+    extentBottom: null,
+    extentRight: null,
+    extentTop: null
 };
 Ext.define('jxgisapp.utils.ConstUtil', {});

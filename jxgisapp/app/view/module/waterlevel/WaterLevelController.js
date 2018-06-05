@@ -143,10 +143,10 @@ Ext.define('jxgisapp.view.module.waterlevel.WaterLevelController', {
                                     //添加测站名称
                                     var textSymbol = {
                                         type: "text",  // autocasts as new TextSymbol()
-                                        color: "white",
+                                        color: "black",
                                         haloColor: "black",
                                         haloSize: "1px",
-                                        text: "You are here",
+                                        text: "",
                                         xoffset: 0,
                                         yoffset: -20,
                                         font: {  // autocast as new Font()
@@ -181,7 +181,7 @@ Ext.define('jxgisapp.view.module.waterlevel.WaterLevelController', {
                                             //添加测站水位
                                             var leveltextSymbol = {
                                                 type: "text",  // autocasts as new TextSymbol()
-                                                color: "white",
+                                                color: "black",
                                                 haloColor: "black",
                                                 haloSize: "1px",
                                                 text: "You are here",

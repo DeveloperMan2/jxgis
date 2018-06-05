@@ -2,5 +2,10 @@
   "title": "江西水利监测信息管理系统",
   "serviceUrl": "http://localhost:8080/jxgisapp/",
   "pageSize": 10,
-  "waterlevelMapUrl":"http://localhost:6080/arcgis/rest/services/jiangxi/station/MapServer/0"
+  "baseMapUrl":"http://localhost:6080/arcgis/rest/services/jiangxi/jiangxi2/MapServer",
+  "waterlevelMapUrl":"http://localhost:6080/arcgis/rest/services/jiangxi/station/MapServer/0",
+  "extentLeft":108.6331,
+  "extentBottom":23.839,
+  "extentRight":121.677,
+  "extentTop":31.615
 }
