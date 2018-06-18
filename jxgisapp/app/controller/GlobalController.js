@@ -41,32 +41,11 @@ Ext.define('jxgisapp.controller.GlobalController', {
 
         function successCallBack(response, opts) {
             //查询结果转json对象
-            var result = Ext.JSON.decode(decodeURIComponent((response.responseText)), true);
-            if (result) {
-                var title = result['title'];//系统标题
-                var serviceUrl = result['serviceUrl'];//系统服务地址
-                var pageSize = result['pageSize'];//分页查询页面大小
-                var waterlevelMapUrl = result['waterlevelMapUrl'];//站点查询地址
-                var baseMapUrl = result['baseMapUrl'];//地图底图地址
-                var extentLeft = result['extentLeft'];
-                var extentBottom = result['extentBottom'];
-                var extentRight = result['extentRight'];
-                var extentTop = result['extentTop'];
-
-                //存储系统配置
-                cu.title = title;
-                cu.serviceUrl = serviceUrl;
-                cu.pageSize = pageSize;
-                cu.waterlevelMapUrl = waterlevelMapUrl;
-                cu.baseMapUrl = baseMapUrl;
-                cu.extentLeft = extentLeft;
-                cu.extentBottom = extentBottom;
-                cu.extentRight = extentRight;
-                cu.extentTop = extentTop;
-
+            var config = Ext.JSON.decode(decodeURIComponent((response.responseText)), true);
+            if (config) {
+                cu.config = config;
                 //设置系统标题
-                document.title = cu.title;
-
+                document.title = config.title;
                 //加载模块列表
                 me.getModuleList(me);
             }

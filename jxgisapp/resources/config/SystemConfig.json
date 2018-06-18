@@ -2,8 +2,22 @@
   "title": "江西水利监测信息管理系统",
   "serviceUrl": "http://localhost:8080/jxgisapp/",
   "pageSize": 10,
-  "baseMapUrl":"http://localhost:6080/arcgis/rest/services/jiangxi/jiangxi2/MapServer",
-  "waterlevelMapUrl":"http://localhost:6080/arcgis/rest/services/jiangxi/station/MapServer/0",
+  //多个底图服务，用;(英文)进行分割。程序按照顺序加载图层
+  "baseMapUrl":[{"url":"http://localhost:6080/arcgis/rest/services/jiangxi/jiangxi3/MapServer","tile":true}
+  ,{"url":"http://localhost:6080/arcgis/rest/services/jiangxi/station/MapServer","tile":false}],
+
+  //雨量信息专题服务地址
+  "rainfallMapUrl":"http://localhost:6080/arcgis/rest/services/jiangxi/station/MapServer/0",
+  //雨情弹窗地址
+  "rainfallWinowUrl":"http://dojotoolkit.org/api/",
+
+
+  //arcgis服务,要素ID字段
+  "fieldID":"Id",
+  //arcgis服务,要素名称字段
+  "fieldName":"name",
+  //arcgis服务,要素旋转角度字段
+  "fieldAngle":"angle",
   "extentLeft":108.6331,
   "extentBottom":23.839,
   "extentRight":121.677,

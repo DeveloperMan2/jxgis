@@ -80,120 +80,103 @@ Ext.define('jxgisapp.view.module.rainfall.RainFallController', {
                 "esri/symbols/PictureMarkerSymbol",
                 "esri/Graphic",
                 "esri/layers/GraphicsLayer",
+                "esri/tasks/QueryTask",
+                "esri/tasks/support/Query",
                 "dojo/domReady!"
-            ], function (FeatureLayer, PictureMarkerSymbol, Graphic, GraphicsLayer) {
-                // Create the PopupTemplate
-                const popupTemplate = {
-                    title: "雨量信息 ",
-                    content: [{
-                        type: "fields",
-                        fieldInfos: [{
-                            fieldName: "id",
-                            label: "测站编码",
-                            format: {
-                                places: 0,
-                                digitSeparator: true
-                            }
-                        }, {
-                            fieldName: "name",
-                            label: "测站名称",
-                            format: {
-                                places: 0,
-                                digitSeparator: true
-                            }
-                        }, {
-                            fieldName: "level",
-                            label: "雨量",
-                            format: {
-                                places: 0,
-                                digitSeparator: true
-                            }
-                        }]
-                    }]
-                };
-                // points to the states layer in a service storing U.S. census data
-                var stationLayer = new FeatureLayer({
-                    url: cu.waterlevelMapUrl,
-                    popupTemplate: popupTemplate
+            ], function (FeatureLayer, PictureMarkerSymbol, Graphic, GraphicsLayer, QueryTask, Query) {
+                var queryTask = new QueryTask({
+                    url: cu.config.rainfallMapUrl
                 });
-                var graphicsLayer = new GraphicsLayer();
-                cu.map.add(graphicsLayer);
-                cu.map.add(stationLayer);  // adds the layer to the map
-                // returns all the graphics from the layer view
-                cu.mapView.whenLayerView(stationLayer).then(function (lyrView) {
-                    lyrView.watch("updating", function (val) {
-                        if (!val) {  // wait for the layer view to finish updating
-                            lyrView.queryFeatures().then(function (results) {
-                                Ext.Array.each(results, function (ft) {
-                                    //添加测站名称
-                                    var textSymbol = {
-                                        type: "text",  // autocasts as new TextSymbol()
-                                        color: "black",
-                                        haloColor: "black",
-                                        haloSize: "1px",
-                                        text: "",
-                                        xoffset: 0,
-                                        yoffset: -20,
-                                        font: {  // autocast as new Font()
-                                            size: 10,
-                                            family: "宋体",
-                                            weight: "normal"
-                                        }
-                                    };
-                                    textSymbol.text = ft.getAttribute('name');
-                                    var label = new Graphic(ft.geometry, textSymbol);
-                                    graphicsLayer.add(label);
+                var query = new Query();
+                query.returnGeometry = true;
+                query.outFields = ['*'];
+                query.where = " 1 = 1";
+                queryTask.execute(query).then(function (results) {
+                    console.log(results.features);
+                    var graphicsLayer = new GraphicsLayer();
+                    cu.map.add(graphicsLayer);
+                    Ext.Array.each(results.features, function (ft) {
+                        //添加测站名称
+                        var textSymbol = {
+                            type: "text",
+                            color: "black",
+                            haloColor: "black",
+                            haloSize: "1px",
+                            text: "",
+                            xoffset: 0,
+                            yoffset: -20,
+                            font: {
+                                size: 10,
+                                family: "宋体",
+                                weight: "normal"
+                            }
+                        };
+                        textSymbol.text = ft.getAttribute(cu.config.fieldName);
+                        var label = new Graphic(ft.geometry, textSymbol);
+                        graphicsLayer.add(label);
 
-                                    Ext.Array.each(features, function (rd) {
-                                        if (ft.getAttribute('Id').toString() == rd.data.id.toString()) {
-                                            var symbol = new PictureMarkerSymbol();
-                                            var flsymbol = stationLayer.renderer.symbol;
-                                            symbol.height = 10;
-                                            symbol.width = 10;
-                                            symbol.type = flsymbol.type;
-                                            if (rd.data.level < 10) {
-                                                symbol.url = 'resources/img/10.png';
-                                            } else if (rd.data.level < 25) {
-                                                symbol.url = 'resources/img/25.png';
-                                            } else if (rd.data.level < 50) {
-                                                symbol.url = 'resources/img/50.png';
-                                            } else if (rd.data.level < 100) {
-                                                symbol.url = 'resources/img/100.png';
-                                            } else if (rd.data.level < 250) {
-                                                symbol.url = 'resources/img/25.png';
-                                            } else if (rd.data.level >= 250) {
-                                                symbol.url = 'resources/img/500.png';
-                                            }
-                                            ft.symbol = symbol;
+                        Ext.Array.each(features, function (rd) {
+                            if (ft.getAttribute(cu.config.fieldID).toString() == rd.data.id.toString()) {
+                                var symbol = new PictureMarkerSymbol();
+                                symbol.height = 10;
+                                symbol.width = 10;
+                                if (rd.data.level < 10) {
+                                    symbol.url = 'resources/img/10.png';
+                                } else if (rd.data.level < 25) {
+                                    symbol.url = 'resources/img/25.png';
+                                } else if (rd.data.level < 50) {
+                                    symbol.url = 'resources/img/50.png';
+                                } else if (rd.data.level < 100) {
+                                    symbol.url = 'resources/img/100.png';
+                                } else if (rd.data.level < 250) {
+                                    symbol.url = 'resources/img/250.png';
+                                } else if (rd.data.level >= 250) {
+                                    symbol.url = 'resources/img/500.png';
+                                }
+                                ft.symbol = symbol;
+                                graphicsLayer.add(ft);
+                                //添加测站水位
+                                var leveltextSymbol = {
+                                    type: "text",
+                                    color: "black",
+                                    haloColor: "black",
+                                    haloSize: "1px",
+                                    text: "",
+                                    xoffset: 0,
+                                    yoffset: 10,
+                                    font: {
+                                        size: 10,
+                                        family: "宋体",
+                                        weight: "normal"
+                                    }
+                                };
+                                leveltextSymbol.text = rd.data.level;
+                                var levellabel = new Graphic(ft.geometry, leveltextSymbol);
+                                graphicsLayer.add(levellabel);
 
-                                            //添加测站水位
-                                            var leveltextSymbol = {
-                                                type: "text",  // autocasts as new TextSymbol()
-                                                color: "black",
-                                                haloColor: "black",
-                                                haloSize: "1px",
-                                                text: "You are here",
-                                                xoffset: 0,
-                                                yoffset: 10,
-                                                font: {  // autocast as new Font()
-                                                    size: 10,
-                                                    family: "宋体",
-                                                    weight: "normal"
-                                                }
-                                            };
-                                            leveltextSymbol.text = rd.data.level;
-                                            var levellabel = new Graphic(ft.geometry, leveltextSymbol);
-                                            graphicsLayer.add(levellabel);
-
-                                            Ext.apply(ft.attributes, rd.data);
-                                            return false;
-                                        }
-                                    })
-                                })
-                            });
+                                Ext.apply(ft.attributes, rd.data);
+                                return false;
+                            }
+                        })
+                    })
+                });
+                cu.mapView.on("click", function (event) {
+                    var screenPoint = {
+                        x: event.x,
+                        y: event.y
+                    };
+                    cu.mapView.hitTest(screenPoint).then(function (response) {
+                        if (response.results.length) {
+                            var graphic = response.results.filter(function (result) {
+                                // check if the graphic belongs to the layer of interest
+                                return true;
+                            })[0].graphic;
+                            var title = graphic.getAttribute(cu.config.fieldName);
+                            cu.createPopupWindow(title, cu.config.rainfallWinowUrl, '信息加载中...', 1000);
                         }
                     });
                 });
-            })
+
+            });
     }
-});
+})

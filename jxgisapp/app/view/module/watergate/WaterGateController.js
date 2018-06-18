@@ -197,6 +197,7 @@ Ext.define('jxgisapp.view.module.watergate.WaterGateController', {
                                     })
                                 })
                             });
+                            lyrView.layer.refresh();
                         }
                     });
                 });

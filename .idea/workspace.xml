@@ -1,7 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="774aba46-45c3-40e8-91c0-65a042a55377" name="Default" comment="新增模块，调整工程结构，增加Readme.md说明文件" />
+    <list default="true" id="774aba46-45c3-40e8-91c0-65a042a55377" name="Default" comment="新增模块，调整工程结构，增加Readme.md说明文件">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jxgisapp/app/controller/GlobalController.js" beforeDir="false" afterPath="$PROJECT_DIR$/jxgisapp/app/controller/GlobalController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jxgisapp/app/utils/ConstUtil.js" beforeDir="false" afterPath="$PROJECT_DIR$/jxgisapp/app/utils/ConstUtil.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jxgisapp/app/view/map/MapController.js" beforeDir="false" afterPath="$PROJECT_DIR$/jxgisapp/app/view/map/MapController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jxgisapp/app/view/module/evaporator/EvaporatorController.js" beforeDir="false" afterPath="$PROJECT_DIR$/jxgisapp/app/view/module/evaporator/EvaporatorController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jxgisapp/app/view/module/flow/FlowController.js" beforeDir="false" afterPath="$PROJECT_DIR$/jxgisapp/app/view/module/flow/FlowController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jxgisapp/app/view/module/rainfall/RainFallController.js" beforeDir="false" afterPath="$PROJECT_DIR$/jxgisapp/app/view/module/rainfall/RainFallController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jxgisapp/app/view/module/soilmoisture/SoilMoistureController.js" beforeDir="false" afterPath="$PROJECT_DIR$/jxgisapp/app/view/module/soilmoisture/SoilMoistureController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jxgisapp/app/view/module/video/VideoController.js" beforeDir="false" afterPath="$PROJECT_DIR$/jxgisapp/app/view/module/video/VideoController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jxgisapp/app/view/module/watergate/WaterGateController.js" beforeDir="false" afterPath="$PROJECT_DIR$/jxgisapp/app/view/module/watergate/WaterGateController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jxgisapp/app/view/module/waterlevel/WaterLevelController.js" beforeDir="false" afterPath="$PROJECT_DIR$/jxgisapp/app/view/module/waterlevel/WaterLevelController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jxgisapp/app/view/module/waterquality/WaterQualityController.js" beforeDir="false" afterPath="$PROJECT_DIR$/jxgisapp/app/view/module/waterquality/WaterQualityController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jxgisapp/app/view/module/watersupply/WaterSupplyController.js" beforeDir="false" afterPath="$PROJECT_DIR$/jxgisapp/app/view/module/watersupply/WaterSupplyController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jxgisapp/resources/config/SystemConfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/jxgisapp/resources/config/SystemConfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jxgisapp/resources/json/rainfall.json" beforeDir="false" afterPath="$PROJECT_DIR$/jxgisapp/resources/json/rainfall.json" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -13,7 +29,17 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/jxgisapp/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -102,10 +128,9 @@
     <packageJsonPaths />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="120" />
-    <option name="y" value="40" />
-    <option name="width" value="1400" />
-    <option name="height" value="790" />
+    <option name="x" value="-9" />
+    <option name="width" value="1617" />
+    <option name="height" value="877" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -115,7 +140,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -123,21 +147,28 @@
               <item name="jxgis" type="b2602c69:ProjectViewProjectNode" />
               <item name="jxgis" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="jxgis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jxgis" type="462c0819:PsiDirectoryNode" />
+              <item name="jxgisapp" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="NewWatcherDialog.advanced.open" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/jxgisapp" />
     <property name="list.type.of.created.stylesheet" value="SCSS" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
+    <property name="settings.editor.selected.configurable" value="terminal" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -173,7 +204,6 @@
     <list>
       <item itemvalue="JavaScript Debug.jxgisapp" />
       <item itemvalue="JavaScript Debug.jzzxapp" />
-      <item itemvalue="Sencha App Watch.jxgisapp-watch" />
     </list>
   </component>
   <component name="SvnConfiguration">
@@ -230,6 +260,11 @@
       <workItem from="1527914549564" duration="14000" />
       <workItem from="1527914643149" duration="461000" />
       <workItem from="1528006612652" duration="72000" />
+      <workItem from="1528786237288" duration="63000" />
+      <workItem from="1529054394439" duration="452000" />
+      <workItem from="1529054879582" duration="65000" />
+      <workItem from="1529054961487" duration="102000" />
+      <workItem from="1529055079376" duration="201000" />
     </task>
     <task id="LOCAL-00001" summary="调整arcgis脚本库连接">
       <created>1526209895742</created>
@@ -291,7 +326,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="115064000" />
+    <option name="totallyTimeSpent" value="115947000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -303,17 +338,17 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info anchor="right" id="Key Promoter X" order="3" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19571045" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19815059" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3286517" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50067025" side_tool="true" weight="0.3286517" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5033025" side_tool="true" visible="true" weight="0.35520685" />
       <window_info anchor="bottom" id="Version Control" order="7" sideWeight="0.49932975" weight="0.23001403" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.3286517" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" sideWeight="0.49932975" visible="true" weight="0.34550563" />
+      <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.4966975" visible="true" weight="0.35520685" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.56882024" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -322,6 +357,7 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="right" id="Key Promoter X" order="3" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3286517" />
     </layout>
   </component>
@@ -454,6 +490,13 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/jxgisapp/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/jxgisapp/app/view/module/videom/Videom.js" />
     <entry file="file://$PROJECT_DIR$/jxgisapp/app/view/module/video/Video.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -525,23 +568,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/jxgisapp/app/Readme.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="266">
-            <caret line="14" column="7" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jxgisapp/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" column="7" lean-forward="true" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/jxgisapp/app/Readme.md" />
     <entry file="file://$PROJECT_DIR$/jxgisapp/app/utils/ConstUtil.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
@@ -639,5 +666,27 @@
     <entry file="file://$PROJECT_DIR$/jzzxapp/app/utils/ConstUtil.js" />
     <entry file="file://$PROJECT_DIR$/jzzxapp/app/view/map/MapController.js" />
     <entry file="file://$PROJECT_DIR$/jzzxapp/bd.html" />
+    <entry file="file://$PROJECT_DIR$/jxgisapp/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>

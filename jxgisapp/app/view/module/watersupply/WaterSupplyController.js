@@ -185,6 +185,7 @@ Ext.define('jxgisapp.view.module.watersupply.WaterSupplyController', {
                                     })
                                 })
                             });
+                            lyrView.layer.refresh();
                         }
                     });
                 });

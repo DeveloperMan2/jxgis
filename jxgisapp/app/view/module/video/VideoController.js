@@ -143,6 +143,7 @@ Ext.define('jxgisapp.view.module.video.VideoController', {
                                     })
                                 })
                             });
+                            lyrView.layer.refresh();
                         }
                     });
                 });

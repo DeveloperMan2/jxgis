@@ -188,6 +188,7 @@ Ext.define('jxgisapp.view.module.flow.FlowController', {
                                     })
                                 })
                             });
+                            lyrView.layer.refresh();
                         }
                     });
                 });

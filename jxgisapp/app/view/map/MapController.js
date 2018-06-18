@@ -5,6 +5,12 @@ Ext.define('jxgisapp.view.map.MapController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.map',
 
+    requires: [
+        'Ext.layout.container.Fit',
+        'Ext.ux.IFrame',
+        'Ext.window.Window'
+    ],
+
     initMap: function (mapId) {
         var me = this;
         require(
@@ -14,8 +20,11 @@ Ext.define('jxgisapp.view.map.MapController', {
                 "esri/layers/TileLayer",
                 "esri/geometry/SpatialReference",
                 "esri/geometry/Extent",
+                "esri/config",
+                "esri/layers/MapImageLayer",
                 "dojo/domReady!"
-            ], function (Map, MapView,TileLayer,SpatialReference,Extent) {
+            ], function (Map, MapView,TileLayer,SpatialReference,Extent,esriConfig,MapImageLayer) {
+                // esriConfig.request.proxyUrl = "http://localhost:8080/proxy/proxy.jsp";
                 var appMap = new Map({
                   //  basemap: 'satellite'
                 });
@@ -30,15 +39,28 @@ Ext.define('jxgisapp.view.map.MapController', {
                     }
                 });
 
-                var baseLayer = new TileLayer({url:cu.baseMapUrl});
+                if (cu.config.baseMapUrl.length > 0) {
+                    Ext.Array.forEach(cu.config.baseMapUrl, function(item,index,all){
+                        var baseLayer = null;
+                        if (item.tile == true) {
+                            baseLayer = new TileLayer({url:item.url});
+                        } else {
+                            baseLayer = new MapImageLayer({url:item.url});
+                        }
+                        appMap.add(baseLayer);
+                    })
+
+                }
                 var ext = new Extent({
-                    xmin: cu.extentLeft,
-                    ymin: cu.extentBottom,
-                    xmax: cu.extentRight,
-                    ymax: cu.extentTop,
+                    xmin: cu.config.extentLeft,
+                    ymin: cu.config.extentBottom,
+                    xmax: cu.config.extentRight,
+                    ymax: cu.config.extentTop,
+                    spatialReference: {
+                        wkid: 4490
+                    }
                 });
                 mapView.extent = ext;
-                appMap.add(baseLayer);
                 //去掉默认的地图缩放工具及地图底部版权信息
                 mapView.ui.remove(["zoom", 'attribution']);
 
@@ -47,7 +69,6 @@ Ext.define('jxgisapp.view.map.MapController', {
                 cu.mapView = mapView;
             });
     },
-
     afterrenderHandler: function () {
         this.initMap('mapContainerId');
     },

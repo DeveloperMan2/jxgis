@@ -209,6 +209,7 @@ Ext.define('jxgisapp.view.module.soilmoisture.SoilMoistureController', {
                                     })
                                 })
                             });
+                            lyrView.layer.refresh();
                         }
                     });
                 });

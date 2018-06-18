@@ -202,6 +202,7 @@ Ext.define('jxgisapp.view.module.waterlevel.WaterLevelController', {
                                     })
                                 })
                             });
+                            lyrView.layer.refresh();
                         }
                     });
                 });

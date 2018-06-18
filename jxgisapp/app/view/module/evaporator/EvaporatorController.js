@@ -191,6 +191,7 @@ Ext.define('jxgisapp.view.module.evaporator.EvaporatorController', {
                             });
                         }
                     });
+                    lyrView.layer.refresh();
                 });
             })
     }

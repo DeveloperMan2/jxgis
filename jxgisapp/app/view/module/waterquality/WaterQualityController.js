@@ -197,6 +197,7 @@ Ext.define('jxgisapp.view.module.waterquality.WaterQualityController', {
                                     })
                                 })
                             });
+                            lyrView.layer.refresh();
                         }
                     });
                 });
