@@ -1,9 +1,9 @@
 /**
  * Created by winnerlbm on 2018/5/19.
  */
-Ext.define('jxgisapp.view.module.video.VideoController', {
+Ext.define('jxgisapp.view.module.video4gis.Video4GISController', {
     extend: 'Ext.app.ViewController',
-    alias: 'controller.video',
+    alias: 'controller.video4gis',
 
     requires: [
         'Ext.util.TaskManager'
@@ -50,7 +50,7 @@ Ext.define('jxgisapp.view.module.video.VideoController', {
 
         var store = gridCom.getStore();
         // store.proxy.url = conf.rtmdataUrl + 'rtmdata';//TODO 2018-04-23---本地数据加载暂时屏蔽，若需要加载后台服务数据，需要解除注释
-        store.proxy.url = 'resources/json/video.json';
+        store.proxy.url = 'resources/json/video4gis.json';
         store.load({
             params: {
                 keywords: keywords

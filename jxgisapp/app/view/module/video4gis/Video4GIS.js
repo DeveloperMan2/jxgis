@@ -1,7 +1,7 @@
 /**
  * Created by winnerlbm on 2018/5/19.
  */
-Ext.define('jxgisapp.view.module.video.Video', {
+Ext.define('jxgisapp.view.module.video4gis.Video4GIS', {
     extend: 'Ext.Container',
 
     requires: [
@@ -9,25 +9,24 @@ Ext.define('jxgisapp.view.module.video.Video', {
         'Ext.container.Container',
         'Ext.data.proxy.Ajax',
         'Ext.form.Label',
-        'Ext.form.field.Date',
         'Ext.form.field.Text',
         'Ext.grid.Panel',
         'Ext.layout.container.HBox',
         'Ext.layout.container.VBox',
         'Ext.selection.RowModel',
-        'jxgisapp.view.module.video.VideoController',
-        'jxgisapp.view.module.video.VideoModel'
+        'jxgisapp.view.module.video4gis.Video4GISController',
+        'jxgisapp.view.module.video4gis.Video4GISModel'
     ],
 
     /*
     Uncomment to give this component an xtype */
-    xtype: 'video',
+    xtype: 'video4gis',
 
     viewModel: {
-        type: 'video'
+        type: 'video4gis'
     },
 
-    controller: 'video',
+    controller: 'video4gis',
     layout: {
         type: 'vbox',
         pack: 'start',
@@ -82,7 +81,7 @@ Ext.define('jxgisapp.view.module.video.Video', {
             store: {
                 proxy: {
                     type: 'ajax',
-                    url: 'resources/json/video.json'//TODO 2018-04-23---测试本地数据加载，加载后台服务需要屏蔽该行代码。
+                    url: 'resources/json/video4gis.json'//TODO 2018-04-23---测试本地数据加载，加载后台服务需要屏蔽该行代码。
                     //  url: conf.serviceRootUrl+'rtmdata'
                 },
                 autoLoad: false,

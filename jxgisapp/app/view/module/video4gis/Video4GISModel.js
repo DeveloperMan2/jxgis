@@ -1,9 +1,9 @@
 /**
  * Created by winnerlbm on 2018/5/19.
  */
-Ext.define('jxgisapp.view.module.video.VideoModel', {
+Ext.define('jxgisapp.view.module.video4gis.Video4GISModel', {
     extend: 'Ext.app.ViewModel',
-    alias: 'viewmodel.video',
+    alias: 'viewmodel.video4gis',
 
     stores: {
         /*

@@ -16,6 +16,10 @@ Ext.define('jxgisapp.Application', {
 
     launch: function () {
         // TODO - Launch the application
+        var load = Ext.get('loading');
+        if (load) {
+            load.remove();//清除启动mask
+        }
     },
 
     onAppUpdate: function () {

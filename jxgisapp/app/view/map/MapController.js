@@ -5,14 +5,7 @@ Ext.define('jxgisapp.view.map.MapController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.map',
 
-    requires: [
-        'Ext.layout.container.Fit',
-        'Ext.ux.IFrame',
-        'Ext.window.Window'
-    ],
-
     initMap: function (mapId) {
-        var me = this;
         require(
             [
                 "esri/Map",
@@ -24,9 +17,8 @@ Ext.define('jxgisapp.view.map.MapController', {
                 "esri/layers/MapImageLayer",
                 "dojo/domReady!"
             ], function (Map, MapView,TileLayer,SpatialReference,Extent,esriConfig,MapImageLayer) {
-                // esriConfig.request.proxyUrl = "http://localhost:8080/proxy/proxy.jsp";
                 var appMap = new Map({
-                  //  basemap: 'satellite'
+                   //basemap: 'satellite'
                 });
                 //二维地图
                 var mapView = new MapView({
@@ -40,12 +32,12 @@ Ext.define('jxgisapp.view.map.MapController', {
                 });
 
                 if (cu.config.baseMapUrl.length > 0) {
-                    Ext.Array.forEach(cu.config.baseMapUrl, function(item,index,all){
+                    Ext.Array.forEach(cu.config.baseMapUrl, function (item, index, all) {
                         var baseLayer = null;
                         if (item.tile == true) {
-                            baseLayer = new TileLayer({url:item.url});
+                            baseLayer = new TileLayer({url: item.url});
                         } else {
-                            baseLayer = new MapImageLayer({url:item.url});
+                            baseLayer = new MapImageLayer({url: item.url});
                         }
                         appMap.add(baseLayer);
                     })

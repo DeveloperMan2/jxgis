@@ -16,7 +16,6 @@ Ext.define('jxgisapp.view.main.Main', {
         'Ext.layout.container.VBox',
         'Ext.panel.Panel',
         'Ext.plugin.Viewport',
-        'jxgisapp.utils.WrapUtil',
         'jxgisapp.view.main.MainController',
         'jxgisapp.view.main.MainModel',
         'jxgisapp.view.map.Map',
