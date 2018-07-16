@@ -205,7 +205,7 @@
             "bundle": true
         },
         {
-            "path": "http://localhost:8080/ajs/sdk/4.7/dojo/dojo.js",
+            "path": "http://localhost:8090/ajs/sdk/4.7/dojo/dojo.js",
             "bundle": true
         }
     ],
@@ -253,7 +253,7 @@
             ]
         },
         {
-            "path": "http://localhost:8080/ajs/sdk/4.7/esri/css/main.css",
+            "path": "http://localhost:8090/ajs/sdk/4.7/esri/css/main.css",
             "bundle": true,
             "exclude": [
                 "fashion"
