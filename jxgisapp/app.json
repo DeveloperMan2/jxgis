@@ -203,11 +203,11 @@
         {
             "path": "resources/libs/echarts/echarts.min.js",
             "bundle": true
-        },
-        {
-            "path": "http://localhost:8080/ajs/sdk/4.7/dojo/dojo.js",
-            "bundle": true
         }
+           ,     {
+                    "path": "http://localhost:8080/ajs/sdk/4.7/dojo/dojo.js",
+                    "bundle": true
+                }
     ],
     /**
    * List of all CSS assets in the right inclusion order.
@@ -251,14 +251,15 @@
             "exclude": [
                 "fashion"
             ]
-        },
-        {
-            "path": "http://localhost:8080/ajs/sdk/4.7/esri/css/main.css",
-            "bundle": true,
-            "exclude": [
-                "fashion"
-            ]
         }
+            ,
+                {
+                    "path": "http://localhost:8080/ajs/sdk/4.7/esri/css/main.css",
+                    "bundle": true,
+                    "exclude": [
+                        "fashion"
+                    ]
+                }
     ],
     /**
    * This option is used to configure the dynamic loader. At present these options
