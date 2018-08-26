@@ -40,8 +40,34 @@ Ext.define('jxgisapp.view.module.waterlevel.WaterLevelController', {
     },
     //模块初始化（重写）
     moduleInit: function (me) {
-        me.queryWaterLevelData();
+        //todo 2018-08-26 因测试需要暂时隐藏
+        //me.queryWaterLevelData();
+        me.getWaterPumpData('resources/json/waterpump.json');
     },
+    //根据配置创建水闸图层
+    getWaterPumpData: function (url) {
+        let params = {};
+
+        //执行成功回调
+        function successCallBack(response, opts) {
+            //查询结果转json对象
+            let result = Ext.JSON.decode(decodeURIComponent(response.responseText), true);
+            if (result) {
+                //地图标绘企业点
+                let pumps = geoUtil.json2geo(result, "geometry", "name");
+                if (pumps && pumps.length > 0) {
+                    geoUtil.drawPoint4WaterPump(pumps, true);
+                }
+            }
+        }
+
+        //执行失败回调
+        function failureCallBack(response, opts) {
+        }
+
+        ajax.fn.execute(params, 'GET', url, successCallBack, failureCallBack);
+    },
+
     //根据选择的时间，查询水位数据
     queryWaterLevelData: function () {
         var me = this;

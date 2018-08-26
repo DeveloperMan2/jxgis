@@ -1,0 +1,130 @@
+[
+  {
+    "invest": "5000万元",
+    "name": "水泵站迁建工程1",
+    "type": "工程迁建",
+    "time": "12个月",
+    "date": "2018年8月",
+    "level": "特级工程",
+    "status": "在建",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        115.89,
+        29.68
+      ]
+    }
+  },
+  {
+    "invest": "3000万元",
+    "name": "水泵站迁建工程2",
+    "type": "工程迁建",
+    "time": "12个月",
+    "date": "2018年8月",
+    "level": "三级工程",
+    "status": "在建",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        116.89,
+        28.68
+      ]
+    }
+  },
+  {
+    "invest": "4000万元",
+    "name": "水泵站迁建工程3",
+    "type": "工程迁建",
+    "time": "12个月",
+    "date": "2018年8月",
+    "level": "一级工程",
+    "status": "在建",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        116.89,
+        27.68
+      ]
+    }
+  },
+  {
+    "invest": "1000万元",
+    "name": "水泵站迁建工程4",
+    "type": "工程迁建",
+    "time": "12个月",
+    "date": "2018年8月",
+    "level": "五级工程",
+    "status": "在建",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        114.89,
+        29.68
+      ]
+    }
+  },
+  {
+    "invest": "2000万元",
+    "name": "水泵站迁建工程5",
+    "type": "工程迁建",
+    "time": "12个月",
+    "date": "2018年8月",
+    "level": "四级工程",
+    "status": "在建",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        114.89,
+        27.68
+      ]
+    }
+  },
+  {
+    "invest": "2000万元",
+    "name": "水泵站迁建工程6",
+    "type": "工程迁建",
+    "time": "12个月",
+    "date": "2018年8月",
+    "level": "二级工程",
+    "status": "在建",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        113.89,
+        24.68
+      ]
+    }
+  },
+  {
+    "invest": "3000万元",
+    "name": "水泵站迁建工程7",
+    "type": "工程迁建",
+    "time": "12个月",
+    "date": "2018年8月",
+    "level": "三级工程",
+    "status": "在建",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        118.89,
+        26.68
+      ]
+    }
+  },
+  {
+    "invest": "4000万元",
+    "name": "水泵站迁建工程8",
+    "type": "工程迁建",
+    "time": "12个月",
+    "date": "2018年8月",
+    "level": "一级工程",
+    "status": "在建",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        117.89,
+        29.68
+      ]
+    }
+  }
+]

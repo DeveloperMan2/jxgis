@@ -61,7 +61,8 @@ Ext.define('jxgisapp.view.main.Main', {
                     ]
                 },
                 {
-                    xtype: 'right'
+                    xtype: 'right',
+                    hidden: true//todo 2018-08-26 右侧面板暂时隐藏
                 }
             ]
         }
