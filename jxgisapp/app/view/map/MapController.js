@@ -17,9 +17,11 @@ Ext.define('jxgisapp.view.map.MapController', {
                 "esri/layers/MapImageLayer",
                 "dojo/domReady!"
             ], function (Map, MapView, TileLayer, SpatialReference, Extent, esriConfig, MapImageLayer) {
-                var appMap = new Map({
-                    basemap: 'satellite'
-                });
+                var appMap = new Map(
+                //     {
+                //     basemap: 'satellite'
+                // }
+                );
                 //二维地图
                 var mapView = new MapView({
                     container: mapId,
@@ -32,7 +34,7 @@ Ext.define('jxgisapp.view.map.MapController', {
                 });
 
                 //todo 2018-08-26 暂时注释
-                /*if (cu.config.baseMapUrl.length > 0) {
+                if (cu.config.baseMapUrl.length > 0) {
                     Ext.Array.forEach(cu.config.baseMapUrl, function (item, index, all) {
                         var baseLayer = null;
                         if (item.tile == true) {
@@ -43,7 +45,7 @@ Ext.define('jxgisapp.view.map.MapController', {
                         appMap.add(baseLayer);
                     })
 
-                }*/
+                }
 
                 var ext = new Extent({
                     xmin: cu.config.extentLeft,
@@ -51,8 +53,8 @@ Ext.define('jxgisapp.view.map.MapController', {
                     xmax: cu.config.extentRight,
                     ymax: cu.config.extentTop,
                     spatialReference: {
-                        // wkid: 4490
-                        wkid: 4326
+                         wkid: 4490
+                        //wkid: 4326
                     }
                 });
                 mapView.extent = ext;

@@ -38,13 +38,26 @@ Ext.define('jxgisapp.view.module.evaporator.Evaporator', {
     items: [
         {
             xtype: 'datefield',
-            fieldLabel: '时间',
+            fieldLabel: '开始时间',
             format: 'Y-m-d',
+            formatText:'时间格式必须为:年-月-日',
             labelWidth: 60,
-            reference: 'queryevaStartDate',
+            reference: 'querywlStartDate',
             emptyText: '请选择起始时间',
             allowBlank: false,
             value: new Date(new Date().getFullYear(), new Date().getMonth(), (new Date().getDate()) - 1),
+            maxValue: new Date()
+        },
+        {
+            xtype: 'datefield',
+            fieldLabel: '结束时间',
+            format: 'Y-m-d',
+            formatText:'时间格式必须为:年-月-日',
+            labelWidth: 60,
+            reference: 'querywlEndDate',
+            emptyText: '请选择起始时间',
+            allowBlank: false,
+            value: new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate()),
             maxValue: new Date()
         },
         {
@@ -143,9 +156,7 @@ Ext.define('jxgisapp.view.module.evaporator.Evaporator', {
             ],
             store: {
                 proxy: {
-                    type: 'ajax',
-                    url: 'resources/json/evaporator.json'//TODO 2018-04-23---测试本地数据加载，加载后台服务需要屏蔽该行代码。
-                    //  url: conf.serviceRootUrl+'rtmdata'
+                    type: 'ajax'
                 },
                 autoLoad: false,
             },

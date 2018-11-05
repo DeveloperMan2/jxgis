@@ -2,24 +2,109 @@
   "title": "江西水利监测信息管理系统",
   "serviceUrl": "http://localhost:8080/jxgisapp/",
   "pageSize": 10,
-  //多个底图服务，用;(英文)进行分割。程序按照顺序加载图层
-  "baseMapUrl":[{"url":"http://localhost:6080/arcgis/rest/services/jiangxi/jiangxi3/MapServer","tile":true}
-  ,{"url":"http://localhost:6080/arcgis/rest/services/jiangxi/station/MapServer","tile":false}],
+  //多个底图服务,程序按照顺序加载图层.结构：[{"url":"xxxxx","tile":true},{"url":"xxxxx","tile":false}],url--地图服务地址tile---true切片服务,false动态图层
+  "baseMapUrl":[{"url":"http://localhost:6080/arcgis/rest/services/jiangxi/MapServer","tile":true}],
+//  "baseMapUrl":[{"url":"http://localhost:6080/arcgis/rest/services/jiangxi/jiangxi3/MapServer","tile":true}
+//  ,{"url":"http://localhost:6080/arcgis/rest/services/station/MapServer","tile":false}],
 
-  //雨量信息专题服务地址
-  "rainfallMapUrl":"http://localhost:6080/arcgis/rest/services/jiangxi/station/MapServer/0",
+  /***********************水情数据查询配置文件********************************/
+  //雨量站空间数据地图服务地址
+  "waterlevelMapUrl":"http://localhost:6080/arcgis/rest/services/station/MapServer/0",
+  //右侧列表查询服务地址
+  "waterlevelListQueryUrl":"http://10.36.96.157:9002/mforcegateway/restful/slgc_swxx/sqlSrchRecord",
+  //水情弹窗地址
+  "waterlevelWinowUrl":"http://dojotoolkit.org/api/",
+
+  /***********************雨情数据查询配置文件********************************/
+  //雨量站空间数据地图服务地址
+  "rainfallMapUrl":"http://localhost:6080/arcgis/rest/services/station/MapServer/0",
+  //右侧列表查询服务地址
+  "rainfallListQueryUrl":"http://localhost:8090/waterserver",
   //雨情弹窗地址
   "rainfallWinowUrl":"http://dojotoolkit.org/api/",
 
+  /***********************蒸发量数据查询配置文件********************************/
+  //蒸发量站空间数据地图服务地址
+  "evaporatorMapUrl":"http://localhost:6080/arcgis/rest/services/station/MapServer/0",
+  //右侧列表查询服务地址
+  "evaporatorListQueryUrl":"http://localhost:8090/waterserver",
+  //蒸发量弹窗地址
+  "evaporatorWinowUrl":"http://dojotoolkit.org/api/",
 
+  /***********************流量数据查询配置文件********************************/
+  //流量站空间数据地图服务地址
+  "flowMapUrl":"http://localhost:6080/arcgis/rest/services/station/MapServer/0",
+  //右侧列表查询服务地址
+  "flowListQueryUrl":"http://localhost:8090/waterserver",
+  //流量弹窗地址
+  "flowWinowUrl":"http://dojotoolkit.org/api/",
+
+
+  /***********************视频数据查询配置文件********************************/
+  //流量站空间数据地图服务地址
+  "videoMapUrl":"http://localhost:6080/arcgis/rest/services/station/MapServer/0",
+  //右侧列表查询服务地址
+  "videoListQueryUrl":"http://localhost:8090/waterserver",
+  //流量弹窗地址
+  "videoWinowUrl":"http://dojotoolkit.org/api/",
+
+
+  /***********************闸门数据查询配置文件********************************/
+  //闸门站空间数据地图服务地址
+  "watergateMapUrl":"http://localhost:6080/arcgis/rest/services/station/MapServer/0",
+  //右侧列表查询服务地址
+  "watergateListQueryUrl":"http://localhost:8090/waterserver",
+  //闸门弹窗地址
+  "watergateWinowUrl":"http://dojotoolkit.org/api/",
+
+  /***********************供水监测查询配置文件********************************/
+  //供水空间数据地图服务地址
+  "watersupplyMapUrl":"http://localhost:6080/arcgis/rest/services/station/MapServer/0",
+  //右侧列表查询服务地址
+  "watersupplyListQueryUrl":"http://localhost:8090/waterserver",
+  //供水弹窗地址
+  "watersupplyWinowUrl":"http://dojotoolkit.org/api/",
+
+
+  /***********************墒情监测查询配置文件********************************/
+  //墒情空间数据地图服务地址
+  "soilmoistureMapUrl":"http://localhost:6080/arcgis/rest/services/station/MapServer/0",
+  //右侧列表查询服务地址
+  "soilmoistureListQueryUrl":"http://localhost:8090/waterserver",
+  //墒情弹窗地址
+  "soilmoistureWinowUrl":"http://dojotoolkit.org/api/",
+
+
+  /***********************水质监测查询配置文件********************************/
+  //墒情空间数据地图服务地址
+  "waterqualityMapUrl":"http://localhost:6080/arcgis/rest/services/station/MapServer/0",
+  //右侧列表查询服务地址
+  "waterqualityListQueryUrl":"http://localhost:8090/waterserver",
+  //墒情弹窗地址
+  "waterqualityWinowUrl":"http://dojotoolkit.org/api/",
+
+
+
+
+
+  /****************************空间地图数据通用字段配置*************************************/
   //arcgis服务,要素ID字段
   "fieldID":"Id",
   //arcgis服务,要素名称字段
   "fieldName":"name",
   //arcgis服务,要素旋转角度字段
   "fieldAngle":"angle",
-  "extentLeft":108.6331,
-  "extentBottom":23.839,
-  "extentRight":121.677,
-  "extentTop":31.615
+
+  /****************************地图初始化显示范围配置*************************************/
+//  "extentLeft":108.6331,
+//  "extentBottom":23.839,
+//  "extentRight":121.677,
+//  "extentTop":31.615
+    "extentLeft":115.022721645091,
+    "extentBottom":26.0500429376042,
+    "extentRight":115.861684548726,
+    "extentTop":26.6995191076597,
+
+  /**分页*/
+  "pageSize":20
 }

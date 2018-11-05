@@ -4,9 +4,9 @@
       "text": "水位信息",
       "id": "swxx",
       "url": "waterlevel",
-      "init": true,
-      "selected": true,
-      "width": 350,
+      "init": false,
+      "selected": false,
+      "width": 400,
       "hide": false,
       "icon": null
       /*,子模块配置
@@ -95,6 +95,16 @@
       "init": false,
       "selected": false,
       "width": 300,
+      "hide": false,
+      "icon": null
+    },
+    {
+      "text": "首页泵站",
+      "id": "bz",
+      "url": "waterpump",
+      "init": false,
+      "selected": false,
+      "width": 0,
       "hide": false,
       "icon": null
     }

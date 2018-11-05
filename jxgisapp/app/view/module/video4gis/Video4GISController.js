@@ -49,8 +49,8 @@ Ext.define('jxgisapp.view.module.video4gis.Video4GISController', {
         var gridCom = Ext.getCmp('videoGrid');
 
         var store = gridCom.getStore();
-        // store.proxy.url = conf.rtmdataUrl + 'rtmdata';//TODO 2018-04-23---本地数据加载暂时屏蔽，若需要加载后台服务数据，需要解除注释
-        store.proxy.url = 'resources/json/video4gis.json';
+        // store.proxy.url = cu.config.videoListQueryUrl;//TODO 2018-04-23---本地数据加载暂时屏蔽，若需要加载后台服务数据，需要解除注释
+        store.proxy.url = 'resources/json/video.json';
         store.load({
             params: {
                 keywords: keywords
@@ -77,14 +77,13 @@ Ext.define('jxgisapp.view.module.video4gis.Video4GISController', {
                 "esri/layers/GraphicsLayer",
                 "dojo/domReady!"
             ], function (FeatureLayer, PictureMarkerSymbol, Graphic, GraphicsLayer) {
-                // Create the PopupTemplate
-                // points to the states layer in a service storing U.S. census data
-                var stationLayer = new FeatureLayer({
-                    url: cu.waterlevelMapUrl,
+                var stationLayer = new FeatureLayer(
+                    {
+                        url: cu.config.videoMapUrl
                 });
                 var graphicsLayer = new GraphicsLayer();
                 cu.map.add(graphicsLayer);
-                cu.map.add(stationLayer);  // adds the layer to the map
+                cu.map.add(stationLayer);
                 // returns all the graphics from the layer view
                 cu.mapView.whenLayerView(stationLayer).then(function (lyrView) {
                     lyrView.watch("updating", function (val) {
@@ -109,17 +108,16 @@ Ext.define('jxgisapp.view.module.video4gis.Video4GISController', {
                                     textSymbol.text = ft.getAttribute('name');
                                     var label = new Graphic(ft.geometry, textSymbol);
                                     graphicsLayer.add(label);
-
+                                    var symbol = new PictureMarkerSymbol();
+                                    var flsymbol = stationLayer.renderer.symbol;
+                                    symbol.height = 28;
+                                    symbol.width = 28;
+                                    symbol.type = flsymbol.type;
+                                    symbol.url = "resources/img/cammer.png";
+                                    var videoFt = new Graphic(ft.geometry, symbol);
+                                    graphicsLayer.add(videoFt);
                                     Ext.Array.each(features, function (rd) {
-                                        if (ft.getAttribute('Id').toString() == rd.data.id.toString()) {
-                                            var symbol = new PictureMarkerSymbol();
-                                            var flsymbol = stationLayer.renderer.symbol;
-                                            symbol.height = 28;
-                                            symbol.width = 28;
-                                            symbol.type = flsymbol.type;
-                                            symbol.url = 'resources/img/cammer.png';
-                                            ft.symbol = symbol;
-
+                                        if (ft.getAttribute('stcd') != null &&  rd.data.id != null && ft.getAttribute('stcd').toString() == rd.data.id.toString()) {
                                             //添加注记
                                             var leveltextSymbol = {
                                                 type: "text",  // autocasts as new TextSymbol()
@@ -143,9 +141,12 @@ Ext.define('jxgisapp.view.module.video4gis.Video4GISController', {
                                     })
                                 })
                             });
+                            stationLayer.visible = false;
                             lyrView.layer.refresh();
                         }
                     });
+                }).catch(function(error) {
+                    console.log(error);
                 });
             })
     }

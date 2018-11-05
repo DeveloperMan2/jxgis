@@ -8,10 +8,16 @@
     "level": "特级工程",
     "status": "在建",
     "geometry": {
+      "crs": {
+        "type": "name",
+        "properties": {
+          "name": "EPSG:4490"
+        }
+      },
       "type": "Point",
       "coordinates": [
-        115.89,
-        29.68
+        115.2117,
+        28.48
       ]
     }
   },

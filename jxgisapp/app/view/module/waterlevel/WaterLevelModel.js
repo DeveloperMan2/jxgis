@@ -17,7 +17,13 @@ Ext.define('jxgisapp.view.module.waterlevel.WaterLevelModel', {
             */
         },
 
-        data: [
-        ]
+        data: {
+            /* 表单页面参数 */
+            // gridPageStore: {
+            //     total: 0,
+            //     currentPage: 0,
+            //     pageSize:20
+            // }
+        }
     }
 );

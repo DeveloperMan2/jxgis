@@ -61,8 +61,9 @@ Ext.define('jxgisapp.view.main.Main', {
                     ]
                 },
                 {
+                    id:"rightConditionWrapId",
                     xtype: 'right',
-                    hidden: true//todo 2018-08-26 右侧面板暂时隐藏
+                    hidden: false//todo 2018-08-26 右侧面板暂时隐藏
                 }
             ]
         }

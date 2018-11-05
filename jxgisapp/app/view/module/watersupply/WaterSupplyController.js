@@ -53,7 +53,7 @@ Ext.define('jxgisapp.view.module.watersupply.WaterSupplyController', {
         var gridCom = Ext.getCmp('supplyGrid');
 
         var store = gridCom.getStore();
-        // store.proxy.url = conf.rtmdataUrl + 'rtmdata';//TODO 2018-04-23---本地数据加载暂时屏蔽，若需要加载后台服务数据，需要解除注释
+        // store.proxy.url = cu.config.watersupplyListQueryUrl;//TODO 2018-04-23---本地数据加载暂时屏蔽，若需要加载后台服务数据，需要解除注释
         store.proxy.url = 'resources/json/watersupply.json';
         store.load({
             params: {
@@ -83,7 +83,7 @@ Ext.define('jxgisapp.view.module.watersupply.WaterSupplyController', {
                 "dojo/domReady!"
             ], function (FeatureLayer, PictureMarkerSymbol, Graphic, GraphicsLayer) {
                 // Create the PopupTemplate
-                const popupTemplate = {
+                var popupTemplate = {
                     title: "测站信息 ",
                     content: [{
                         type: "fields",
@@ -120,7 +120,7 @@ Ext.define('jxgisapp.view.module.watersupply.WaterSupplyController', {
                 };
                 // points to the states layer in a service storing U.S. census data
                 var stationLayer = new FeatureLayer({
-                    url: cu.waterlevelMapUrl,
+                    url: cu.config.watersupplyMapUrl,
                     popupTemplate: popupTemplate
                 });
                 var graphicsLayer = new GraphicsLayer();
@@ -151,16 +151,18 @@ Ext.define('jxgisapp.view.module.watersupply.WaterSupplyController', {
                                     var label = new Graphic(ft.geometry, textSymbol);
                                     graphicsLayer.add(label);
 
-                                    Ext.Array.each(features, function (rd) {
-                                        if (ft.getAttribute('Id').toString() == rd.data.id.toString()) {
-                                            var symbol = new PictureMarkerSymbol();
-                                            var flsymbol = stationLayer.renderer.symbol;
-                                            symbol.height = 20;
-                                            symbol.width = 8;
-                                            symbol.type = flsymbol.type;
-                                            symbol.url = 'resources/img/normal.png';
-                                            ft.symbol = symbol;
+                                    var symbol = new PictureMarkerSymbol();
+                                    var flsymbol = stationLayer.renderer.symbol;
+                                    symbol.height = 20;
+                                    symbol.width = 8;
+                                    symbol.type = flsymbol.type;
+                                    symbol.url = "resources/img/normal.png";
+                                    var watersupplyFt = new Graphic(ft.geometry, symbol);
+                                    graphicsLayer.add(watersupplyFt);
 
+                                    Ext.Array.each(features, function (rd) {
+                                        if (ft.getAttribute('stcd') != null &&  rd.data.id != null &&
+                                            ft.getAttribute('Id').toString() == rd.data.id.toString()) {
                                             //添加测站水位
                                             var leveltextSymbol = {
                                                 type: "text",  // autocasts as new TextSymbol()
@@ -185,6 +187,7 @@ Ext.define('jxgisapp.view.module.watersupply.WaterSupplyController', {
                                     })
                                 })
                             });
+                            stationLayer.visible = false;
                             lyrView.layer.refresh();
                         }
                     });
