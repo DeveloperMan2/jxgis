@@ -5,18 +5,6 @@ Ext.define('jxgisapp.view.module.waterlevel.WaterLevel', {
     extend: 'Ext.Container',
 
     requires: [
-        'Ext.button.Button',
-        'Ext.container.Container',
-        'Ext.data.TreeStore',
-        'Ext.data.proxy.Ajax',
-        'Ext.form.FieldSet',
-        'Ext.form.Label',
-        'Ext.form.field.Date',
-        'Ext.form.field.Text',
-        'Ext.grid.Panel',
-        'Ext.layout.container.HBox',
-        'Ext.layout.container.VBox',
-        'Ext.selection.RowModel',
         'jxgisapp.view.module.waterlevel.WaterLevelController',
         'jxgisapp.view.module.waterlevel.WaterLevelModel'
     ],
