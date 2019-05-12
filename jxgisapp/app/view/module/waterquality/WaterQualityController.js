@@ -53,7 +53,7 @@ Ext.define('jxgisapp.view.module.waterquality.WaterQualityController', {
         var gridCom = Ext.getCmp('qualityGrid');
 
         var store = gridCom.getStore();
-        // store.proxy.url = conf.rtmdataUrl + 'rtmdata';//TODO 2018-04-23---本地数据加载暂时屏蔽，若需要加载后台服务数据，需要解除注释
+        // store.proxy.url = cu.config.waterqualityListQueryUrl;//TODO 2018-04-23---本地数据加载暂时屏蔽，若需要加载后台服务数据，需要解除注释
         store.proxy.url = 'resources/json/waterquality.json';
         store.load({
             params: {
@@ -83,7 +83,7 @@ Ext.define('jxgisapp.view.module.waterquality.WaterQualityController', {
                 "dojo/domReady!"
             ], function (FeatureLayer, PictureMarkerSymbol, Graphic, GraphicsLayer) {
                 // Create the PopupTemplate
-                const popupTemplate = {
+                var popupTemplate = {
                     title: "测站信息 ",
                     content: [{
                         type: "fields",
@@ -113,7 +113,7 @@ Ext.define('jxgisapp.view.module.waterquality.WaterQualityController', {
                 };
                 // points to the states layer in a service storing U.S. census data
                 var stationLayer = new FeatureLayer({
-                    url: cu.waterlevelMapUrl,
+                    url: cu.config.waterqualityMapUrl,
                     popupTemplate: popupTemplate
                 });
                 // var symbol = {
@@ -153,26 +153,19 @@ Ext.define('jxgisapp.view.module.waterquality.WaterQualityController', {
                                     textSymbol.text = ft.getAttribute('name');
                                     var label = new Graphic(ft.geometry, textSymbol);
                                     graphicsLayer.add(label);
+                                    var symbol = new PictureMarkerSymbol();
+                                    var flsymbol = stationLayer.renderer.symbol;
+                                    symbol.height = 10;
+                                    symbol.width = 10;
+                                    symbol.type = flsymbol.type;
+                                    symbol.url = 'resources/img/sz/1.png';
+                                    var  waterFt = new Graphic(ft.geometry, symbol);
+                                    graphicsLayer.add(waterFt);
 
                                     Ext.Array.each(features, function (rd) {
-                                        if (ft.getAttribute('Id').toString() == rd.data.id.toString()) {
-                                            var symbol = new PictureMarkerSymbol();
-                                            var flsymbol = stationLayer.renderer.symbol;
-                                            symbol.height = 10;
-                                            symbol.width = 10;
-                                            symbol.type = flsymbol.type;
-                                            if (rd.data.rank == "I类" || rd.data.rank == "I类") {
-                                                symbol.url = 'resources/img/sz/1.png';
-                                            } else if (rd.data.rank == "III类" ) {
-                                                symbol.url = 'resources/img/sz/3.png';
-                                            } else if (rd.data.rank ==  "IV类") {
-                                                symbol.url = 'resources/img/sz/4.png';
-                                            } else if (rd.data.rank ==  "V类") {
-                                                symbol.url = 'resources/img/sz/5.png';
-                                            } else {
-                                                symbol.url = 'resources/img/sz/6.png';
-                                            }
-                                            ft.symbol = symbol;
+                                        if (ft.getAttribute('stcd') != null &&  rd.data.id != null &&
+                                            ft.getAttribute('Id').toString() == rd.data.id.toString()) {
+
                                             //添加测站水位
                                             var leveltextSymbol = {
                                                 type: "text",  // autocasts as new TextSymbol()
@@ -188,6 +181,19 @@ Ext.define('jxgisapp.view.module.waterquality.WaterQualityController', {
                                                     weight: "normal"
                                                 }
                                             };
+
+                                            if (rd.data.rank == "I类" || rd.data.rank == "I类") {
+                                                symbol.url = 'resources/img/sz/1.png';
+                                            } else if (rd.data.rank == "III类" ) {
+                                                symbol.url = 'resources/img/sz/3.png';
+                                            } else if (rd.data.rank ==  "IV类") {
+                                                symbol.url = 'resources/img/sz/4.png';
+                                            } else if (rd.data.rank ==  "V类") {
+                                                symbol.url = 'resources/img/sz/5.png';
+                                            } else {
+                                                symbol.url = 'resources/img/sz/6.png';
+                                            }
+
                                             leveltextSymbol.text = rd.data.level;
                                             var levellabel = new Graphic(ft.geometry, leveltextSymbol);
                                             graphicsLayer.add(levellabel);
@@ -197,6 +203,7 @@ Ext.define('jxgisapp.view.module.waterquality.WaterQualityController', {
                                     })
                                 })
                             });
+                            stationLayer.visible = false;
                             lyrView.layer.refresh();
                         }
                     });

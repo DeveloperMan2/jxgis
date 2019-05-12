@@ -50,7 +50,7 @@ Ext.define('jxgisapp.view.module.watergate.WaterGateController', {
         var gridCom = Ext.getCmp('gateGrid');
 
         var store = gridCom.getStore();
-        // store.proxy.url = conf.rtmdataUrl + 'rtmdata';//TODO 2018-04-23---本地数据加载暂时屏蔽，若需要加载后台服务数据，需要解除注释
+        // store.proxy.url = cu.config.watergateListQueryUrl;//TODO 2018-04-23---本地数据加载暂时屏蔽，若需要加载后台服务数据，需要解除注释
         store.proxy.url = 'resources/json/watergate.json';
         store.load({
             params: {
@@ -80,7 +80,7 @@ Ext.define('jxgisapp.view.module.watergate.WaterGateController', {
                 "dojo/domReady!"
             ], function (FeatureLayer, PictureMarkerSymbol, Graphic, GraphicsLayer) {
                 // Create the PopupTemplate
-                const popupTemplate = {
+                var popupTemplate = {
                     title: "闸门信息 ",
                     content: [{
                         type: "fields",
@@ -131,10 +131,12 @@ Ext.define('jxgisapp.view.module.watergate.WaterGateController', {
                 };
                 // points to the states layer in a service storing U.S. census data
                 var stationLayer = new FeatureLayer({
-                    url: cu.waterlevelMapUrl,
+                    url: cu.config.watergateMapUrl,
                     popupTemplate: popupTemplate
                 });
-                var graphicsLayer = new GraphicsLayer();
+                var graphicsLayer = new GraphicsLayer({
+                    popupTemplate: popupTemplate
+                });
                 cu.map.add(graphicsLayer);
                 cu.map.add(stationLayer);  // adds the layer to the map
                 // returns all the graphics from the layer view
@@ -162,18 +164,20 @@ Ext.define('jxgisapp.view.module.watergate.WaterGateController', {
                                     var label = new Graphic(ft.geometry, textSymbol);
                                     graphicsLayer.add(label);
 
-                                    Ext.Array.each(features, function (rd) {
-                                        if (ft.getAttribute('Id').toString() == rd.data.id.toString()) {
-                                            var symbol = new PictureMarkerSymbol();
-                                            var flsymbol = stationLayer.renderer.symbol;
-                                            symbol.height = 15;
-                                            symbol.width = 15;
-                                            symbol.type = flsymbol.type;
-                                            symbol.angle = ft.getAttribute('angle');
-                                            symbol.url = 'resources/img/gate.png';
-                                            ft.symbol = symbol;
+                                    var symbol = new PictureMarkerSymbol();
+                                    var flsymbol = stationLayer.renderer.symbol;
+                                    symbol.height = 15;
+                                    symbol.width = 15;
+                                    symbol.type = flsymbol.type;
+                                    symbol.angle = ft.getAttribute('angle');
+                                    symbol.url = 'resources/img/gate.png';
+                                    var gateFt = new Graphic(ft.geometry, symbol);
+                                    graphicsLayer.add(gateFt);
 
-                                            //添加测站水位
+                                    Ext.Array.each(features, function (rd) {
+                                        if (ft.getAttribute('Id') != null &&
+                                            rd.data.id != null
+                                            &&ft.getAttribute('Id').toString() == rd.data.id.toString()) {
                                             var leveltextSymbol = {
                                                 type: "text",  // autocasts as new TextSymbol()
                                                 color: "black",
@@ -191,12 +195,12 @@ Ext.define('jxgisapp.view.module.watergate.WaterGateController', {
                                             leveltextSymbol.text = rd.data.level;
                                             var levellabel = new Graphic(ft.geometry, leveltextSymbol);
                                             graphicsLayer.add(levellabel);
-
                                             Ext.apply(ft.attributes, rd.data);
                                         }
                                     })
                                 })
                             });
+                            stationLayer.visible = false;
                             lyrView.layer.refresh();
                         }
                     });

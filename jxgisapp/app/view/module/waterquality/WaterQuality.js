@@ -157,8 +157,6 @@ Ext.define('jxgisapp.view.module.waterquality.WaterQuality', {
             store: {
                 proxy: {
                     type: 'ajax',
-                    url: 'resources/json/waterquality.json'//TODO 2018-04-23---测试本地数据加载，加载后台服务需要屏蔽该行代码。
-                    //  url: conf.serviceRootUrl+'rtmdata'
                 },
                 autoLoad: false,
             },

@@ -41,13 +41,14 @@ Ext.define('jxgisapp.view.module.evaporator.EvaporatorController', {
         var me = this;
         //加载统计信息
         var meView = this.getView();
-        var st = meView.lookupReference('queryevaStartDate').getRawValue();
+        var st = meView.lookupReference('querywlStartDate').getRawValue();
+        var et = meView.lookupReference('querywlEndDate').getRawValue();
         var keywords = Ext.getCmp('evaporatorKeyWordId').getValue();
 
         var gridCom = Ext.getCmp('evaporatorGrid');
 
         var store = gridCom.getStore();
-        // store.proxy.url = conf.rtmdataUrl + 'rtmdata';//TODO 2018-04-23---本地数据加载暂时屏蔽，若需要加载后台服务数据，需要解除注释
+         // store.proxy.url = cu.config.evaporatorListQueryUrl;//TODO 2018-04-23---本地数据加载暂时屏蔽，若需要加载后台服务数据，需要解除注释
         store.proxy.url = 'resources/json/evaporator.json';
         store.load({
             params: {
@@ -76,12 +77,12 @@ Ext.define('jxgisapp.view.module.evaporator.EvaporatorController', {
                 "dojo/domReady!"
             ], function (FeatureLayer, PictureMarkerSymbol, Graphic, GraphicsLayer) {
                 // Create the PopupTemplate
-                const popupTemplate = {
+                var popupTemplate = {
                     title: "蒸发站信息 ",
                     content: [{
                         type: "fields",
                         fieldInfos: [{
-                            fieldName: "id",
+                            fieldName: "stnm",
                             label: "测站编码",
                             format: {
                                 places: 0,
@@ -94,38 +95,33 @@ Ext.define('jxgisapp.view.module.evaporator.EvaporatorController', {
                                 places: 0,
                                 digitSeparator: true
                             }
-                        }, {
+                        }
+                        , {
                             fieldName: "level",
                             label: "蒸发量",
                             format: {
                                 places: 0,
                                 digitSeparator: true
                             }
-                        }]
+                        }
+                        ]
                     }]
                 };
                 // points to the states layer in a service storing U.S. census data
                 var stationLayer = new FeatureLayer({
-                    url: cu.waterlevelMapUrl,
+                    url: cu.config.evaporatorMapUrl,
                     popupTemplate: popupTemplate
                 });
-                // var symbol = {
-                //     type: "simple-marker",  // autocasts as new SimpleMarkerSymbol()
-                //     style: 'square',
-                //     color: "blue",
-                //     size: 8,
-                //     outline: {  // autocasts as new SimpleLineSymbol()
-                //         width: 0.5,
-                //         color: "darkblue"
-                //     }
-                // }
                 var graphicsLayer = new GraphicsLayer();
                 cu.map.add(graphicsLayer);
                 cu.map.add(stationLayer);  // adds the layer to the map
                 // returns all the graphics from the layer view
                 cu.mapView.whenLayerView(stationLayer).then(function (lyrView) {
                     lyrView.watch("updating", function (val) {
-                        if (!val) {  // wait for the layer view to finish updating
+                        if (!val) {
+                            // var query = stationLayer.createQuery();
+                            // query.returnGeometry = true;
+                            // query.outFields = [];
                             lyrView.queryFeatures().then(function (results) {
                                 Ext.Array.each(results, function (ft) {
                                     //添加测站名称
@@ -148,12 +144,15 @@ Ext.define('jxgisapp.view.module.evaporator.EvaporatorController', {
                                     graphicsLayer.add(label);
 
                                     Ext.Array.each(features, function (rd) {
-                                        if (ft.getAttribute('Id').toString() == rd.data.id.toString()) {
-                                            var symbol = new PictureMarkerSymbol();
-                                            var flsymbol = stationLayer.renderer.symbol;
-                                            symbol.height = 10;
-                                            symbol.width = 10;
-                                            symbol.type = flsymbol.type;
+                                        var symbol = new PictureMarkerSymbol();
+                                        var flsymbol = stationLayer.renderer.symbol;
+                                        symbol.height = 10;
+                                        symbol.width = 10;
+                                        symbol.type = flsymbol.type;
+                                        ft.symbol = symbol;
+                                        symbol.url = 'resources/img/zf/80.png';
+                                        if (ft.getAttribute('STCD').toString() == rd.data.id.toString()) {
+
                                             if (rd.data.level < 50) {
                                                 symbol.url = 'resources/img/zf/50.png';
                                             } else if (rd.data.level < 60) {
@@ -163,7 +162,6 @@ Ext.define('jxgisapp.view.module.evaporator.EvaporatorController', {
                                             } else if (rd.data.level > 70) {
                                                 symbol.url = 'resources/img/zf/80.png';
                                             }
-                                            ft.symbol = symbol;
 
                                             //添加测站水位
                                             var leveltextSymbol = {

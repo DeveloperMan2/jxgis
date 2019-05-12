@@ -53,8 +53,9 @@ Ext.define('jxgisapp.utils.GeoUtil', {
                 "esri/Color",
                 "esri/geometry/support/jsonUtils",
                 "esri/layers/GraphicsLayer",
+                "esri/geometry/SpatialReference",
                 "dojo/domReady!"
-            ], function (Map, SceneView, Geometry, Graphic, SimpleLineSymbol, SimpleFillSymbol, Color, jsonUtils, GraphicsLayer) {
+            ], function (Map, SceneView, Geometry, Graphic, SimpleLineSymbol, SimpleFillSymbol, Color, jsonUtils, GraphicsLayer,SpatialReference) {
                 let gfxs = [];
                 for (let i = 0; i < geoDatas.length; i++) {
                     let geo = geoDatas[i];
@@ -64,6 +65,7 @@ Ext.define('jxgisapp.utils.GeoUtil', {
 
                     // convert to an esri geometry
                     let geometry = jsonUtils.fromJSON(arcgis.geometry);
+                    geometry.spatialReference = new SpatialReference(4490);
 
                     let pumpName = geo['properties']['name'];
 
@@ -76,8 +78,8 @@ Ext.define('jxgisapp.utils.GeoUtil', {
 
                     let textSymbol = {
                         type: "text",  // autocasts as new TextSymbol()
-                        color: "white",
-                        haloColor: "white",
+                        color: "black",
+                        haloColor: "black",
                         haloSize: "1px",
                         text: pumpName,
                         xoffset: 0,

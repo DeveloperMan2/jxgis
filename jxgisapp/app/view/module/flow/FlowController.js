@@ -8,13 +8,6 @@ Ext.define('jxgisapp.view.module.flow.FlowController', {
     requires: [
         'Ext.util.TaskManager'
     ],
-
-    /**
-     * Called when the view is created
-     */
-    init: function() {
-
-    },
     //模块组件渲染完成
     afterrenderHandler: function () {
         this.afterMapViewLoaded(this.moduleInit);
@@ -53,7 +46,7 @@ Ext.define('jxgisapp.view.module.flow.FlowController', {
         var gridCom = Ext.getCmp('flowGrid');
 
         var store = gridCom.getStore();
-        // store.proxy.url = conf.rtmdataUrl + 'rtmdata';//TODO 2018-04-23---本地数据加载暂时屏蔽，若需要加载后台服务数据，需要解除注释
+         // store.proxy.url = cu.config.flowListQueryUrl;//TODO 2018-04-23---本地数据加载暂时屏蔽，若需要加载后台服务数据，需要解除注释
         store.proxy.url = 'resources/json/flow.json';
         store.load({
             params: {
@@ -83,12 +76,12 @@ Ext.define('jxgisapp.view.module.flow.FlowController', {
                 "dojo/domReady!"
             ], function (FeatureLayer, PictureMarkerSymbol, Graphic, GraphicsLayer) {
                 // Create the PopupTemplate
-                const popupTemplate = {
+                 popupTemplate = {
                     title: "测站信息 ",
                     content: [{
                         type: "fields",
                         fieldInfos: [{
-                            fieldName: "id",
+                            fieldName: "stcd",
                             label: "测站编码",
                             format: {
                                 places: 0,
@@ -113,7 +106,7 @@ Ext.define('jxgisapp.view.module.flow.FlowController', {
                 };
                 // points to the states layer in a service storing U.S. census data
                 var stationLayer = new FeatureLayer({
-                    url: cu.waterlevelMapUrl,
+                    url: cu.config.flowMapUrl,
                     popupTemplate: popupTemplate
                 });
                 // var symbol = {
@@ -155,15 +148,14 @@ Ext.define('jxgisapp.view.module.flow.FlowController', {
                                     graphicsLayer.add(label);
 
                                     Ext.Array.each(features, function (rd) {
-                                        if (ft.getAttribute('Id').toString() == rd.data.id.toString()) {
-                                            var symbol = new PictureMarkerSymbol();
-                                            var flsymbol = stationLayer.renderer.symbol;
-                                            symbol.height = 10;
-                                            symbol.width = 10;
-                                            symbol.type = flsymbol.type;
-                                            symbol.url = 'resources/img/normal.png';
-                                            ft.symbol = symbol;
-
+                                        var symbol = new PictureMarkerSymbol();
+                                        var flsymbol = stationLayer.renderer.symbol;
+                                        symbol.height = 10;
+                                        symbol.width = 10;
+                                        symbol.type = flsymbol.type;
+                                        symbol.url = 'resources/img/normal.png';
+                                        ft.symbol = symbol;
+                                        if (ft.getAttribute('stcd').toString() == rd.data.id.toString()) {
                                             //添加测站水位
                                             var leveltextSymbol = {
                                                 type: "text",  // autocasts as new TextSymbol()

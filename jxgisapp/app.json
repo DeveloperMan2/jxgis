@@ -199,6 +199,153 @@
         {
             "path": "app.js",
             "bundle": true
+        },
+        {
+            "path": "app/view/map/Map.js",
+            "bundle": false
+        },
+        {
+            "path": "app/view/map/MapController.js",
+            "bundle": false
+        }
+  ,
+        {
+            "path": "app/view/module/evaporator/Evaporator.js",
+            "bundle": false
+        },
+        {
+            "path": "app/view/module/evaporator/EvaporatorController.js",
+            "bundle": false
+        },
+        {
+            "path": "app/view/module/evaporator/EvaporatorModel.js",
+            "bundle": false
+        },
+        {
+            "path": "app/view/module/flow/Flow.js",
+            "bundle": false
+        },
+        {
+            "path": "app/view/module/flow/FlowController.js",
+            "bundle": false
+        },
+        {
+            "path": "app/view/module/flow/FlowModel.js",
+            "bundle": false
+        },
+        {
+            "path": "app/view/module/projectsafety/ProjectSafety.js",
+            "bundle": false
+        },
+        {
+            "path": "app/view/module/projectsafety/ProjectSafetyController.js",
+            "bundle": false
+        },
+        {
+            "path": "app/view/module/projectsafety/ProjectSafetyModel.js",
+            "bundle": false
+        }
+    ,
+        {
+            "path": "app/view/module/rainfall/RainFall.js",
+            "bundle": false
+        },
+        {
+            "path": "app/view/module/rainfall/RainFallController.js",
+            "bundle": false
+        },
+        {
+            "path": "app/view/module/rainfall/RainFallModel.js",
+            "bundle": false
+        },
+        {
+            "path": "app/view/module/soilmoisture/SoilMoisture.js",
+            "bundle": false
+        },
+        {
+            "path": "app/view/module/soilmoisture/SoilMoistureController.js",
+            "bundle": false
+        },
+        {
+            "path": "app/view/module/soilmoisture/SoilMoistureModel.js",
+            "bundle": false
+        }
+    ,
+        {
+            "path": "app/view/module/video4gis/Video4GIS.js",
+            "bundle": false
+        },
+        {
+            "path": "app/view/module/video4gis/Video4GISController.js",
+            "bundle": false
+        },
+        {
+            "path": "app/view/module/video4gis/Video4GISModel.js",
+            "bundle": false
+        },
+        {
+            "path": "app/view/module/watergate/WaterGate.js",
+            "bundle": false
+        },
+        {
+            "path": "app/view/module/watergate/WaterGateController.js",
+            "bundle": false
+        },
+        {
+            "path": "app/view/module/watergate/WaterGateModel.js",
+            "bundle": false
+        }
+    ,
+        {
+            "path": "app/view/module/waterlevel/WaterLevel.js",
+            "bundle": false
+        },
+        {
+            "path": "app/view/module/waterlevel/WaterLevelController.js",
+            "bundle": false
+        },
+        {
+            "path": "app/view/module/waterlevel/WaterLevelModel.js",
+            "bundle": false
+        }
+//    ,
+//        {
+//            "path": "app/view/module/waterpump/WaterPump.js",
+//            "bundle": false
+//        },
+//        {
+//            "path": "app/view/module/waterpump/WaterPumpController.js",
+//            "bundle": false
+//        },
+//        {
+//            "path": "app/view/module/waterpump/WaterPumpModel.js",
+//            "bundle": false
+//        }
+    ,
+        {
+            "path": "app/view/module/waterquality/WaterQuality.js",
+            "bundle": false
+        },
+        {
+            "path": "app/view/module/waterquality/WaterQualityController.js",
+            "bundle": false
+        },
+        {
+            "path": "app/view/module/waterquality/WaterQualityModel.js",
+            "bundle": false
+        }
+    ,
+        {
+            "path": "app/view/module/watersupply/WaterSupply.js",
+            "bundle": false
+        },
+        {
+            "path": "app/view/module/watersupply/WaterSupplyController.js",
+            "bundle": false
+        },
+        {
+            "path": "app/view/module/watersupply/WaterSupplyModel.js",
+            "bundle": false
         }
     ],
     /**
@@ -288,7 +435,7 @@
             "enable": true
         },
         "compressor": {
-            "type": "yui"
+            "type": "none"
         }
     },
     /**

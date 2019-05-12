@@ -9,7 +9,8 @@ Ext.define('jxgisapp.view.module.rainfall.RainFallController', {
     requires: [
         'Ext.util.TaskManager'
     ],
-
+    results:null, //空间要素查询结果
+    graphicsLayer:null,//地图标绘图层
     /**
      * Called when the view is created
      */
@@ -36,7 +37,20 @@ Ext.define('jxgisapp.view.module.rainfall.RainFallController', {
         Ext.TaskManager.start(task);
     },
     rowclickHandler: function (gp, record, element, rowIndex, e, eOpts) {
-        //window.open('http://www.baidu.com');//todo 跳转页面
+        if (record.feature != null) {
+            cu.mapView.goTo(record.feature.geometry);
+            this.openBusinessInfoWindow(record.feature);
+        }
+    },
+    openBusinessInfoWindow: function(feature){
+        var url = cu.config.rainfallWinowUrl;//基础查询地址
+        var id = feature.getAttribute(cu.config.fieldID);//测站ID，来源于空间数据，cu.config.fieldID是systemconfig.json配置的空间数据ID字段名称
+        var stationName = feature.getAttribute(cu.config.fieldName); //测站名称，来源于空间数据，和id配置相同
+        var meView = this.getView();
+        var st = meView.lookupReference('querywlStartDate').getRawValue(); //对应界面选择的时间
+        var et = meView.lookupReference('querywlEndDate').getRawValue();
+        var queryUrl = url + "?" + "id=" + id + "&st=" + st + "&et=" + et;
+        cu.createPopupWindow(stationName, queryUrl, '信息加载中...', 1000);
     },
     moduleInit: function (me) {
         me.queryRainFallData()
@@ -52,28 +66,35 @@ Ext.define('jxgisapp.view.module.rainfall.RainFallController', {
 
         var gridCom = Ext.getCmp('rainfallGrid');
 
+
+        //示例
+        var param = {};
+        param["bt"] = st;
+        param["et"] = et;
+        var srchCluase ={};
+        srchCluase["srchCluase"] = param;
+        var reqBody = {};
+        reqBody["reqBody"] = srchCluase;
+
         var store = gridCom.getStore();
-        // store.proxy.url = conf.rtmdataUrl + 'rtmdata';//TODO 2018-04-23---本地数据加载暂时屏蔽，若需要加载后台服务数据，需要解除注释
+        //左侧列表查询地址，需要根据业务系统请求地址，进行改造
+        //store.proxy.url = cu.config.rainfallListQueryUrl + "?keywords=" +keywords + "&st=" + st + "&et=" + et;
         store.proxy.url = 'resources/json/rainfall.json';
         store.load({
-            params: {
-                st: st,
-                et: et,
-                keywords: keywords
-            }, //参数
+            params: reqBody, //参数
 
             callback: function (records, options, success) {
                 if (success) {
                     store.loadData(records);
                     gridCom.updateLayout();
-                    me.loadRainFallLayer(records);
+                    me.loadRainFallLayer(records,me);
                 }
             },
             scope: store,
             add: false
         });
     },
-    loadRainFallLayer: function (features) {
+    loadRainFallLayer: function (features,me) {
         require(
             [
                 "esri/layers/FeatureLayer",
@@ -84,17 +105,26 @@ Ext.define('jxgisapp.view.module.rainfall.RainFallController', {
                 "esri/tasks/support/Query",
                 "dojo/domReady!"
             ], function (FeatureLayer, PictureMarkerSymbol, Graphic, GraphicsLayer, QueryTask, Query) {
-                var queryTask = new QueryTask({
-                    url: cu.config.rainfallMapUrl
-                });
-                var query = new Query();
-                query.returnGeometry = true;
-                query.outFields = ['*'];
-                query.where = " 1 = 1";
-                queryTask.execute(query).then(function (results) {
-                    console.log(results.features);
-                    var graphicsLayer = new GraphicsLayer();
-                    cu.map.add(graphicsLayer);
+                if (me.results == null) {
+                    var queryTask = new QueryTask({
+                        url: cu.config.rainfallMapUrl
+                    });
+                    var query = new Query();
+                    query.returnGeometry = true;
+                    query.outFields = ['*'];
+                    query.where = " 1 = 1";
+                    queryTask.execute(query).then(function (results) {
+                        me.results = results;
+                        me.graphicsLayer = new GraphicsLayer();
+                        cu.map.add(me.graphicsLayer);
+                        showFeature(results);
+                    });
+                } else {
+                    me.graphicsLayer.removeAll();
+                    showFeature(me.results);
+                }
+
+                function showFeature(results) {
                     Ext.Array.each(results.features, function (ft) {
                         //添加测站名称
                         var textSymbol = {
@@ -113,10 +143,12 @@ Ext.define('jxgisapp.view.module.rainfall.RainFallController', {
                         };
                         textSymbol.text = ft.getAttribute(cu.config.fieldName);
                         var label = new Graphic(ft.geometry, textSymbol);
-                        graphicsLayer.add(label);
+                        me.graphicsLayer.add(label);
 
                         Ext.Array.each(features, function (rd) {
                             if (ft.getAttribute(cu.config.fieldID).toString() == rd.data.id.toString()) {
+                                //将空间对象赋值到属性表格数据中
+                                rd.feature = ft;
                                 var symbol = new PictureMarkerSymbol();
                                 symbol.height = 10;
                                 symbol.width = 10;
@@ -134,7 +166,7 @@ Ext.define('jxgisapp.view.module.rainfall.RainFallController', {
                                     symbol.url = 'resources/img/500.png';
                                 }
                                 ft.symbol = symbol;
-                                graphicsLayer.add(ft);
+                                me.graphicsLayer.add(ft);
                                 //添加测站水位
                                 var leveltextSymbol = {
                                     type: "text",
@@ -152,31 +184,29 @@ Ext.define('jxgisapp.view.module.rainfall.RainFallController', {
                                 };
                                 leveltextSymbol.text = rd.data.level;
                                 var levellabel = new Graphic(ft.geometry, leveltextSymbol);
-                                graphicsLayer.add(levellabel);
-
-                                Ext.apply(ft.attributes, rd.data);
+                                me.graphicsLayer.add(levellabel);
                                 return false;
                             }
-                        })
-                    })
-                });
-                cu.mapView.on("click", function (event) {
-                    var screenPoint = {
-                        x: event.x,
-                        y: event.y
-                    };
-                    cu.mapView.hitTest(screenPoint).then(function (response) {
-                        if (response.results.length) {
-                            var graphic = response.results.filter(function (result) {
-                                // check if the graphic belongs to the layer of interest
-                                return true;
-                            })[0].graphic;
-                            var title = graphic.getAttribute(cu.config.fieldName);
-                            cu.createPopupWindow(title, cu.config.rainfallWinowUrl, '信息加载中...', 1000);
-                        }
+                        });
                     });
-                });
-
-            });
+                    cu.mapView.on("click", function (event) {
+                        var screenPoint = {
+                            x: event.x,
+                            y: event.y
+                        };
+                        cu.mapView.hitTest(screenPoint).then(function (response) {
+                            if (response.results.length) {
+                                var graphic = response.results.filter(function (result) {
+                                    // check if the graphic belongs to the layer of interest
+                                    return true;
+                                })[0].graphic;
+                                if (graphic != null) {
+                                    me.openBusinessInfoWindow(graphic);
+                                }
+                            }
+                        });
+                    });
+                }
+            })
     }
 })
