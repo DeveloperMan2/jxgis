@@ -8,6 +8,7 @@ Ext.define('jxgisapp.view.module.rainfall.RainFallController', {
 
     requires: [
         'Ext.util.TaskManager'
+
     ],
     results: null, //空间要素查询结果
     graphicsLayer: null,//地图标绘图层
