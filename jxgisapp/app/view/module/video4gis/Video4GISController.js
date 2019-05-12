@@ -49,8 +49,8 @@ Ext.define('jxgisapp.view.module.video4gis.Video4GISController', {
         var gridCom = Ext.getCmp('videoGrid');
 
         var store = gridCom.getStore();
-        // store.proxy.url = cu.config.videoListQueryUrl;//TODO 2018-04-23---本地数据加载暂时屏蔽，若需要加载后台服务数据，需要解除注释
-        store.proxy.url = 'resources/json/video.json';
+        store.proxy.url = cu.config.videoListQueryUrl;//TODO 2018-04-23---本地数据加载暂时屏蔽，若需要加载后台服务数据，需要解除注释
+        // store.proxy.url = 'resources/json/video.json';
         store.load({
             params: {
                 keywords: keywords

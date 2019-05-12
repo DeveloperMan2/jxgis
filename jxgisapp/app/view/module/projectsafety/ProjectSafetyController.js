@@ -51,8 +51,8 @@ Ext.define('jxgisapp.view.module.projectsafety.ProjectSafetyController', {
         var gridCom = Ext.getCmp('projSafetyGrid');
 
         var store = gridCom.getStore();
-        // store.proxy.url = conf.rtmdataUrl + 'rtmdata';//TODO 2018-04-23---本地数据加载暂时屏蔽，若需要加载后台服务数据，需要解除注释
-        store.proxy.url = 'resources/json/projectsafety.json';
+        store.proxy.url = conf.rtmdataUrl + 'rtmdata';//TODO 2018-04-23---本地数据加载暂时屏蔽，若需要加载后台服务数据，需要解除注释
+        // store.proxy.url = 'resources/json/projectsafety.json';
         store.load({
             params: {
                 st: st,

@@ -9,8 +9,8 @@ Ext.define('jxgisapp.view.module.rainfall.RainFallController', {
     requires: [
         'Ext.util.TaskManager'
     ],
-    results:null, //空间要素查询结果
-    graphicsLayer:null,//地图标绘图层
+    results: null, //空间要素查询结果
+    graphicsLayer: null,//地图标绘图层
     /**
      * Called when the view is created
      */
@@ -42,7 +42,7 @@ Ext.define('jxgisapp.view.module.rainfall.RainFallController', {
             this.openBusinessInfoWindow(record.feature);
         }
     },
-    openBusinessInfoWindow: function(feature){
+    openBusinessInfoWindow: function (feature) {
         var url = cu.config.rainfallWinowUrl;//基础查询地址
         var id = feature.getAttribute(cu.config.fieldID);//测站ID，来源于空间数据，cu.config.fieldID是systemconfig.json配置的空间数据ID字段名称
         var stationName = feature.getAttribute(cu.config.fieldName); //测站名称，来源于空间数据，和id配置相同
@@ -71,15 +71,15 @@ Ext.define('jxgisapp.view.module.rainfall.RainFallController', {
         var param = {};
         param["bt"] = st;
         param["et"] = et;
-        var srchCluase ={};
+        var srchCluase = {};
         srchCluase["srchCluase"] = param;
         var reqBody = {};
         reqBody["reqBody"] = srchCluase;
 
         var store = gridCom.getStore();
         //左侧列表查询地址，需要根据业务系统请求地址，进行改造
-        //store.proxy.url = cu.config.rainfallListQueryUrl + "?keywords=" +keywords + "&st=" + st + "&et=" + et;
-        store.proxy.url = 'resources/json/rainfall.json';
+        store.proxy.url = cu.config.rainfallListQueryUrl + "?keywords=" + keywords + "&st=" + st + "&et=" + et;
+        // store.proxy.url = 'resources/json/rainfall.json';
         store.load({
             params: reqBody, //参数
 
@@ -87,14 +87,14 @@ Ext.define('jxgisapp.view.module.rainfall.RainFallController', {
                 if (success) {
                     store.loadData(records);
                     gridCom.updateLayout();
-                    me.loadRainFallLayer(records,me);
+                    me.loadRainFallLayer(records, me);
                 }
             },
             scope: store,
             add: false
         });
     },
-    loadRainFallLayer: function (features,me) {
+    loadRainFallLayer: function (features, me) {
         require(
             [
                 "esri/layers/FeatureLayer",
