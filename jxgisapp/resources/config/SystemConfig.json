@@ -19,7 +19,7 @@
   //雨量站空间数据地图服务地址
   "rainfallMapUrl":"http://localhost:6080/arcgis/rest/services/station/MapServer/0",
   //右侧列表查询服务地址
-  "rainfallListQueryUrl":"http://localhost:8090/waterserver",
+  "rainfallListQueryUrl":"resources/json/rainfall.json",
   //雨情弹窗地址
   "rainfallWinowUrl":"http://dojotoolkit.org/api/",
 
@@ -27,7 +27,7 @@
   //蒸发量站空间数据地图服务地址
   "evaporatorMapUrl":"http://localhost:6080/arcgis/rest/services/station/MapServer/0",
   //右侧列表查询服务地址
-  "evaporatorListQueryUrl":"http://localhost:8090/waterserver",
+  "evaporatorListQueryUrl":"resources/json/evaporator.json",
   //蒸发量弹窗地址
   "evaporatorWinowUrl":"http://dojotoolkit.org/api/",
 
@@ -35,7 +35,7 @@
   //流量站空间数据地图服务地址
   "flowMapUrl":"http://localhost:6080/arcgis/rest/services/station/MapServer/0",
   //右侧列表查询服务地址
-  "flowListQueryUrl":"http://localhost:8090/waterserver",
+  "flowListQueryUrl":"resources/json/flow.json",
   //流量弹窗地址
   "flowWinowUrl":"http://dojotoolkit.org/api/",
 
@@ -44,7 +44,7 @@
   //流量站空间数据地图服务地址
   "videoMapUrl":"http://localhost:6080/arcgis/rest/services/station/MapServer/0",
   //右侧列表查询服务地址
-  "videoListQueryUrl":"http://localhost:8090/waterserver",
+  "videoListQueryUrl":"resources/json/video.json",
   //流量弹窗地址
   "videoWinowUrl":"http://dojotoolkit.org/api/",
 
@@ -70,7 +70,7 @@
   //墒情空间数据地图服务地址
   "soilmoistureMapUrl":"http://localhost:6080/arcgis/rest/services/station/MapServer/0",
   //右侧列表查询服务地址
-  "soilmoistureListQueryUrl":"http://localhost:8090/waterserver",
+  "soilmoistureListQueryUrl":"resources/json/soilm.json",
   //墒情弹窗地址
   "soilmoistureWinowUrl":"http://dojotoolkit.org/api/",
 
