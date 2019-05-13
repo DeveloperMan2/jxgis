@@ -218,13 +218,15 @@ Ext.define('jxgisapp.utils.GeoUtil', {
                     geometry.spatialReference = new SpatialReference(4490);
 
                     let labelName = geo['properties']['name'],
-                        labelColor = geo['properties']['color'],
-                        labelSymbolSize = geo['properties']['size'];
+                        symbolColor = geo['properties']['symbolColor'],
+                        symbolSize = geo['properties']['symbolSize'],
+                        textColor = geo['properties']['textColor'],
+                        fontSize = geo['properties']['fontSize'];
 
                     let markerSymbol = {
                         type: "simple-marker", // autocasts as new SimpleMarkerSymbol()
-                        color: labelColor.colorRgb(),
-                        size: labelSymbolSize + "px",  // pixels
+                        color: symbolColor.colorRgb(),
+                        size: symbolSize + "px",  // pixels
                         outline: { // autocasts as new SimpleLineSymbol()
                             color: [255, 255, 255],
                             width: 2
@@ -233,14 +235,14 @@ Ext.define('jxgisapp.utils.GeoUtil', {
 
                     let textSymbol = {
                         type: "text",  // autocasts as new TextSymbol()
-                        color: "black",
-                        haloColor: "black",
+                        color: textColor.colorRgb(),
+                        haloColor: textColor.colorRgb(),
                         haloSize: "1px",
                         text: labelName,
                         xoffset: 0,
-                        yoffset: -labelSymbolSize,
+                        yoffset: -(symbolSize + 2),
                         font: {  // autocast as new Font()
-                            size: 8,
+                            size: fontSize,
                             family: "sans-serif",
                             weight: "normal"
                         }
