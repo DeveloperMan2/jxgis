@@ -53,8 +53,8 @@ Ext.define('jxgisapp.view.module.watersupply.WaterSupplyController', {
         var gridCom = Ext.getCmp('supplyGrid');
 
         var store = gridCom.getStore();
-        store.proxy.url = cu.config.watersupplyListQueryUrl;//TODO 2018-04-23---本地数据加载暂时屏蔽，若需要加载后台服务数据，需要解除注释
-        // store.proxy.url = 'resources/json/watersupply.json';
+        // store.proxy.url = cu.config.watersupplyListQueryUrl;//TODO 2018-04-23---本地数据加载暂时屏蔽，若需要加载后台服务数据，需要解除注释
+        store.proxy.url = 'resources/json/watersupply.json';
         store.load({
             params: {
                 st: st,

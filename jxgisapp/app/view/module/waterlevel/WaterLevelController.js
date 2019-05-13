@@ -72,8 +72,8 @@ Ext.define('jxgisapp.view.module.waterlevel.WaterLevelController', {
         var gridCom = Ext.getCmp('waterLevelGrid');
 
         var store = gridCom.getStore();
-        store.proxy.url = cu.config.waterlevelListQueryUrl;//TODO 2018-04-23---本地数据加载暂时屏蔽，若需要加载后台服务数据，需要解除注释
-        // store.proxy.url = 'resources/json/waterlevel.json';
+        // store.proxy.url = cu.config.waterlevelListQueryUrl;//TODO 2018-04-23---本地数据加载暂时屏蔽，若需要加载后台服务数据，需要解除注释
+        store.proxy.url = 'resources/json/waterlevel.json';
         store.load({
             params: {
                 reqHeader:{
