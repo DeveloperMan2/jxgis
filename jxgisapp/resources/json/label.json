@@ -2,8 +2,10 @@
   {
     "name": "水泵站迁建工程1",
     "url": "http://www.baidu.com",
-    "color": "#FF0000",
-    "size": 16,
+    "symbolColor": "#FF0000",
+    "symbolSize": 16,
+    "textColor": "00FF00",
+    "fontSize": 12,
     "geometry": {
       "type": "Point",
       "coordinates": [
@@ -15,8 +17,10 @@
   {
     "name": "水泵站迁建工程2",
     "url": "http://www.baidu.com",
-    "color": "#FF0000",
-    "size": 16,
+    "symbolColor": "#FF0000",
+    "symbolSize": 16,
+    "textColor": "00FF00",
+    "fontSize": 12,
     "geometry": {
       "type": "Point",
       "coordinates": [
@@ -28,8 +32,10 @@
   {
     "name": "水泵站迁建工程3",
     "url": "http://www.baidu.com",
-    "color": "#FF0000",
-    "size": 16,
+    "symbolColor": "#FF0000",
+    "symbolSize": 16,
+    "textColor": "00FF00",
+    "fontSize": 12,
     "geometry": {
       "type": "Point",
       "coordinates": [
@@ -41,8 +47,10 @@
   {
     "name": "水泵站迁建工程4",
     "url": "http://www.baidu.com",
-    "color": "#FF0000",
-    "size": 16,
+    "symbolColor": "#FF0000",
+    "symbolSize": 16,
+    "textColor": "00FF00",
+    "fontSize": 12,
     "geometry": {
       "type": "Point",
       "coordinates": [
@@ -54,8 +62,10 @@
   {
     "name": "水泵站迁建工程5",
     "url": "http://www.baidu.com",
-    "color": "#FF0000",
-    "size": 16,
+    "symbolColor": "#FF0000",
+    "symbolSize": 16,
+    "textColor": "00FF00",
+    "fontSize": 12,
     "geometry": {
       "type": "Point",
       "coordinates": [
@@ -67,8 +77,10 @@
   {
     "name": "水泵站迁建工程6",
     "url": "http://www.baidu.com",
-    "color": "#FF0000",
-    "size": 16,
+    "symbolColor": "#FF0000",
+    "symbolSize": 16,
+    "textColor": "00FF00",
+    "fontSize": 12,
     "geometry": {
       "type": "Point",
       "coordinates": [
@@ -80,8 +92,10 @@
   {
     "name": "水泵站迁建工程7",
     "url": "http://www.baidu.com",
-    "color": "#FF0000",
-    "size": 16,
+    "symbolColor": "#FF0000",
+    "symbolSize": 16,
+    "textColor": "00FF00",
+    "fontSize": 12,
     "geometry": {
       "type": "Point",
       "coordinates": [
@@ -93,8 +107,10 @@
   {
     "name": "水泵站迁建工程8",
     "url": "http://www.baidu.com",
-    "color": "#FF0000",
-    "size": 16,
+    "symbolColor": "#FF0000",
+    "symbolSize": 16,
+    "textColor": "00FF00",
+    "fontSize": 12,
     "geometry": {
       "type": "Point",
       "coordinates": [
