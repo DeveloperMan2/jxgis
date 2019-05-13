@@ -79,8 +79,8 @@ Ext.define('jxgisapp.view.module.rainfall.RainFallController', {
 
         var store = gridCom.getStore();
         //左侧列表查询地址，需要根据业务系统请求地址，进行改造
-        // store.proxy.url = cu.config.rainfallListQueryUrl + "?keywords=" + keywords + "&st=" + st + "&et=" + et;
-        store.proxy.url = 'resources/json/rainfall.json';
+        store.proxy.url = cu.config.rainfallListQueryUrl + "?keywords=" + keywords + "&st=" + st + "&et=" + et;
+        // store.proxy.url = 'resources/json/rainfall.json';
         store.load({
             params: reqBody, //参数
 

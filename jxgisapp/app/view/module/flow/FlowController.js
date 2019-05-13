@@ -46,8 +46,8 @@ Ext.define('jxgisapp.view.module.flow.FlowController', {
         var gridCom = Ext.getCmp('flowGrid');
 
         var store = gridCom.getStore();
-        // store.proxy.url = cu.config.flowListQueryUrl;//TODO 2018-04-23---本地数据加载暂时屏蔽，若需要加载后台服务数据，需要解除注释
-        store.proxy.url = 'resources/json/flow.json';
+        store.proxy.url = cu.config.flowListQueryUrl;//TODO 2018-04-23---本地数据加载暂时屏蔽，若需要加载后台服务数据，需要解除注释
+        // store.proxy.url = 'resources/json/flow.json';
         store.load({
             params: {
                 st: st,

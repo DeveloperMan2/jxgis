@@ -5,6 +5,7 @@ Ext.define('jxgisapp.view.module.waterlevel.WaterLevel', {
     extend: 'Ext.Container',
 
     requires: [
+        'Ext.Img',
         'Ext.button.Button',
         'Ext.container.Container',
         'Ext.data.proxy.Ajax',

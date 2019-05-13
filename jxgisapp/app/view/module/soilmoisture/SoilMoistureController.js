@@ -53,8 +53,8 @@ Ext.define('jxgisapp.view.module.soilmoisture.SoilMoistureController', {
         var gridCom = Ext.getCmp('soilMGrid');
 
         var store = gridCom.getStore();
-        // store.proxy.url = cu.config.soilmoistureListQueryUrl;//TODO 2018-04-23---本地数据加载暂时屏蔽，若需要加载后台服务数据，需要解除注释
-        store.proxy.url = 'resources/json/soilm.json';
+        store.proxy.url = cu.config.soilmoistureListQueryUrl;//TODO 2018-04-23---本地数据加载暂时屏蔽，若需要加载后台服务数据，需要解除注释
+        // store.proxy.url = 'resources/json/soilm.json';
         store.load({
             params: {
                 st: st,

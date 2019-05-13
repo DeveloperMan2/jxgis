@@ -35,6 +35,14 @@ Ext.define('jxgisapp.view.right.RightController', {
             existingItem = moduleCard.child('component[routeId=' + hashTag + ']'),
             newView;
 
+        //若右侧需要加载模块则显示，否则隐藏模块容器
+        var rightWrap = Ext.getCmp('rightConditionWrapId');
+        if (hashTag) {
+            rightWrap.setHidden(false);
+        } else {
+            rightWrap.setHidden(true);
+        }
+
         //若有滚动条，则每次切换视图时，滚动条位置置顶
         moduleCard.scrollTo(0, 0, true);
 
@@ -62,8 +70,7 @@ Ext.define('jxgisapp.view.right.RightController', {
                     moduleLayout.setActiveItem(existingItem);
                 }
                 newView = existingItem;
-            }
-            else {
+            } else {
                 // newView is set (did not exist already), so add it and make it the
                 // activeItem.
                 Ext.suspendLayouts();

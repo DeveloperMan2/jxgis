@@ -1,1 +1,1 @@
-sencha -ti app build -c production
+sencha -ti app build production

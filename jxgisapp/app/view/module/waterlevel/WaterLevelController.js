@@ -7,11 +7,7 @@ Ext.define('jxgisapp.view.module.waterlevel.WaterLevelController', {
     ],
     afterrenderHandler: function () {
         //主模块地图加载完成之后执行当前模块初始化
-        // var rightWrap = Ext.getCmp('rightConditionWrapId');
-        // rightWrap.hidden = true;
-        // rightWrap.setVisibility = false;
-        // rightWrap.updateLayout();
-         this.afterMapViewLoaded(this.moduleInit);
+        this.afterMapViewLoaded(this.moduleInit);
     },
     afterMapViewLoaded: function (handler) {
         var me = this;
@@ -41,6 +37,7 @@ Ext.define('jxgisapp.view.module.waterlevel.WaterLevelController', {
     //根据配置创建水闸图层
     getWaterPumpData: function (url) {
         var params = {};
+
         //执行成功回调
         function successCallBack(response, opts) {
             //查询结果转json对象
@@ -72,23 +69,23 @@ Ext.define('jxgisapp.view.module.waterlevel.WaterLevelController', {
         var gridCom = Ext.getCmp('waterLevelGrid');
 
         var store = gridCom.getStore();
-        // store.proxy.url = cu.config.waterlevelListQueryUrl;//TODO 2018-04-23---本地数据加载暂时屏蔽，若需要加载后台服务数据，需要解除注释
-        store.proxy.url = 'resources/json/waterlevel.json';
+        store.proxy.url = cu.config.waterlevelListQueryUrl;//TODO 2018-04-23---本地数据加载暂时屏蔽，若需要加载后台服务数据，需要解除注释
+        // store.proxy.url = 'resources/json/waterlevel.json';
         store.load({
             params: {
-                reqHeader:{
-                    userInfo:{
-                        username:"",
-                        token:""
+                reqHeader: {
+                    userInfo: {
+                        username: "",
+                        token: ""
                     }
                 },
-                reqBody:{
-                    srchClause:{
+                reqBody: {
+                    srchClause: {
                         // page:pageIndex,
                         // pageSize:cu.config.pageSize,
-                        param:{
-                            tm:st,
-                            stcd:keywords
+                        param: {
+                            tm: st,
+                            stcd: keywords
                         }
                     }
                 }

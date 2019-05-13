@@ -1,1 +1,1 @@
-sencha -ti app build -c testing
+sencha -ti app build testing
