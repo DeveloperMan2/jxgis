@@ -10,7 +10,8 @@ var cu = {
     map: null,//地图对象
     mapView: null,//地图视图对象
     layer: {
-        pumpLayer: null
+        pumpLayer: null,
+        labelLayer: null
     },
 
     //TODO 2018-04-24---创建弹出面板

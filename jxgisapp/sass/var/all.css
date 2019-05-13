@@ -1,16 +1,12 @@
 /*
  * This is is imported by virtue of "sass.var" in "app.json".
  */
-
-$enable-font-awesome: dynamic(true);
-$MyThemeColor: rgba(41, 128, 185, 1.0);
-
 .x-grid-row-blue {
   background-color: blue;
-  color: white;
-}
+  color: white; }
 
 .x-grid-row-orange {
   background-color: orange;
-  color: white;
-}
+  color: white; }
+
+/*# sourceMappingURL=all.css.map */
