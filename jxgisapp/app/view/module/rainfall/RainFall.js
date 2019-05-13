@@ -5,6 +5,7 @@ Ext.define('jxgisapp.view.module.rainfall.RainFall', {
     extend: 'Ext.Container',
 
     requires: [
+        'Ext.Img',
         'Ext.button.Button',
         'Ext.container.Container',
         'Ext.data.proxy.Ajax',
@@ -39,7 +40,7 @@ Ext.define('jxgisapp.view.module.rainfall.RainFall', {
             xtype: 'datefield',
             fieldLabel: '开始时间',
             format: 'Y-m-d',
-            formatText:'时间格式必须为:年-月-日',
+            formatText: '时间格式必须为:年-月-日',
             labelWidth: 60,
             reference: 'querywlStartDate',
             emptyText: '请选择起始时间',
@@ -51,7 +52,7 @@ Ext.define('jxgisapp.view.module.rainfall.RainFall', {
             xtype: 'datefield',
             fieldLabel: '结束时间',
             format: 'Y-m-d',
-            formatText:'时间格式必须为:年-月-日',
+            formatText: '时间格式必须为:年-月-日',
             labelWidth: 60,
             reference: 'querywlEndDate',
             emptyText: '请选择起始时间',
@@ -90,7 +91,7 @@ Ext.define('jxgisapp.view.module.rainfall.RainFall', {
                     xtype: 'button',
                     html: '查询',
                     margin: '10 0 10 0 ',
-                    handler:"queryRainFallData"
+                    handler: "queryRainFallData"
                 }
             ]
         },
@@ -187,7 +188,6 @@ Ext.define('jxgisapp.view.module.rainfall.RainFall', {
     ],
     listeners:
         {
-            afterrender: 'afterrenderHandler',
+            afterrender: 'afterrenderHandler'
         }
-})
-;
+});

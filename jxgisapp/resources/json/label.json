@@ -1,0 +1,106 @@
+[
+  {
+    "name": "水泵站迁建工程1",
+    "url": "http://www.baidu.com",
+    "color": "#FF0000",
+    "size": 16,
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        115.2117,
+        28.48
+      ]
+    }
+  },
+  {
+    "name": "水泵站迁建工程2",
+    "url": "http://www.baidu.com",
+    "color": "#FF0000",
+    "size": 16,
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        116.89,
+        28.68
+      ]
+    }
+  },
+  {
+    "name": "水泵站迁建工程3",
+    "url": "http://www.baidu.com",
+    "color": "#FF0000",
+    "size": 16,
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        116.89,
+        27.68
+      ]
+    }
+  },
+  {
+    "name": "水泵站迁建工程4",
+    "url": "http://www.baidu.com",
+    "color": "#FF0000",
+    "size": 16,
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        114.89,
+        29.68
+      ]
+    }
+  },
+  {
+    "name": "水泵站迁建工程5",
+    "url": "http://www.baidu.com",
+    "color": "#FF0000",
+    "size": 16,
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        114.89,
+        27.68
+      ]
+    }
+  },
+  {
+    "name": "水泵站迁建工程6",
+    "url": "http://www.baidu.com",
+    "color": "#FF0000",
+    "size": 16,
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        113.89,
+        24.68
+      ]
+    }
+  },
+  {
+    "name": "水泵站迁建工程7",
+    "url": "http://www.baidu.com",
+    "color": "#FF0000",
+    "size": 16,
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        118.89,
+        26.68
+      ]
+    }
+  },
+  {
+    "name": "水泵站迁建工程8",
+    "url": "http://www.baidu.com",
+    "color": "#FF0000",
+    "size": 16,
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        117.89,
+        29.68
+      ]
+    }
+  }
+]

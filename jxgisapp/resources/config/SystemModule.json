@@ -1,6 +1,16 @@
 {
   "sysMenus": [
     {
+      "text": "首页",
+      "id": "xtsy",
+      "url": "index",
+      "init": false,
+      "selected": false,
+      "width": 0,
+      "hide": false,
+      "icon": null
+    },
+    {
       "text": "水位信息",
       "id": "swxx",
       "url": "waterlevel",

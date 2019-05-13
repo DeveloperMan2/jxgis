@@ -21,7 +21,7 @@ Ext.define('jxgisapp.view.module.waterpump.WaterPumpController', {
         // rightWrap.hidden = true;
         // rightWrap.setVisibility = false;
         // rightWrap.updateLayout();
-         this.afterMapViewLoaded(this.moduleInit);
+        this.afterMapViewLoaded(this.moduleInit);
     },
     afterMapViewLoaded: function (handler) {
         var me = this;
@@ -50,6 +50,7 @@ Ext.define('jxgisapp.view.module.waterpump.WaterPumpController', {
     //根据配置创建水闸图层
     getWaterPumpData: function (url) {
         let params = {};
+
         //执行成功回调
         function successCallBack(response, opts) {
             //查询结果转json对象
