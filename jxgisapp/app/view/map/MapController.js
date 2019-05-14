@@ -20,8 +20,9 @@ Ext.define('jxgisapp.view.map.MapController', {
                 "esri/geometry/Extent",
                 "esri/config",
                 "esri/layers/MapImageLayer",
+                "esri/geometry/Point",
                 "dojo/domReady!"
-            ], function (Map, MapView, TileLayer, SpatialReference, Extent, esriConfig, MapImageLayer) {
+            ], function (Map, MapView, TileLayer, SpatialReference, Extent, esriConfig, MapImageLayer, Point) {
                 var appMap = new Map(
                     /*{
                         basemap: 'satellite'
@@ -78,6 +79,9 @@ Ext.define('jxgisapp.view.map.MapController', {
                         x: event.x,
                         y: event.y
                     };
+
+                    let mapPot = mapView.toMap(screenPoint);
+                    console.log("x=" + mapPot.x + ",y=" + mapPot.y);
 
                     // Search for graphics at the clicked location
                     mapView.hitTest(screenPoint).then(function (response) {

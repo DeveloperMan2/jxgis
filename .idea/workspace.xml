@@ -2,18 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="774aba46-45c3-40e8-91c0-65a042a55377" name="Default" comment="新增模块，调整工程结构，增加Readme.md说明文件">
-      <change afterPath="$PROJECT_DIR$/jxgisapp/sass/src/view/module/index/Index.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jxgisapp/app.json" beforeDir="false" afterPath="$PROJECT_DIR$/jxgisapp/app.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jxgisapp/app/controller/GlobalController.js" beforeDir="false" afterPath="$PROJECT_DIR$/jxgisapp/app/controller/GlobalController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jxgisapp/app/utils/GeoUtil.js" beforeDir="false" afterPath="$PROJECT_DIR$/jxgisapp/app/utils/GeoUtil.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/jxgisapp/app/view/map/MapController.js" beforeDir="false" afterPath="$PROJECT_DIR$/jxgisapp/app/view/map/MapController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jxgisapp/app/view/module/index/IndexController.js" beforeDir="false" afterPath="$PROJECT_DIR$/jxgisapp/app/view/module/index/IndexController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jxgisapp/app/view/right/RightController.js" beforeDir="false" afterPath="$PROJECT_DIR$/jxgisapp/app/view/right/RightController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jxgisapp/resources/config/SystemConfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/jxgisapp/resources/config/SystemConfig.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jxgisapp/sass/src/view/main/Main.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jxgisapp/sass/src/view/main/Main.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/jxgisapp/sass/src/view/main/Main.scss" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -26,11 +16,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/jxgisapp/app/view/map/MapController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="94" column="55" selection-start-line="94" selection-start-column="55" selection-end-line="94" selection-end-column="55" />
+            <state relative-caret-position="323">
+              <caret line="83" column="68" lean-forward="true" selection-start-line="83" selection-start-column="68" selection-end-line="83" selection-end-column="68" />
             </state>
           </provider>
         </entry>
@@ -40,10 +30,10 @@
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/jxgisapp/app/view/right/RightController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="407">
+            <state relative-caret-position="1">
               <caret line="88" column="10" selection-start-line="88" selection-start-column="10" selection-end-line="88" selection-end-column="10" />
             </state>
           </provider>
@@ -61,11 +51,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/jxgisapp/app/utils/GeoUtil.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="302" column="49" selection-start-line="302" selection-start-column="49" selection-end-line="302" selection-end-column="49" />
+            <state relative-caret-position="217">
+              <caret line="313" lean-forward="true" selection-start-line="313" selection-end-line="313" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
-                <element signature="e#9733#11424#0" />
               </folding>
             </state>
           </provider>
@@ -148,7 +137,6 @@
         <option value="$PROJECT_DIR$/jxgisapp/sass/var/all.scss" />
         <option value="$PROJECT_DIR$/jxgisapp/app/view/module/index/Index.js" />
         <option value="$PROJECT_DIR$/jxgisapp/resources/json/label.json" />
-        <option value="$PROJECT_DIR$/jxgisapp/app/utils/GeoUtil.js" />
         <option value="$PROJECT_DIR$/jxgisapp/pro.cmd" />
         <option value="$PROJECT_DIR$/jxgisapp/sass/src/view/main/Main.scss" />
         <option value="$PROJECT_DIR$/jxgisapp/sass/src/view/module/index/Index.scss" />
@@ -156,12 +144,13 @@
         <option value="$PROJECT_DIR$/jxgisapp/app/controller/GlobalController.js" />
         <option value="$PROJECT_DIR$/jxgisapp/app.json" />
         <option value="$PROJECT_DIR$/jxgisapp/resources/config/SystemConfig.json" />
-        <option value="$PROJECT_DIR$/jxgisapp/app/view/map/MapController.js" />
         <option value="$PROJECT_DIR$/jxgisapp/app/view/right/RightController.js" />
+        <option value="$PROJECT_DIR$/jxgisapp/app/utils/GeoUtil.js" />
+        <option value="$PROJECT_DIR$/jxgisapp/app/view/map/MapController.js" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-10" />
     <option name="width" value="979" />
     <option name="height" value="1050" />
@@ -250,6 +239,27 @@
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="view" type="462c0819:PsiDirectoryNode" />
               <item name="right" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jxgis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jxgis" type="462c0819:PsiDirectoryNode" />
+              <item name="jxgisapp" type="462c0819:PsiDirectoryNode" />
+              <item name="build" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jxgis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jxgis" type="462c0819:PsiDirectoryNode" />
+              <item name="jxgisapp" type="462c0819:PsiDirectoryNode" />
+              <item name="build" type="462c0819:PsiDirectoryNode" />
+              <item name="production" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jxgis" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jxgis" type="462c0819:PsiDirectoryNode" />
+              <item name="jxgisapp" type="462c0819:PsiDirectoryNode" />
+              <item name="build" type="462c0819:PsiDirectoryNode" />
+              <item name="production" type="462c0819:PsiDirectoryNode" />
+              <item name="jxgisapp" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="jxgis" type="b2602c69:ProjectViewProjectNode" />
@@ -391,7 +401,7 @@
       <workItem from="1557752111869" duration="7993000" />
       <workItem from="1557795409161" duration="4229000" />
       <workItem from="1557801575835" duration="2569000" />
-      <workItem from="1557808157810" duration="1165000" />
+      <workItem from="1557808157810" duration="4762000" />
     </task>
     <task id="LOCAL-00001" summary="调整arcgis脚本库连接">
       <created>1526209895742</created>
@@ -453,7 +463,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="153967000" />
+    <option name="totallyTimeSpent" value="157564000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -466,9 +476,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26358148" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26358148" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -479,7 +488,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3286517" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49603698" weight="0.41547278" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" sideWeight="0.49603698" visible="true" weight="0.41547278" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.503963" side_tool="true" weight="0.35470086" />
       <window_info anchor="bottom" id="Version Control" order="10" sideWeight="0.49932975" weight="0.22922637" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -899,24 +908,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/jxgisapp/build/production/jxgisapp/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="16" column="19" lean-forward="true" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jxgisapp/app/utils/GeoUtil.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="302" column="49" selection-start-line="302" selection-start-column="49" selection-end-line="302" selection-end-column="49" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#9733#11424#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/jxgisapp/resources/config/SystemConfig.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="114">
@@ -924,20 +915,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/jxgisapp/app/view/map/MapController.js">
+    <entry file="file://$PROJECT_DIR$/jxgisapp/app/view/right/RightController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="94" column="55" selection-start-line="94" selection-start-column="55" selection-end-line="94" selection-end-column="55" />
+        <state relative-caret-position="1">
+          <caret line="88" column="10" selection-start-line="88" selection-start-column="10" selection-end-line="88" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jxgisapp/build/production/jxgisapp/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="307">
+          <caret line="16" column="19" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jxgisapp/app/utils/GeoUtil.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="313" lean-forward="true" selection-start-line="313" selection-end-line="313" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/jxgisapp/app/view/main/MainController.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/jxgisapp/app/view/right/RightController.js">
+    <entry file="file://$PROJECT_DIR$/jxgisapp/app/view/map/MapController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="407">
-          <caret line="88" column="10" selection-start-line="88" selection-start-column="10" selection-end-line="88" selection-end-column="10" />
+        <state relative-caret-position="323">
+          <caret line="83" column="68" lean-forward="true" selection-start-line="83" selection-start-column="68" selection-end-line="83" selection-end-column="68" />
         </state>
       </provider>
     </entry>
