@@ -140,8 +140,6 @@ Ext.define('jxgisapp.controller.GlobalController', {
         rvc.redirectTo(module['url']);
         rv.updateLayout();
 
-        alert(11111);
-
         //加载子模块
         var subModule = module['moduleExtraParams'];
         if (subModule) {

@@ -3,7 +3,7 @@
   "serviceUrl": "http://localhost:8080/jxgisapp/",
   "pageSize": 10,
   //多个底图服务,程序按照顺序加载图层.结构：[{"url":"xxxxx","tile":true},{"url":"xxxxx","tile":false}],url--地图服务地址tile---true切片服务,false动态图层
-  "baseMapUrl":[{"url":"http://localhost:6080/arcgis/rest/services/jiangxi/MapServer","tile":true}],
+  "baseMapUrl":[{"url":"http://10.1.5.79:6080/arcgis/rest/services/jiangxi/MapServer","tile":true}],
 //  "baseMapUrl":[{"url":"http://localhost:6080/arcgis/rest/services/jiangxi/jiangxi3/MapServer","tile":true}
 //  ,{"url":"http://localhost:6080/arcgis/rest/services/station/MapServer","tile":false}],
 

@@ -4,6 +4,10 @@
 Ext.define('jxgisapp.view.map.MapController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.map',
+    requires: [
+        'Ext.window.Window',
+        'Ext.ux.IFrame'
+    ],
     labelInfoWindow: null,
     initMap: function (mapId) {
         let me = this;
@@ -31,8 +35,9 @@ Ext.define('jxgisapp.view.map.MapController', {
                     center: [115.89, 28.68],*/
                     constraints: {
                         rotationEnabled: false
-                    },
-                    spatialReference: new SpatialReference(4490)
+                    }
+                    /*,
+                    spatialReference: new SpatialReference(4490)*/
                 });
 
                 //todo 2018-08-26 暂时注释
@@ -86,7 +91,8 @@ Ext.define('jxgisapp.view.map.MapController', {
                             let attrs = graphic.attributes;
                             if (attrs) {
                                 let name = attrs['name'], url = attrs['url'];
-                                me.createPopupWindow(name, url, '加载中...', 1000, me);
+                                //me.createPopupWindow(name, url, '加载中...', 1000, me);
+                                window.open(url, '_self');
                             }
                         }
                     });

@@ -1,7 +1,7 @@
 /*
 Error: Undefined mixin 'extjs-window-ui'.
-        on line 2 of Main.scss, in `extjs-window-ui'
-        from line 2 of Main.scss
+        on line 2 of Index.scss, in `extjs-window-ui'
+        from line 2 of Index.scss
 
 1: /*window组件全局样式*\/
 2: @include extjs-window-ui(
@@ -12,8 +12,8 @@ Error: Undefined mixin 'extjs-window-ui'.
 7:         $ui-header-glyph-color: #ffffff,
 
 Backtrace:
-Main.scss:2:in `extjs-window-ui'
-Main.scss:2
+Index.scss:2:in `extjs-window-ui'
+Index.scss:2
 D:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/tree/visitors/perform.rb:352:in `block in visit_mixin'
 D:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/stack.rb:98:in `block in with_mixin'
 D:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/sass-3.5.5/lib/sass/stack.rb:135:in `with_frame'
@@ -56,4 +56,4 @@ D:/Ruby24-x64/bin/scss:22:in `<main>'
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Undefined mixin 'extjs-window-ui'.\A         on line 2 of Main.scss, in `extjs-window-ui'\A         from line 2 of Main.scss\A \A 1: /*window组件全局样式*/\A 2: @include extjs-window-ui(\A 3:         $ui: 'window-panel-ui',\A 4:         $ui-header-background-color: $MyThemeColor,\A 5:         $ui-border-color: $MyThemeColor,\A 6:         $ui-header-color: #ffffff,\A 7:         $ui-header-glyph-color: #ffffff,"; }
+  content: "Error: Undefined mixin 'extjs-window-ui'.\A         on line 2 of Index.scss, in `extjs-window-ui'\A         from line 2 of Index.scss\A \A 1: /*window组件全局样式*/\A 2: @include extjs-window-ui(\A 3:         $ui: 'window-panel-ui',\A 4:         $ui-header-background-color: $MyThemeColor,\A 5:         $ui-border-color: $MyThemeColor,\A 6:         $ui-header-color: #ffffff,\A 7:         $ui-header-glyph-color: #ffffff,"; }
