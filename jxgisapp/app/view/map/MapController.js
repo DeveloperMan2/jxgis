@@ -4,6 +4,10 @@
 Ext.define('jxgisapp.view.map.MapController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.map',
+    requires: [
+        'Ext.window.Window',
+        'Ext.ux.IFrame'
+    ],
     labelInfoWindow: null,
     initMap: function (mapId) {
         let me = this;
@@ -16,8 +20,9 @@ Ext.define('jxgisapp.view.map.MapController', {
                 "esri/geometry/Extent",
                 "esri/config",
                 "esri/layers/MapImageLayer",
+                "esri/geometry/Point",
                 "dojo/domReady!"
-            ], function (Map, MapView, TileLayer, SpatialReference, Extent, esriConfig, MapImageLayer) {
+            ], function (Map, MapView, TileLayer, SpatialReference, Extent, esriConfig, MapImageLayer, Point) {
                 var appMap = new Map(
                     /*{
                         basemap: 'satellite'
@@ -31,8 +36,9 @@ Ext.define('jxgisapp.view.map.MapController', {
                     center: [115.89, 28.68],*/
                     constraints: {
                         rotationEnabled: false
-                    },
-                    spatialReference: new SpatialReference(4490)
+                    }
+                    /*,
+                    spatialReference: new SpatialReference(4490)*/
                 });
 
                 //todo 2018-08-26 暂时注释
@@ -74,6 +80,9 @@ Ext.define('jxgisapp.view.map.MapController', {
                         y: event.y
                     };
 
+                    let mapPot = mapView.toMap(screenPoint);
+                    console.log("x=" + mapPot.x + ",y=" + mapPot.y);
+
                     // Search for graphics at the clicked location
                     mapView.hitTest(screenPoint).then(function (response) {
                         if (response.results.length) {
@@ -86,7 +95,8 @@ Ext.define('jxgisapp.view.map.MapController', {
                             let attrs = graphic.attributes;
                             if (attrs) {
                                 let name = attrs['name'], url = attrs['url'];
-                                me.createPopupWindow(name, url, '加载中...', 1000, me);
+                                //me.createPopupWindow(name, url, '加载中...', 1000, me);
+                                window.open(url, '_self');
                             }
                         }
                     });

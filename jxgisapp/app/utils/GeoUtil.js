@@ -306,7 +306,8 @@ Ext.define('jxgisapp.utils.GeoUtil', {
 
                 if (cu.layer.labelLayer == null) {
                     let graphicsLayer = new GraphicsLayer();
-                    cu.map.add(graphicsLayer);
+                    //添加地图并置顶
+                    cu.map.add(graphicsLayer, cu.map.layers.length + 99);
                     //全局存储
                     cu.layer.labelLayer = graphicsLayer;
                 }

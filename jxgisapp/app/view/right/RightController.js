@@ -86,7 +86,7 @@ Ext.define('jxgisapp.view.right.RightController', {
         me.lastView = newView;
 
         //禁用浏览器历史回退功能
-        window.history.forward(1);
+        //window.history.forward(1);
     },
     //路由切换
     onRouteChange: function (id) {

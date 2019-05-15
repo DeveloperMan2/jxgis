@@ -4,7 +4,9 @@
 Ext.define('jxgisapp.view.module.index.IndexController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.index',
-
+    requires: [
+        'Ext.util.TaskManager'
+    ],
     /**
      * Called when the view is created
      */
