@@ -85,6 +85,10 @@
   "waterqualityWinowUrl":"http://dojotoolkit.org/api/",
 
 
+  /***********************右侧空白页配置文件*******************************/
+  "indexMapQueryUrl":"resources/json/label.json",
+
+
 
 
 
