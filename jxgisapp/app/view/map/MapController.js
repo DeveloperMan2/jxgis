@@ -5,8 +5,9 @@ Ext.define('jxgisapp.view.map.MapController', {
     extend: 'Ext.app.ViewController',
     alias: 'controller.map',
     requires: [
-        'Ext.window.Window',
-        'Ext.ux.IFrame'
+        'Ext.layout.container.Fit',
+        'Ext.ux.IFrame',
+        'Ext.window.Window'
     ],
     labelInfoWindow: null,
     initMap: function (mapId) {
@@ -66,12 +67,17 @@ Ext.define('jxgisapp.view.map.MapController', {
                     }
                 });
                 mapView.extent = ext;
+
                 //去掉默认的地图缩放工具及地图底部版权信息
                 mapView.ui.remove(["zoom", 'attribution']);
 
                 //全局存储
                 cu.map = appMap;
                 cu.mapView = mapView;
+
+                mapView.when(function(){
+                    mapView.goTo(ext);
+                });
 
                 // Get the screen point from the view's click event
                 mapView.on("click", function (event) {
