@@ -1,8 +1,0 @@
-/build
-.idea/workspace.xml
-jxgisapp/.sencha/app/Boot.js
-jxgisapp/.sencha/app/codegen.json
-jxgisapp/.sencha/app/sencha.cfg
-jxgisapp/sass/example/fashion.html
-jxgisapp/sass/example/theme.html
-jxgisapp/sencha-error-20190514.log

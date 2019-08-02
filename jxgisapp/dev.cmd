@@ -1,1 +1,1 @@
-sencha -ti app build development
+sencha -ti app build -c development

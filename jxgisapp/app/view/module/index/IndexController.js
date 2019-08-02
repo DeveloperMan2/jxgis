@@ -7,6 +7,10 @@ Ext.define('jxgisapp.view.module.index.IndexController', {
     requires: [
         'Ext.util.TaskManager'
     ],
+    requires: [
+        'Ext.util.TaskManager'
+    ],
+
     /**
      * Called when the view is created
      */
@@ -53,6 +57,6 @@ Ext.define('jxgisapp.view.module.index.IndexController', {
         function failureCallBack(response, opts) {
         }
 
-        ajax.fn.execute(params, 'GET', 'resources/json/label.json', successCallBack, failureCallBack);
+        ajax.fn.execute(params, 'GET',  cu.config.indexMapQueryUrl, successCallBack, failureCallBack);
     }
 });
